@@ -4,7 +4,7 @@
   padding: 0;
 }
 .sidebar {
-  background-color: aqua;
+  background-color: #9f84b4;
   display: flex;
   position: fixed;
   height: 100%;
@@ -47,6 +47,7 @@
 }
 .details {
   background-color: #9f84b4;
+  border-radius: 24px;
   display: inline;
   padding: 70px;
   margin: 50px 20px 0px 40px;
