@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      #ToDo_list {
+        font-family: "Poppins", sans-serif;
+        width: 80vw;
+        margin: 5vh 10vw;
+        background-color: #fffffe;
+        border: 0;
+        box-shadow: 1px 4px 4px 5px grey;
+        box-sizing: content-box;
+      }
+
+      .to {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eceddb;
+      }
+
+      .it {
+        width: 100%;
+        height: 2vh;
+        margin-top: 50px;
+        margin-left: 40px;
+      }
+
+      #check {
+        width: 50vw;
+      }
+      #item {
+        width: 80%;
+        margin: 20px 100px 0 100px;
+        padding: 10px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border: 0;
+        box-shadow: 2px 3px 4px gray;
+      }
+      .inp {
+        width: 100%;
+        margin: auto;
+        height: 15vh;
+      }
+      #list {
+        list-style: none;
+        width: 80%;
+        margin: -10px 100px;
+        padding: 4px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border: 0;
+      }
+      li {
+        background-color: aquamarine;
+        box-shadow: 2px 3px 4px gray;
+        margin: 10px 0px;
+        padding: 10px;
+        user-select: none;
+      }
+      .noti {
+        width: 40%;
+        height: 40px;
+        background-color: green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 10px;
+        left: 376px;
+        border-radius: 30px;
+        font-size: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      svg {
+        width: 20px;
+        color: black;
+        /* background-color: black; */
+        position: absolute;
+        right: 265px;
+        margin: -1px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .done {
+        text-decoration: line-through;
+        background-color: rgb(155, 184, 174);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="noti" class="noti">Your todo is successfuly set</div>
+    <div id="ToDo_list">
+      <div class="to">
+        <h2 class="t-o">Your to do list</h2>
+        <div class="inp">
+          <input
+            type="text"
+            autofocus
+            placeholder="Write your to do"
+            id="item"
+          />
+        </div>
+      </div>
+      <ul id="list"></ul>
+    </div>
+
+    <script>
+      document.getElementById("noti").style.display = "none";
+      const todo = document.querySelector("#item");
+      const list = document.querySelector("#list");
+      todo.addEventListener("keyup", (event) => {
+        if (event.key == "Enter") {
+          setTimeout(() => {
+            document.getElementById("noti").style.display = "flex";
+          }, 100);
+          setTimeout(() => {
+            document.getElementById("noti").style.display = "none";
+          }, 2000);
+
+          addtodo(todo.value);
+          todo.value = "anda diyo ne ";
+          addtodo(todo.value);
+          todo.value = "sasto ma";
+          addtodo(todo.value);
+        }
+      });
+      let addtodo = (items) => {
+        let listitem = document.createElement("li");
+        listitem.innerHTML = `${items} `;
+        listitem.addEventListener("click", () => {
+          listitem.classList.toggle("done");
+        });
+
+        list.appendChild(listitem);
+      };
+
+      // document.getElementById("noti").style.display = "none";
+      // const todo = document.querySelector("#item");
+      // const list = document.querySelector("#list");
+      // todo.addEventListener("keyup", (event) => {
+      //   if (event.key == "Enter") {
+      //     setTimeout(() => {
+      //       document.getElementById("noti").style.display = "flex";
+      //     }, 100);
+      //     setTimeout(() => {
+      //       document.getElementById("noti").style.display = "none";
+      //     }, 2000);
+      //     addtodo(todo.value);
+      //     todo.value = "";
+      //     // document.getElementById('noti').style.display = " block"
+      //   }
+      // });
+      // let addtodo = (items) => {
+      //   let listitem = document.createElement("li");
+      //   listitem.innerHTML = `${items} <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>`;
+      //   listitem.addEventListener("click", () => {
+      //     listitem.classList.toggle("done");
+      //   });
+      //   listitem.querySelector("svg").addEventListener("click", () => {
+      //     listitem.remove();
+      //   });
+      //   list.appendChild(listitem);
+      // };
+    </script>
+  </body>
+</html>
