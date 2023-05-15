@@ -29,29 +29,37 @@
 .container {
   display: flex;
   width: auto;
-  height: 100vh;
-  background-color:white;
+  min-height: 100vh;
+  background-color: rgb(207, 183, 183);
   margin-left: 100px;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .content {
-  margin: 20px 20px 10px 30px;
+  margin: auto;
   padding: 30px;
+  font-size: 20px;
 }
 .websitename {
-  margin: 10px ;
+  margin: 12px;
   padding: 40px;
   font-size: 32px;
   font-weight: bolder;
 }
 .details {
   background-color: #9f84b4;
-  border-radius: 24px;
-  display: inline;
-  padding: 70px;
-  margin: 50px 20px 0px 40px;
-  padding: 20px;
-  min-width: 50%;
-  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100px;
+  padding: 10px 30px;
+  margin: 30px;
+}
+th,
+td {
+  padding: 5px;
 }
