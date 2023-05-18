@@ -4,9 +4,6 @@ require "../database/crud.php";
 $login = new crud();
 $table = "login";
 
-
-
-
 $username=$_POST['username'];
 $password=$_POST['password'];
 $email=$_POST['email'];
