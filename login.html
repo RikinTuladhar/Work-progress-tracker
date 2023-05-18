@@ -117,6 +117,8 @@
           name="form_login"
           id="form_login"
           style="left: 50"
+          method="get"
+          action="login.php"
         >
           <input
             type="text"
@@ -141,25 +143,29 @@
           name="form_register"
           id="form_register"
           style="left: 450px"
-          method="get"
+          method="post"
+          action="Insertdata/insert_login_todatabase.php"
         >
           <input
             type="text"
             class="input-field"
             placeholder="Enter username"
             id="name-register"
+            name="username"
           />
           <input
             type="password"
             class="input-field"
             placeholder="Enter password"
             id="password-register"
+            name="password"
           />
           <input
             type="text"
             class="input-field"
             placeholder="Enter email"
             id="email-register"
+            name="email"
           />
           <input type="checkbox" class="checkbox" id="checkbox" /><span
             >I agree to the terms and conditions</span
