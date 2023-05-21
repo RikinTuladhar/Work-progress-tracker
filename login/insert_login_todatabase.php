@@ -7,7 +7,7 @@ $table = "login";
 $username=$_POST['username'];
 $password=$_POST['password'];
 $email=$_POST['email'];
-echo $username;
+
 // $items = [
 //     "id"=>1,
 //     "username"=> "sita",
@@ -17,12 +17,11 @@ echo $username;
 // ];
 
 $items = [
-    "id"=>2,
     "username"=> "$username",
     "password"=>"$password",
     "email" => "$email"
     
 ];
-
+print_r($items);
 $login -> insert($table,$items);
 ?>
