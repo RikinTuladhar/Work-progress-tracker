@@ -14,7 +14,7 @@
     // $testobj = new selectDatabase();
     // $testobj->getUsers();
     $testobj = new datacontainer();
-    echo $testobj->showAllUsers();
+     $testobj->showAllUsersOfLogin();
 
     // $testobj->getUsersStmt("rikin"); ?>
   </body>

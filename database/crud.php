@@ -43,14 +43,20 @@ class crud {
     //     return $ret;
     // }
 
- public function getUsers(){
-        $sql = "select * from login";
-        $stmt = $this->con->query($sql);
-        while($row = $stmt->fetch_assoc())
-        {
-           $data[] = $row;
+ public function getUsers($table){
+        $sql = "select * from ".$table;
+        $stmt = mysqli_query($this->con,$sql);
+        if($stmt->num_rows > 0){
+
+            while($row = $stmt->fetch_assoc())
+            {
+                $data[] = $row;
+            }
+            return $data;
+        } 
+        else{
+            return 0;
         }
-        return $data;
     }
 
 }
