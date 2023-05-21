@@ -70,7 +70,7 @@ form_register.addEventListener("submit", function (event) {
     alert("@ cannot be at beginning");
     return;
   }
-  if (email.search(/@gmail.com/i) == -1) {
+  if (email.search(/@/i) == -1) {
     alert("Please enter a valid email");
     return;
   }

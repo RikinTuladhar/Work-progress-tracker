@@ -30,7 +30,7 @@
   display: flex;
   width: auto;
   min-height: 100vh;
-  background-color: rgb(207, 183, 183);
+  background-color: #d9d9d9;
   margin-left: 100px;
   align-items: center;
   flex-wrap: wrap;
