@@ -1,5 +1,5 @@
 <?php
-  require "viewdata.php";
+  require "datacontainer.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,8 @@
     <?php
     // $testobj = new selectDatabase();
     // $testobj->getUsers();
-    $testobj = new viewdata();
-    $testobj->showAllUsers();
+    $testobj = new datacontainer();
+    echo $testobj->showAllUsers();
 
     // $testobj->getUsersStmt("rikin"); ?>
   </body>

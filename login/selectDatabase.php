@@ -1,15 +1,15 @@
 <?php
-require "../database/crud.php";
-class selectDatabase extends Database{
-    public function getUsers(){
-        $sql = "select * from login";
-        $stmt = $this->getConnection()->query($sql);
-        while($row = $stmt->fetch_assoc())
-        {
-           $data[] = $row;
-        }
-        return $data;
-    }
+// require "../database/crud.php";
+// class selectDatabase extends Database{
+//     public function getUsers(){
+//         $sql = "select * from login";
+//         $stmt = $this->getConnection()->query($sql);
+//         while($row = $stmt->fetch_assoc())
+//         {
+//            $data[] = $row;
+//         }
+//         return $data;
+//     }
 
     // public function getUsersStmt($firstname){
     //     $sql = "select * from login where username= ?";
@@ -22,4 +22,4 @@ class selectDatabase extends Database{
     //     }
     // }
 
-}
+// }

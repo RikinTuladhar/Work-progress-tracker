@@ -1,6 +1,8 @@
 <?php
-require "selectDatabase.php";
-class viewdata extends selectDatabase{
+// require "selectDatabase.php";
+require "../database/crud.php";
+class datacontainer extends crud{
+   
     public function showAllUsers(){
        $datas = $this->getUsers();
        foreach($datas as $data)

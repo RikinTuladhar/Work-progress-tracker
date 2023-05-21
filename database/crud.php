@@ -25,21 +25,32 @@ class crud {
         $ret = mysqli_query($this->con, $query);
     }
 
-    public function select($table, $item_arr) {
-        $statment = "select * from " . $table;
-        $where = "where ";
-        $i = 0;
-        foreach($item_arr as $k => $v) 
+    // public function select($table, $item_arr) {
+    //     $statment = "select * from " . $table;
+    //     $where = "where ";
+    //     $i = 0;
+    //     foreach($item_arr as $k => $v) 
+    //     {
+    //      if($i > 0) 
+    //      {
+    //         $where .= " and ";
+    //      }
+    //         $where .= $k . " = '" . $v . "'";
+    //          $i++;
+    //     }
+    //     $query = $statment . $where;
+    //     $ret = mysqli_query($this->con, $query);
+    //     return $ret;
+    // }
+
+ public function getUsers(){
+        $sql = "select * from login";
+        $stmt = $this->con->query($sql);
+        while($row = $stmt->fetch_assoc())
         {
-         if($i > 0) 
-         {
-            $where .= " and ";
-         }
-            $where .= $k . " = '" . $v . "'";
-             $i++;
+           $data[] = $row;
         }
-        $query = $statment . $where;
-        $ret = mysqli_query($this->con, $query);
-        return $ret;
+        return $data;
     }
+
 }
