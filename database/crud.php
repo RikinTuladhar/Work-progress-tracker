@@ -59,4 +59,10 @@ class crud {
         }
     }
 
+    // public function delete($table){
+    //     $id = $_GET['id'];
+    //     $sql = "delete from ".$table." where id = ".$id;
+    //     $stmt = mysqli_query($this->con,$sql);
+    // }
+
 }
