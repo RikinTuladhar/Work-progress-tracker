@@ -1,12 +1,33 @@
+<!-- All the display contents but is called at displaydata.php using oop -->
+
+<style>
+#addcontact{
+    width: 300px;
+    border: 2px;
+    text-decoration: none;
+    border: 2px solid black;
+    margin: 5px auto 20px 20px;
+    position: relative;
+}
+table{
+    margin: 20px;
+}
+
+</style>
 <?php
 // require "selectDatabase.php";
 require "../database/crud.php";
 class datacontainer extends crud{
    
+    
+
     public function showAllUsersOfLogin(){
        $datas = $this->getUsers("login");
        ?>
-        <table border="1" cellspacing="10px" cellpadding="20px">
+       <div >
+        <a href="login.html" id="addcontact">Add Contact</a>
+     </div>
+        <table border="1" cellspacing="10px" cellpadding="20px" >
             
             <tr>
                 <th>Id</th>
@@ -17,22 +38,30 @@ class datacontainer extends crud{
             </tr>
          <?php
 
+        if($datas >0)
+        {
         foreach($datas as $data)
         {
             // echo "<td><td>".$data['id']."</td><td>".$data['username']."</td><td>".$data['email'].
             // "</td></td> <a href='delete.php?id=".$data["id"]."'>Delete</a></td>
             // <td><a hreft ='edit.php?id=".$data["id"]."'>Edit</a></td></tr>";
 
-            echo "<tr>
-            <td>" . $data["id"] . "</td>
-            <td>" . $data["username"]. "</td>
-            <td>"  .$data["email"]. "</td>
-         <td> <a href='delete.php?id=" .$data["Id"]."'>Delete</a></td>
-         <td><a href='edit.php?id=" . $data["Id"]."'>Edit</a></td></tr>";
-
-         }
+                echo "<tr>
+                <td>" . $data["id"] . "</td>
+                <td>" . $data["username"]. "</td>
+                <td>"  .$data["email"]. "</td>
+                <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
+                <td><a href='edit_login.php?id=".$data["id"]."'>Edit</a></td></tr>";
+                
+            }
+        }
+        else{
+            $message = "No Data Found";
+            echo "<div style='color:red;margin: 20px'>$message</div>";
+        }
     }
-}?>
+}
+?>
         </table>
        
 
