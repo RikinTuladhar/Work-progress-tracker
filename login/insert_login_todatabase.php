@@ -22,6 +22,11 @@ $items = [
     "email" => "$email"
     
 ];
-print_r($items);
+// print_r($items);
+
 $login -> insert($table,$items);
+if($login)
+{
+    header('location:http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html');
+}
 ?>
