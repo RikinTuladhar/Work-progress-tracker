@@ -78,13 +78,17 @@ td {
   padding-top: 30px;
 }
 #add {
-  background-color: #d9d9d9;
+  border: 1px solid black;
   display: flex;
-  align-items: center;
-  color: black;
+  color: rgb(63, 33, 68);
   justify-content: flex-end;
-  padding-right: 30px;
-  padding-bottom: 30px;
+  padding-right: 20px;
+  padding-bottom: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  align-items: center;
+  font-size: 18px;
 }
 /* .flex-group {
   display: flex;

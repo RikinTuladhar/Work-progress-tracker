@@ -1,6 +1,9 @@
 <!-- All the display contents but is called at displaydata.php using oop -->
 
 <style>
+    *{
+        background-color: #d9d9d9;
+    }
 #addcontact{
     width: 300px;
     border: 2px;
@@ -33,8 +36,9 @@ class datacontainer extends crud{
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Delete</th>
                 <th>Edit</th>
+                <th>Delete</th>
+                <th>Approve</th>
             </tr>
          <?php
 
@@ -50,8 +54,9 @@ class datacontainer extends crud{
                 <td>" . $data["id"] . "</td>
                 <td>" . $data["username"]. "</td>
                 <td>"  .$data["email"]. "</td>
+                <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
-                <td><a href='edit_login.php?id=".$data["id"]."'>Edit</a></td></tr>";
+                <td><a href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
                 
             }
         }
