@@ -15,7 +15,15 @@
 table{
     margin: 20px;
 }
+.myClass{
+    color: gray;
 
+}
+a:active {
+  /* CSS styles for when the link is being clicked */
+  color: red;
+  /* Add any other styles you want to apply during the click */
+}
 </style>
 <?php
 // require "selectDatabase.php";
@@ -56,7 +64,7 @@ class datacontainer extends crud{
                 <td>"  .$data["email"]. "</td>
                 <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
-                <td><a href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
+                <td><a id='mylink' onclick = 'disablelink(event)' href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
                 
             }
         }
@@ -68,6 +76,21 @@ class datacontainer extends crud{
 }
 ?>
         </table>
+       
+        <script >
+            var hasclicked = false;
+
+            function disablelink(e) {
+                var link = event.target;
+                link.removeEventListener('click',disablelink);
+                link.setAttribute('disabled','true');
+                link.classList.add('myClass');
+                event.preventDefault();
+            }
+            
+         
+
+        </script>
        
 
 <?php
