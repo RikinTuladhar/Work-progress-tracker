@@ -70,6 +70,7 @@ td {
   padding: 20px;
   font-size: 32px;
   font-weight: bolder;
+  background-color: #d9d9d9;
 }
 .details {
   /* border-radius: 20px;
@@ -86,11 +87,9 @@ td {
   padding: 30px;
   background-color: #9f84b4;
   border-radius: 30px;
-}
-.details:nth-child(1) {
   width: 70%;
-  height: auto;
 }
+
 .details:nth-child(1):hover {
   /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px; */
@@ -101,12 +100,21 @@ td {
   border: 1px solid black;
   padding: 10px;
 }
+.project_table {
+  display: flex;
+  width: 100%;
+  height: auto;
+
+  flex-direction: column;
+}
+
 table,
 th,
 td {
   border: 1px solid black;
+  height: auto;
   border-collapse: collapse;
-  width: 100%;
+  font-weight: bold;
 }
 th,
 td {
