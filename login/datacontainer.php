@@ -78,15 +78,15 @@ class datacontainer extends crud{
         </table>
        
         <script >
-            var hasclicked = false;
+            // var hasclicked = false;
 
-            function disablelink(e) {
-                var link = event.target;
-                link.removeEventListener('click',disablelink);
-                link.setAttribute('disabled','true');
-                link.classList.add('myClass');
-                event.preventDefault();
-            }
+            // function disablelink(e) {
+            //     var link = event.target;
+            //     link.removeEventListener('click',disablelink);
+            //     link.setAttribute('disabled','true');
+            //     link.classList.add('myClass');
+            //     event.preventDefault();
+            // }
             
          
 
