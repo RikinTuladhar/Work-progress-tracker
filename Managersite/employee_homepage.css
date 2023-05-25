@@ -15,13 +15,15 @@
   flex-wrap: wrap;
   align-items: flex-start;
 }
-
-/* .sidebar .element :hover{
-      width: 150px;
-      
-  
-  
-  }  */
+.sidebar:hover {
+  z-index: 1;
+  width: 150px;
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
 .element {
   margin: 50px 2px 20px 20px;
   padding: 10px;
@@ -29,11 +31,10 @@
 .container {
   display: flex;
   width: auto;
-  height: auto;
+  min-height: 100vh;
   background-color: #d9d9d9;
   margin-left: 100px;
-  align-items: center;
-  align-items: center;
+  position: relative;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
@@ -111,4 +112,66 @@ td {
 }
 .space_between {
   margin: 20px;
+}
+#total {
+  background-color: #d9d9d9;
+}
+div#total {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.total_container {
+  background-color: #9f84b4;
+}
+#employee_card {
+  border-top: 3px solid #6734e0;
+  display: flex;
+  background-color: rgb(223, 169, 100);
+  width: 90%;
+  height: auto;
+  margin: 40px;
+  padding: 40px;
+  border-radius: 30px;
+  flex-direction: column;
+}
+#employee_card:hover {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+.add_emp_button {
+  width: 100%;
+  height: 42px;
+  background: blueviolet;
+  border-radius: 9px;
+  right: 30px;
+}
+.search_show {
+  width: 100%;
+  height: 40px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+.showbar {
+  width: 100%;
+  height: 200px;
+}
+.search_bar {
+  width: auto;
+  height: 200px;
+  float: right;
+}
+table {
+  border: 1px solid black;
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  font-weight: bold;
+}
+th,
+td {
+  padding: 15px;
 }
