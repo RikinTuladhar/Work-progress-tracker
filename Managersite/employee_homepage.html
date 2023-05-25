@@ -64,10 +64,16 @@
     <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
     <div class="container">
       <div id="employee_card">
-        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button> Add</button></span></div>
+        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;">Add</button></span></div>
         <div class="search_show">
-         <span  class="showbar">showbar</span>
-          <span class="search_bar">Search</span>
+         <span  class="showbar">Showbar <select style="margin:0px 5px;">
+          
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          
+         </select>entries</span>
+          <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 20px;text-align: center;"></span>
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
