@@ -59,15 +59,21 @@
       </div>
     </div>
 
-    <h1 id="top-heading">Employee</h1>
+    <h1 id="top-heading" style="background-color: #d7d7d7;">Employee List</h1>
   
-    <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
     <div class="container">
+      <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
       <div id="employee_card">
-        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button> Add</button></span></div>
+        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;">Add Employee</button></span></div>
         <div class="search_show">
-         <span  class="showbar">showbar</span>
-          <span class="search_bar">Search</span>
+         <span  class="showbar">Showbar <select style="margin:0px 5px;">
+          
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          
+         </select>entries</span>
+          <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 10px;text-align: center;"></span>
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >

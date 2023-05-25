@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="stylemanager1.css" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    
+    <link rel="stylesheet" href="task_homepage.css">
   </head>
-  <body>
+  <im>
     <div class="sidebar">
-      <!-- <div class="element">
+      <div class="element">
         <a href="manager_homepage.html"
           ><span
             class="material-symbols-outlined"
@@ -56,7 +58,36 @@
           </span></a
         >
       </div>
-    </div> -->
-    <div class="container"></div>
+    </div>
+
+    <h1 id="top-heading">Task List</h1>
+    <div class="container">
+      <div id="task_card">
+        <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;">Add Task</button></span></div>
+        <div class="search_show">
+         <span  class="showbar">Showbar <select style="margin:0px 5px;">
+          
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          
+         </select>entries</span>
+          <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 20px;text-align: center;"></span>
+        </div>
+        <div id="employee_table">
+          <table border="1px black solid" cellspacing="15px" >
+            <tr>
+              <th>#</th>
+              <th>Department</th>
+              <th>Task</th>
+              <th>Task Started</th>
+              <th>Task Due Date</th>
+              <th>Task status</th>
+              <th>Action</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
