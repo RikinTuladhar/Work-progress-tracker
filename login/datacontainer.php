@@ -37,6 +37,7 @@ class datacontainer extends crud{
        ?>
        <div >
         <a href="login.html" id="addcontact">Add Contact</a>
+        
      </div>
         <table border="1" cellspacing="10px" cellpadding="20px" >
             
@@ -64,7 +65,7 @@ class datacontainer extends crud{
                 <td>"  .$data["email"]. "</td>
                 <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
-                <td><a id='mylink' href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
+                <td><a id='mylink' onclick='disable()' href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
                 
             }
         }
@@ -78,8 +79,7 @@ class datacontainer extends crud{
         </table>
        
         <script >
-         
-
+        
         </script>
        
 

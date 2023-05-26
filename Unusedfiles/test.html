@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="#" id="myLink">Click me</a>
+
+    <script>
+      // Get the link element
+      const link = document.getElementById("myLink");
+
+      // Check if the link has already been clicked
+      if (sessionStorage.getItem("linkClicked")) {
+        disableLink();
+      }
+
+      // Define the click event handler
+      function disableLink(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        link.removeEventListener("click", disableLink); // Remove the event listener
+        link.style.pointerEvents = "none"; // Disable further clicks by changing pointer events
+        sessionStorage.setItem("linkClicked", "true"); // Store the flag in session storage
+      }
+
+      // Attach the event listener to the link element
+      link.addEventListener("click", disableLink, false);
+    </script>
+  </body>
+</html>

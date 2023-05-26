@@ -21,6 +21,9 @@
         header('location:displaydata.php');
     }
     $sql ="select * from login where id = '$id'";
+    
+    
+
     $result = mysqli_query($conn,$sql);
     if($result->num_rows > 0)
     {
