@@ -160,3 +160,22 @@ th,
 td {
   padding: 15px;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.margin-content {
+  margin: 5px;
+  font-size: larger;
+}
+.large-input {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+}
+.submit-input {
+  width: 80px;
+  height: 40px;
+  font-size: 15px;
+}

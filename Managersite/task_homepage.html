@@ -15,7 +15,7 @@
     <style>
     .popup {
       display: none;
-      position: fixed;
+      position: absolute;
       z-index: 9999;
       top: 0;
       left: 0;
@@ -27,7 +27,8 @@
     
     .popup-content {
       background-color: #fff;
-      max-width: 400px;
+      max-width: 700px;
+      height: fit-content;
       margin: 100px auto;
       padding: 20px;
       border-radius: 5px;
@@ -136,7 +137,50 @@
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="hidePopup()">&times;</span>
-    <h2 style="text-align: center;">Form </h2>
+    <h2 style="text-align: center;">Add new task </h2>
+    <form action="taskadd.php" method="post">
+      <div class="row">
+        <div class="margin-content">
+        <br><label for="Name" class="large-input">Name</label><br>
+        <br><input type="text" class="large-input"id="Name" name="Name" placeholder="Name" required></div><br>
+        <div class="margin-content">
+        <br><label class="large-input" for="Status">Status</label><br>
+        <br><select class="large-input"name="Status" id="Status">
+          <option value="">pending</option>
+          <option value="">On-hold</option>
+          <option value="">Done</option>
+        </select> </div><br>
+      </div>
+
+      <div class="row">
+        <div class="margin-content">
+        <br><label class="large-input" for="Start-Date">Start Date</label><br>
+        <br><input type="date" id="Start-Date" name="Start-Date" class="large-input"placeholder=""  class="large-input" required></div><br>
+        <div class="margin-content">
+        <br><label class="large-input" for="End-Date">End Date</label><br>
+        <br><input type="date" id="End-Date" name="End-Date" placeholder=""  class="large-input" required></div><br>
+        </div>
+       
+      <div class="row">
+        <div class="margin-content">
+        <br><label  class="large-input" for="Project-Manager">Project Manager</label><br>
+        <br><input type="text" id="Project-Manager" name="Project-Manager"class="large-input" placeholder="" required></div><br>
+        <div class="margin-content">
+        <br><label  class="large-input"for="Project-Member">Project Member</label><br>
+        <br><input type="text" id="Project-Member"class="large-input" name="Title" placeholder="" required></div><br>
+      </div>
+
+      <div class="row">
+        <div class="margin-content">
+      <br><label class="large-input" for="Description">Description</label><br>
+      <br><textarea name="Description" id="" cols="30" rows="10" style="height: 43px; width: 334px;"></textarea><br>
+      </div>
+      </div>
+      <div class="row">
+
+        <input type="submit" value="submit" class="submit-input" >
+      </div>
+    </form>
     
   </div>
 </div>
