@@ -173,6 +173,7 @@ td {
   width: 200px;
   height: 30px;
   font-size: 18px;
+  font-weight: bold;
 }
 .submit-input {
   width: 80px;
