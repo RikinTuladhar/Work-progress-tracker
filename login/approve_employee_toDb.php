@@ -21,13 +21,19 @@ else{
 }
 
 $sql = "INSERT INTO `employee`(`eid`, `emp_name`,`e_pw`,`emp_email`) VALUES ('$id','$username','$password','$email')";
+try{
 if(mysqli_query($conn,$sql))
 {
     header('location:displaydata.php');
     // var_dump($username);
 }
 }
+catch(Exception )
+{   
+    echo "<script> alert('Cannot Approve Twice') </script>";
+}
 
-
+}
 $conn->close();
 
+?>

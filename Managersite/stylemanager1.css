@@ -16,14 +16,14 @@
   flex-wrap: wrap;
   align-items: flex-start;
 }
-.sidebar:hover {
+/* .sidebar:hover {
   width: 150px;
   transition-property: width;
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
   transition-delay: 0.1s;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-}
+} */
 
 /* .sidebar .element :hover{
     width: 150px;
