@@ -26,13 +26,16 @@
     }
     
     .popup-content {
-      background-color: #fff;
+      box-shadow: 0px 13px 15px 28px rgba(115, 114, 117, 0.562);
+  
+      border-radius: 25px;
+      background-color: #9f84b4;
       max-width: 700px;
       height: fit-content;
       margin: 100px auto;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(138, 15, 238, 0.3);
+ 
+    
 
     }
     
@@ -94,7 +97,7 @@
     </div>
 
     <h1 id="top-heading">Task List</h1>
-    <div class="container">
+    <div class="container ">
       <!-- <div class="blur-effect"> -->
 
 
@@ -137,16 +140,17 @@
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="hidePopup()">&times;</span>
-    <h2 style="text-align: center;">Add new task </h2>
+    <h2 style="text-align: center;margin-bottom: 2px;">Add New Task </h2>
+    <hr>
     <form action="taskadd.php" method="post">
       <div class="row">
         <div class="margin-content">
-        <br><label for="Name" class="large-input">Name</label><br>
-        <br><input type="text" class="large-input"id="Name" name="Name" placeholder="Name" required></div><br>
+        <br><label for="Name" class="large-input">Task Name</label><br>
+        <br><input type="text" class="large-input"id="Name" name="Name" placeholder="Task Name" required></div><br>
         <div class="margin-content">
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
-          <option value="">pending</option>
+          <option value="">Pending</option>
           <option value="">On-hold</option>
           <option value="">Done</option>
         </select> </div><br>

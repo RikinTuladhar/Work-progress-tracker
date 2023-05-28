@@ -63,8 +63,8 @@
   
     <div class="container">
       <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
-      <div id="employee_card">
-        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;">Add Employee</button></span></div>
+      <div id="employee_card" class="blur-effect">
+        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;" onclick="showPopup()">Add Employee</button></span></div>
         <div class="search_show">
          <span  class="showbar">Showbar <select style="margin:0px 5px;">
           
@@ -108,6 +108,67 @@
           </table>
         </div>
       </div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="hidePopup()">&times;</span>
+          <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
+          <hr>
+          <form action="employeeadd.php" method="post">
+            <div class="row">
+              <div class="margin-content">
+              <br><label class="large-input" for="Name">Name</label><br>
+              <br><input type="text" id="Name" name="Name" class="large-input"placeholder="Name"  class="large-input" required></div><br>
+              <div class="margin-content">
+              <br><label class="large-input" for="Email"> Email</label><br>
+              <br><input type="Email" id="Email" name="Email" placeholder="Email"  class="large-input" required></div><br>
+              </div>
+           
+      
+            <div class="row">
+              <div class="margin-content">
+              <br><label class="large-input" for="Last-Name">Last-Name</label><br>
+              <br><input type="text" id="Last-Name" name="Last-Name" class="large-input"placeholder="Last-Name"  class="large-input" required></div><br>
+              <div class="margin-content">
+              <br><label class="large-input" for="Password"> Password</label><br>
+              <br><input type="password" id="Password" name="Password" placeholder="Password"  class="large-input" required></div><br>
+              </div>
+             
+            <div class="row">
+              <div class="margin-content">
+              <br><label  class="large-input" for="Phone">Phone</label><br>
+              <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
+              <div class="margin-content">
+              <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
+              <br><input type="file" id="Avatar" name="Avatar"  required style="margin-left: 100px;"></div><br>
+            </div>
+      
+
+            <!-- <div class="row">
+              <div class="margin-content">
+            <br><label class="large-input" for="Avatar">Avatar</label><br>
+            <br><input type="file"><br>
+            </div>
+            </div> -->
+            <div class="row submit-flex">
+              <input type="submit" value="submit" class="submit-input" >
+            </div>
+          </form>
+          
+        </div>
+      </div>
     </div>
+    <script>
+      function showPopup() {
+  document.getElementById("popup").style.display = "block";
+  document.querySelector(".blur-effect").style.filter= "blur(8px)";
+}
+
+function hidePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.querySelector(".blur-effect").style.filter= "none";
+  
+}
+
+    </script>
   </body>
 </html>
