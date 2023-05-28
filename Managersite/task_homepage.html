@@ -12,6 +12,38 @@
     />
     
     <link rel="stylesheet" href="task_homepage.css">
+    <style>
+    .popup {
+      display: none;
+      position: absolute;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #b2b2b24e;
+      
+    }
+    
+    .popup-content {
+      background-color: #fff;
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(242, 6, 6, 0.3);
+
+    }
+    
+    .close {
+      float: right;
+      cursor: pointer;
+    }
+    
+    .close:hover {
+      color: red;
+    }
+    </style>
   </head>
   <im>
     <div class="sidebar">
@@ -62,8 +94,11 @@
 
     <h1 id="top-heading">Task List</h1>
     <div class="container">
-      <div id="task_card">
-        <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;">Add Task</button></span></div>
+      <!-- <div class="blur-effect"> -->
+
+
+      <div id="task_card" class="blur-effect">
+        <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;" onclick="showPopup()">Add Task</button></span></div>
         <div class="search_show">
          <span  class="showbar">Showbar <select style="margin:0px 5px;">
           
@@ -96,7 +131,30 @@
             </tr>
           </table>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="hidePopup()">&times;</span>
+    <h2>Pop-up Title</h2>
+    <p>This is the content of the pop-up.</p>
+  </div>
+</div>
+    </div>
+    
+
+    <script>
+      function showPopup() {
+  document.getElementById("popup").style.display = "block";
+  document.querySelector(".blur-effect").style.filter= "blur(8px)";
+}
+
+function hidePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.querySelector(".blur-effect").style.filter= "none";
+  
+}
+
+    </script>
   </body>
 </html>
