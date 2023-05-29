@@ -150,9 +150,9 @@
         <div class="margin-content">
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
-          <option value="">Pending</option>
-          <option value="">On-hold</option>
-          <option value="">Done</option>
+          <option value="Pending">Pending</option>
+          <option value="On-hold">On-hold</option>
+          <option value="<?php echo"Done";?>">Done</option>
         </select> </div><br>
       </div>
 
@@ -179,7 +179,7 @@
         {
           while($row = $result->fetch_assoc())
           {?>
-            <option value="<?php $row['m_name']?>"><?php echo $row['m_name']; ?></option>
+            <option value="<?php echo $row['m_id'] ?>"><?php echo $row['m_name']; ?></option>
             <?php
           }
         }
@@ -198,7 +198,7 @@
             while($row_employee = $result_employee->fetch_assoc())
             {
               ?>
-              <option value="<?php echo $row_employee['emp_name'];?>"><?php echo $row_employee['emp_name'];?></option>
+              <option value="<?php echo $row_employee['eid'];?>"><?php echo $row_employee['emp_name'];?></option>
               <?php
             }
           }
