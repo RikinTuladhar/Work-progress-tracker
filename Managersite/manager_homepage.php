@@ -46,7 +46,7 @@
       </div>
 
       <div class="element">
-        <a href="login.html"
+        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
