@@ -52,7 +52,7 @@
   <im>
     <div class="sidebar">
       <div class="element">
-        <a href="manager_homepage.html"
+        <a href="manager_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -63,7 +63,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.html"
+          href="employee_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -74,7 +74,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.html"
+          href="task_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -85,7 +85,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
+          href="login.html"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -168,10 +168,43 @@
       <div class="row">
         <div class="margin-content">
         <br><label  class="large-input" for="Project-Manager">Project Manager</label><br>
-        <br><input type="text" id="Project-Manager" name="Project-Manager"class="large-input" placeholder="" required></div><br>
+        <br>
+        <?php
+        $conn = mysqli_connect("localhost","root","","workprogresstracker");
+        $sql_manager = "SELECT * from  manager";
+        $result = mysqli_query($conn,$sql_manager);?>
+        <select id="Project-Manager" name="Project-Manager"class="large-input" >
+        <?php
+        if($result>0)
+        {
+          while($row = $result->fetch_assoc())
+          {?>
+            <option value="<?php $row['m_name']?>"><?php echo $row['m_name']; ?></option>
+            <?php
+          }
+        }
+       ?>
+        </select>
+      </div><br>
         <div class="margin-content">
         <br><label  class="large-input"for="Project-Member">Project Member</label><br>
-        <br><input type="text" id="Project-Member"class="large-input" name="Title" placeholder="" required></div><br>
+        <br>
+        <select id="Project-Member"class="large-input" name="Project-Member">
+          <?php
+          $sql_employee = "select * from employee";
+          $result_employee = mysqli_query($conn, $sql_employee );
+          if($result_employee >0)
+          {
+            while($row_employee = $result_employee->fetch_assoc())
+            {
+              ?>
+              <option value="<?php echo $row_employee['emp_name'];?>"><?php echo $row_employee['emp_name'];?></option>
+              <?php
+            }
+          }
+         ?>
+        </select>
+      </div><br>
       </div>
 
       <div class="row">
