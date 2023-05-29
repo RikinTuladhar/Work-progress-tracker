@@ -123,6 +123,7 @@
               <th>end date</th>
               <th>task description</th>
               <th>e-id</th>
+              <th>Delete</th>
             </tr>
             <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
                     $sql_task = "select * from tasks";
@@ -132,15 +133,19 @@
                       while($row = $result_task->fetch_assoc())
                       {
                         echo "<tr>
-                        <th>".$row['task_id']."</th>
-                        <th>".$row['task_title']."</th>
-                        <th>".$row['status']."</th>
-                        <th>".$row['start_date']."</th>
-                        <th>".$row['end_date']."</th>
-                        <th>".$row['task_description']."</th>
-                        <th>".$row['e_id']."</th>
-                        </th>";
+                        <td>".$row['task_id']."</td>
+                        <td>".$row['task_title']."</td>
+                        <td>".$row['status']."</td>
+                        <td>".$row['start_date']."</td>
+                        <td>".$row['end_date']."</td>
+                        <td>".$row['task_description']."</td>
+                        <td>".$row['e_id']."</td>
+                        <td> <a href ='tasskdelete.php?task_id=".$row["task_id"]."'>Delete</a></td>
+                        <tr>";
                       }
+                    }
+                    else{
+                      echo "<script>alert('no record');</script> ";
                     }
                       ?>
           </table>
