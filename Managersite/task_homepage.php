@@ -52,7 +52,7 @@
   <im>
     <div class="sidebar">
       <div class="element">
-        <a href="manager_homepage.html"
+        <a href="manager_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -63,7 +63,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.html"
+          href="employee_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -74,7 +74,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.html"
+          href="task_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -115,24 +115,39 @@
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
-            <tr>
+          <tr>
               <th>#</th>
-              <th>Department</th>
-              <th>Task</th>
-              <th>Task Started</th>
-              <th>Task Due Date</th>
-              <th>Task status</th>
-              <th>Action</th>
+              <th>Task Title</th>
+              <th>status</th>
+              <th>start date</th>
+              <th>end date</th>
+              <th>task description</th>
+              <th>e-id</th>
+              <th>Delete</th>
             </tr>
-            <tr>
-              <th>1</th>
-              <th>Design</th>
-              <th>Add styling</th>
-              <th>2023-5-26</th>
-              <th>2023-5-30</th>
-              <th>Active</th>
-              <th>pending</th>
-            </tr>
+            <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
+                    $sql_task = "select * from tasks";
+                    $result_task = mysqli_query($conn,$sql_task);
+                    if($result_task->num_rows > 0)
+                    {
+                      while($row = $result_task->fetch_assoc())
+                      {
+                        echo "<tr>
+                        <td>".$row['task_id']."</td>
+                        <td>".$row['task_title']."</td>
+                        <td>".$row['status']."</td>
+                        <td>".$row['start_date']."</td>
+                        <td>".$row['end_date']."</td>
+                        <td>".$row['task_description']."</td>
+                        <td>".$row['e_id']."</td>
+                        <td> <a href ='tasskdelete.php?task_id=".$row["task_id"]."'>Delete</a></td>
+                        <tr>";
+                      }
+                    }
+                    else{
+                      echo "<script>alert('no record');</script> ";
+                    }
+                      ?>
           </table>
         </div>
       <!-- </div> -->
@@ -150,9 +165,9 @@
         <div class="margin-content">
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
-          <option value="">Pending</option>
-          <option value="">On-hold</option>
-          <option value="">Done</option>
+          <option value="Pending">Pending</option>
+          <option value="On-hold">On-hold</option>
+          <option value="<?php echo"Done";?>">Done</option>
         </select> </div><br>
       </div>
 
@@ -168,10 +183,43 @@
       <div class="row">
         <div class="margin-content">
         <br><label  class="large-input" for="Project-Manager">Project Manager</label><br>
-        <br><input type="text" id="Project-Manager" name="Project-Manager"class="large-input" placeholder="" required></div><br>
+        <br>
+        <?php
+       
+        $sql_manager = "SELECT * from  manager";
+        $result = mysqli_query($conn,$sql_manager);?>
+        <select id="Project-Manager" name="Project-Manager"class="large-input" >
+        <?php
+        if($result>0)
+        {
+          while($row = $result->fetch_assoc())
+          {?>
+            <option value="<?php echo $row['m_id'] ?>"><?php echo $row['m_name']; ?></option>
+            <?php
+          }
+        }
+       ?>
+        </select>
+      </div><br>
         <div class="margin-content">
         <br><label  class="large-input"for="Project-Member">Project Member</label><br>
-        <br><input type="text" id="Project-Member"class="large-input" name="Title" placeholder="" required></div><br>
+        <br>
+        <select id="Project-Member"class="large-input" name="Project-Member">
+          <?php
+          $sql_employee = "select * from employee";
+          $result_employee = mysqli_query($conn, $sql_employee );
+          if($result_employee >0)
+          {
+            while($row_employee = $result_employee->fetch_assoc())
+            {
+              ?>
+              <option value="<?php echo $row_employee['eid'];?>"><?php echo $row_employee['emp_name'];?></option>
+              <?php
+            }
+          }
+         ?>
+        </select>
+      </div><br>
       </div>
 
       <div class="row">

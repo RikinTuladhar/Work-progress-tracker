@@ -14,7 +14,7 @@
   <body>
     <div class="sidebar">
       <div class="element">
-        <a href="manager_homepage.html"
+        <a href="manager_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black;"
@@ -25,7 +25,7 @@
       </div>
       <div class="element">
         <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.html"
+          href="employee_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -35,7 +35,7 @@
         >
       </div>
       <div class="element">
-        <a href=""
+        <a href="task_homepage.php"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
@@ -46,7 +46,7 @@
       </div>
 
       <div class="element">
-        <a href=""
+        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
           ><span
             class="material-symbols-outlined"
             style="font-size: 40px; color: black"
