@@ -115,24 +115,34 @@
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
-            <tr>
+          <tr>
               <th>#</th>
-              <th>Department</th>
-              <th>Task</th>
-              <th>Task Started</th>
-              <th>Task Due Date</th>
-              <th>Task status</th>
-              <th>Action</th>
+              <th>Task Title</th>
+              <th>status</th>
+              <th>start date</th>
+              <th>end date</th>
+              <th>task description</th>
+              <th>e-id</th>
             </tr>
-            <tr>
-              <th>1</th>
-              <th>Design</th>
-              <th>Add styling</th>
-              <th>2023-5-26</th>
-              <th>2023-5-30</th>
-              <th>Active</th>
-              <th>pending</th>
-            </tr>
+            <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
+                    $sql_task = "select * from tasks";
+                    $result_task = mysqli_query($conn,$sql_task);
+                    if($result_task->num_rows > 0)
+                    {
+                      while($row = $result_task->fetch_assoc())
+                      {
+                        echo "<tr>
+                        <th>".$row['task_id']."</th>
+                        <th>".$row['task_title']."</th>
+                        <th>".$row['status']."</th>
+                        <th>".$row['start_date']."</th>
+                        <th>".$row['end_date']."</th>
+                        <th>".$row['task_description']."</th>
+                        <th>".$row['e_id']."</th>
+                        </th>";
+                      }
+                    }
+                      ?>
           </table>
         </div>
       <!-- </div> -->
@@ -170,7 +180,7 @@
         <br><label  class="large-input" for="Project-Manager">Project Manager</label><br>
         <br>
         <?php
-        $conn = mysqli_connect("localhost","root","","workprogresstracker");
+       
         $sql_manager = "SELECT * from  manager";
         $result = mysqli_query($conn,$sql_manager);?>
         <select id="Project-Manager" name="Project-Manager"class="large-input" >
