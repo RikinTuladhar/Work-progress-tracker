@@ -77,6 +77,7 @@
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
+            
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -113,7 +114,7 @@
           <span class="close" onclick="hidePopup()">&times;</span>
           <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
           <hr>
-          <form action="employeeadd.php" method="post">
+          <form action="employeeadd.php" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Name">Name</label><br>
@@ -139,7 +140,7 @@
               <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
               <div class="margin-content">
               <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
-              <br><input type="file" id="Avatar" name="Avatar"  required style="margin-left: 100px;"></div><br>
+              <br><input type="file" id="file" name="file"  required style="margin-left: 100px;"></div><br>
             </div>
       
 
