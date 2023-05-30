@@ -77,35 +77,43 @@
         </div>
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
-            
-            <tr>
+          <tr>
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
+              <th>Last Name</th>
+              <th>Phone</th>
+              <th>Edit</th>
+              <th>Delete</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Ravi</td>
-              <td>ravi@gmail.com</td>
-              <td>Manager</td>
-              <td>Ongoing</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Ravi</td>
-              <td>ravi@gmail.com</td>
-              <td>Manager</td>
-              <td>Ongoing</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Ravi</td>
-              <td>ravi@gmail.com</td>
-              <td>Manager</td>
-              <td>Ongoing</td>
-            </tr>
+            <?php 
+              $conn = mysqli_connect("localhost","root","","workprogresstracker");
+              if($conn->connect_error)
+              {
+                die("Connection error".$conn->connect_error);
+              }
+              $sql = "SELECT * FROM employee";
+              $result=mysqli_query($conn,$sql);
+              if($result->num_rows > 0)
+              {
+                while($row = $result->fetch_assoc())
+                {
+                  
+                  echo "<tr>
+                  <td>".$row['eid']."</td>
+                  <td>".$row['emp_name']."</td>
+                  <td>".$row['emp_email']." </td>
+                  <td>".$row['emp_lastname']."</td>
+                  <td>".$row['emp_phone']."</td>
+                  <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
+                  <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
+                  </tr>";
+                  
+
+                  
+                }
+              }
+            ?>
           </table>
         </div>
       </div>
