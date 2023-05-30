@@ -55,10 +55,12 @@
         <a href="manager_homepage.php"
           ><span
             class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
+            style="font-size: 40px; color: black;display:inline"
           >
             home
-          </span></a
+          </span>
+          <span class="icon-text">Home</span>
+          </a
         >
       </div>
       <div class="element">
@@ -69,7 +71,8 @@
             style="font-size: 40px; color: black"
           >
             person
-          </span></a
+          </span>
+          <span class="icon-text">Person</span></a
         >
       </div>
       <div class="element">
@@ -80,7 +83,8 @@
             style="font-size: 40px; color: black"
           >
             task
-          </span></a
+          </span>
+          <span class="icon-text">Task</span></a
         >
       </div>
       <div class="element">
@@ -91,7 +95,8 @@
             style="font-size: 40px; color: black"
           >
             logout
-          </span></a
+          </span>
+          <span class="icon-text">Login</span></a
         >
       </div>
     </div>
