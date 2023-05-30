@@ -79,6 +79,7 @@
           <table border="1px black solid" cellspacing="15px" >
           <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Name</th>
               <th>Email</th>
               <th>Last Name</th>
@@ -93,27 +94,39 @@
                 die("Connection error".$conn->connect_error);
               }
               $sql = "SELECT * FROM employee";
-              $result=mysqli_query($conn,$sql);
-              if($result->num_rows > 0)
-              {
-                while($row = $result->fetch_assoc())
-                {
+              $row = mysqli_query($conn,$sql);
+              $i=1;
+              // $result=mysqli_query($conn,$sql);
+              // if($result->num_rows > 0)
+              // {
+              //   while($row = $result->fetch_assoc())
+              //   {
                   
-                  echo "<tr>
-                  <td>".$row['eid']."</td>
-                  <td>".$row['emp_name']."</td>
-                  <td>".$row['emp_email']." </td>
-                  <td>".$row['emp_lastname']."</td>
-                  <td>".$row['emp_phone']."</td>
-                  <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
-                  <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
-                  </tr>";
-                  
-
-                  
-                }
-              }
+              //     echo "<tr>
+              //     <td>".$row['eid']."</td>
+              //     <td>".$row['emp_name']."</td>
+              //     <td>".$row['emp_email']." </td>
+              //     <td>".$row['emp_lastname']."</td>
+              //     <td>".$row['emp_phone']."</td>
+              //     <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
+              //     <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
+              //     </tr>";      
+              //   }
+              // ?
             ?>
+            <?php foreach($row as $row):?>
+            <tr>
+              <td><?php echo $i++ ;?></td>
+              <td> <img src="uploads/<?php echo $row["em_img"]; ?>" width = 200px title="<?php echo $row['em_img']; ?>"> </td>
+              <td><?php echo $row['emp_name']  ;?></td>
+              <td><?php echo  $row['emp_email'];?></td>
+              <td><?php echo  $row['emp_lastname'];?></td>
+              <td><?php echo  $row['emp_phone'];?></td>
+              <td><a href="edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
+              <td><a href="delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
+
+            </tr>
+            <?php endforeach ?>
           </table>
         </div>
       </div>
@@ -148,7 +161,7 @@
               <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
               <div class="margin-content">
               <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
-              <br><input type="file" id="file" name="file"  accept=".jpg, .jpeg ,.png" required style="margin-left: 100px;"></div><br>
+              <br><input type="file" id="image" name="image"  accept=".jpg, .jpeg ,.png" required style="margin-left: 100px;"></div><br>
             </div>
       
 
