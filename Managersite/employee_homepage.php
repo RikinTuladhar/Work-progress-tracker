@@ -148,7 +148,7 @@
               <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
               <div class="margin-content">
               <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
-              <br><input type="file" id="file" name="file"  required style="margin-left: 100px;"></div><br>
+              <br><input type="file" id="file" name="file"  accept=".jpg, .jpeg ,.png" required style="margin-left: 100px;"></div><br>
             </div>
       
 

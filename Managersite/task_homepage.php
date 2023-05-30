@@ -113,7 +113,7 @@
          </select>entries</span>
           <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 20px;text-align: center;"></span>
         </div>
-        <div id="employee_table">
+        <div id="task_table">
           <table border="1px black solid" cellspacing="15px" >
           <tr>
               <th>#</th>

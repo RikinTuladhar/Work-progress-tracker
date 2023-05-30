@@ -232,3 +232,11 @@ td {
   justify-content: center;
   align-items: center;
 }
+a {
+  text-decoration: none;
+  color: rgba(88, 14, 46, 0.831);
+}
+a:hover {
+  background-color: aliceblue;
+  color: black;
+}
