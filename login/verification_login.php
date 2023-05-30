@@ -23,7 +23,7 @@ if($result->num_rows > 0)
         {
             // var_dump($row['eid'] );
             $count = 1;
-            header('location:employee_home.php');
+            header('http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php');
         }
         
     }

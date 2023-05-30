@@ -1,59 +1,42 @@
 <?php
 require "../database/crud.php";
-// if(isset($_POST["submit"]))
-// {
 
-    // //file name with a random number so that similar dont get replaced
-    // $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
-    // //temporary file name to store file
-    // $tname = $_FILES["files"]["tmp_name"];
+if($_FILES["image"]["error"] == 4){
+    echo
+    "<script> alert('Image Does Not Exist'); </script>"
+    ;
+  }
+  else{
+    $fileName = $_FILES["image"]["name"];
+    $fileSize = $_FILES["image"]["size"];
+    $tmpName = $_FILES["image"]["tmp_name"];
 
-    // //upload directoary path
-    // $uploads_dir = '/images';
-
-    // //to move the uploaded file to specific location 
-    // move_uploaded_file($tname,$uploads_dir.'/'.$pname);
-
-    //dani yt
-    $file = $_FILES['file'];
-    print_r($file);
-    //size and file type 
-    $fileName = $_FILES['file']['name']; //file name ko lagi 
-    $fileTmpName = $_FILES['file']['tmp_name'];
-    $fileSizw = $_FILES['file']['size'];
-    $fileError = $_FILES['file']['error'];
-    $fileType = $_FILES['file']['type'];
-
-    $fileExt = explode('.',$fileName);  //seperate . lai 
-    $fileActualExt = strtolower(end($fileExt));//last piece of data from array
-    $allowed = array('jpg','jpeg','png');//allow garrne kun kun extentions
-    if(in_array($fileActualExt,$allowed))//check garne exist garxha ki nai hamro extention and array 
-    {
-        if($fileError === 0)   //making sure no error uplading files 
-        {
-            if($fileSizw < 500000)  // lets than 5kb 
-            {
-                $fileNameNew = uniqid('',true).".".$fileActualExt;  //making a new name so that if same name vayo vane override na hos vanera
-                $fileDestination = 'uploads/'.$fileNameNew;
-               $Avatar= move_uploaded_file($fileTmpName, $fileDestination); //temporary location ko file actual location ma rakhne 
-
-            }
-            else{
-                echo "Your file is to big";
-            }
-
-        }
-        else{
-            echo "There was an error uplaoding your file";
-        }
-
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $fileName);
+    $imageExtension = strtolower(end($imageExtension));
+    if ( !in_array($imageExtension, $validImageExtension) ){
+      echo
+      "
+      <script>
+        alert('Invalid Image Extension');
+      </script>
+      ";
+    }
+    else if($fileSize > 1000000){
+      echo
+      "
+      <script>
+        alert('Image Size Is Too Large');
+      </script>
+      ";
     }
     else{
-        echo "you cannot upload files of this type!";
+      $newImageName = uniqid();
+      $newImageName .= '.' . $imageExtension;
+
+      move_uploaded_file($tmpName, 'uploads/' . $newImageName);
     }
-
-
-
+}
     $login = new crud();
     $table = "employee";
     
@@ -69,6 +52,7 @@ require "../database/crud.php";
         "emp_lastname"=>$LastName,
         "emp_phone"=>$Password,
         "e_pw"=>$Phone,
+        "em_img"=>$newImageName
     ];
     $login -> insert($table,$items);
     if($login)
