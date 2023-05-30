@@ -1,32 +1,44 @@
 <?php
-require "../database/crud.php";
+// require "../database/crud.php";
 
-$login = new crud();
-$table = "login";
+
+$conn = mysqli_connect("localhost","root","","workprogresstracker");
+
+if($conn->connect_error)
+{
+    die("connection error".$conn->connect_error);
+    
+}
 
 $username=$_POST['username'];
 $password=$_POST['password'];
 $email=$_POST['email'];
 
-// $items = [
-//     "id"=>1,
-//     "username"=> "sita",
-//     "password"=>"123456",
-//     "email" => "sita@gmail.com"
-    
-// ];
-
-$items = [
-    "username"=> "$username",
-    "password"=>"$password",
-    "email" => "$email"
-    
-];
-// print_r($items);
-
-$login -> insert($table,$items);
-if($login)
+$sql= "select * from login where email = '$email'";
+$result = mysqli_query($conn,$sql);
+$count = mysqli_num_rows($result);
+if($count > 0 )
 {
-    header('location:http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html');
+    ?>
+<script>
+    alert("Email exist");
+        window.location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html";
+</script>
+
+<?php
+} 
+else{
+    
+    $insert = "insert into login (username,	password,email)values('$username','$password','$email')";
+   if( mysqli_query($conn,$insert))
+   {
+    ?>
+    <script> alert("Inserted");
+window.location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html";</script>
+    <?php
+   }
 }
+
+$conn->close();
+
 ?>
