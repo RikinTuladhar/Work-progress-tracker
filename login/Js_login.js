@@ -56,24 +56,45 @@ form_register.addEventListener("submit", function (event) {
     alert("Please enter a password");
     return;
   }
-  if (password < 6) {
-    alert("character should be more than 6");
+  if (password.length < 6) {
+    alert("Password should content more than 6 characters");
     return;
+  }
+  // Password should contain at least one uppercase letter
+  // if (!/[A-Z]/.test(password)) {
+  //   return false;
+  // }
+
+  // Password should contain at least one lowercase letter
+  // if (!/[a-z]/.test(password)) {
+  //   return false;
+  // }
+
+  // Password should contain at least one digit
+  // if (!/[0-9]/.test(password)) {
+  //   return false;
+  // }
+
+  // // Validate the email  /^[a-zA-Z0-9]+@[A-Z0-9]+\.[A-Z]{2,}$/i
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  if (emailRegex.test(email)) {
+  } else {
+    alert("Invalid email");
+    return false;
   }
 
-  // Validate the email
-  if (email.trim() === "") {
-    alert("Please enter an email");
-    return;
-  }
-  if (email.charAt(0) == "@") {
-    alert("@ cannot be at beginning");
-    return;
-  }
-  if (email.search(/@/i) == -1) {
-    alert("Please enter a valid email");
-    return;
-  }
+  // if (email.trim() === "") {
+  //   alert("Please enter an email");
+  //   return;
+  // }
+  // if (email.charAt(0) == "@") {
+  //   alert("@ cannot be at beginning");
+  //   return;
+  // }
+  // if (email.search(/@/i) == -1) {
+  //   alert("Please enter a valid email");
+  //   return;
+  // }
 
   // Validate the checkbox
   if (!agreeCheckbox.checked) {
