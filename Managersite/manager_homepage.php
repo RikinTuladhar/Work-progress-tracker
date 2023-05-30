@@ -19,8 +19,8 @@
             class="material-symbols-outlined"
             style="font-size: 40px; color: black;"
           >
-            home
-          </span></a
+            home 
+          </span><span class="sidebar_on_hover">Home</span> </a
         >
       </div>
       <div class="element">
