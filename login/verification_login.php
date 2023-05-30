@@ -12,7 +12,7 @@ if($con->connect_error)
 {
     die("connection error".$con->connect_error);
 }
-$sql = "SELECT * FROM `employee`";
+$sql = "SELECT * FROM employee";
 $result = mysqli_query($con,$sql);
 if($result->num_rows > 0)
 {
@@ -23,7 +23,14 @@ if($result->num_rows > 0)
         {
             // var_dump($row['eid'] );
             $count = 1;
-            header('http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php');
+            ?>
+
+            <script>alert("Log in success");
+          window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php"</script>
+          
+"
+         <?php
+
         }
         
     }
@@ -33,6 +40,7 @@ if($result->num_rows > 0)
         
         header('location:login.html');
     }
+    
 
 
 }
