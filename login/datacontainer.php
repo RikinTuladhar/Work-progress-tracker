@@ -50,23 +50,23 @@ class datacontainer extends crud{
                 <th>Approve</th>
             </tr>
          <?php
-
+            $idnum = 1;
         if($datas >0)
         {
         foreach($datas as $data)
         {
             // echo "<td><td>".$data['id']."</td><td>".$data['username']."</td><td>".$data['email'].
             // "</td></td> <a href='delete.php?id=".$data["id"]."'>Delete</a></td>
-            // <td><a hreft ='edit.php?id=".$data["id"]."'>Edit</a></td></tr>";
+            // <td><a hreft ='edit.php?id=".$data["id"]."'>Edit</a></td></tr> ";  if needed<td>" . $data["id"] . "</td>
 
                 echo "<tr>
-                <td>" . $data["id"] . "</td>
+                <td> $idnum</td>
                 <td>" . $data["username"]. "</td>
                 <td>"  .$data["email"]. "</td>
                 <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
                 <td><a id='mylink' onclick='disable()' href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
-                
+                $idnum++;
             }
         }
         else{

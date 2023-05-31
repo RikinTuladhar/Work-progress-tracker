@@ -50,57 +50,35 @@
     }
     </style>
   </head>
-  <im>
-    <div class="sidebar">
-      <div class="element">
-        <a href="manager_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black;display:inline"
-          >
-            home
-          </span>
-          <span class="icon-text">Home</span>
-          </a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="employee_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            person
-          </span>
-          <span class="icon-text">Person</span></a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="task_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            task
-          </span>
-          <span class="icon-text">Task</span></a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            logout
-          </span>
-          <span class="icon-text">Login</span></a
-        >
-      </div>
-    </div>
+  
+  <nav>
+      <ul>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php#" class="logo">
+            <img src="icons/home.png" alt="" />
+            <span class="nav-item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php" class="logo">
+            <img src="icons/employee.png" alt="" />
+            <span class="nav-item">Employee</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php" class="logo">
+            <img src="icons/task.png" alt="" />
+            <span class="nav-item">Task</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logo">
+            <img src="icons/logout.png" alt="" />
+            <span class="nav-item">Log-out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <h1 id="top-heading">Task List</h1>
     <div class="container ">
@@ -120,25 +98,18 @@
           <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 20px;text-align: center;"></span>
         </div>
         <div id="task_table">
-          <table border="1px black solid" cellspacing="15px" >
-          <tr>
-              <th>#</th>
-              <th>Task Title</th>
-              <th>status</th>
-              <th>start date</th>
-              <th>end date</th>
-              <th>task description</th>
-              <th>e-id</th>
-              <th>Delete</th>
-            </tr>
-            <table id="yy">
+        <table border="1px black solid" cellspacing="15px" id="yy" >
+    
+      
+            
+          </table>
             <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
                     $sql_task = "select * from tasks";
                     $result_task = mysqli_query($conn,$sql_task);
                     if($result_task->num_rows > 0)
                     {
-                      while($row = $result_task->fetch_assoc())
-                      {
+                      // while($row = $result_task->fetch_assoc())
+                      // {
                         // echo "<tr>
                         // <td>".$row['task_id']."</td>
                         // <td>".$row['task_title']."</td>
@@ -150,7 +121,7 @@
                         // <td> <a href ='tasskdelete.php?task_id=".$row["task_id"]."'>Delete</a></td>
                         // <tr>";
                       }
-                    }
+                    // }
                     else{
                       echo "<script>alert('no record');</script> ";
                     }
