@@ -12,52 +12,35 @@
     />
     <link rel="stylesheet" href="employee_homepage.css" />
   </head>
-  <im>
-    <div class="sidebar">
-      <div class="element">
-        <a href="manager_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            home
-          </span></a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="employee_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            person
-          </span></a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="task_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            task
-          </span></a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            logout
-          </span></a
-        >
-      </div>
-    </div>
+  <nav>
+      <ul>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php#" class="logo">
+            <img src="icons/home.png" alt="" />
+            <span class="nav-item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php" class="logo">
+            <img src="icons/employee.png" alt="" />
+            <span class="nav-item">Employee</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php" class="logo">
+            <img src="icons/task.png" alt="" />
+            <span class="nav-item">Task</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logo">
+            <img src="icons/logout.png" alt="" />
+            <span class="nav-item">Log-out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+     
 
     <h1 id="top-heading" style="background-color: #d7d7d7;">Employee List</h1>
   
@@ -65,7 +48,7 @@
       <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
       <div id="employee_card" class="blur-effect">
         <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;" onclick="showPopup()">Add Employee</button></span></div>
-        <!-- <div class="search_show">
+        <div class="search_show">
          <span  class="showbar">Showbar <select style="margin:0px 5px;">
           
           <option value="10">10</option>
@@ -74,9 +57,9 @@
           
          </select>entries</span>
           <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 10px;text-align: center;"></span>
-        </div> -->
+        </div>
         <div id="employee_table">
-          <table border="1px black solid" cellspacing="15px" >
+        <table border="1px black solid" cellspacing="15px"> 
           <tr>
               <th>#</th>
               <th>Image</th>
@@ -102,18 +85,19 @@
               //   while($row = $result->fetch_assoc())
               //   {
                   
-              //     echo "<tr>
-              //     <td>".$row['eid']."</td>
-              //     <td>".$row['emp_name']."</td>
-              //     <td>".$row['emp_email']." </td>
-              //     <td>".$row['emp_lastname']."</td>
-              //     <td>".$row['emp_phone']."</td>
-              //     <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
-              //     <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
-              //     </tr>";      
+                  // echo "<tr>
+                  // <td>".$row['eid']."</td>
+                  // <td>".$row['emp_name']."</td>
+                  // <td>".$row['emp_email']." </td>
+                  // <td>".$row['emp_lastname']."</td>
+                  // <td>".$row['emp_phone']."</td>
+                  // <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
+                  // <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
+                  // </tr>";      
               //   }
               // ?
-            ?>
+            ?>  
+ 
             <?php foreach($row as $row):?>
             <tr>
               <td><?php echo $i++ ;?></td>
@@ -124,7 +108,6 @@
               <td><?php echo  $row['emp_phone'];?></td>
               <td><a href="edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
               <td><a href="delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
-
             </tr>
             <?php endforeach ?>
           </table>

@@ -1,39 +1,7 @@
-/* .sidebar {
-  background-color: #9f84b4;
-  display: flex;
-  position: fixed;
-  height: 100%;
-  width: 100px;
-  left: 0;
-  top: 0;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-.sidebar:hover {
-  width: 150px;
-  transition-property: width;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0.1s;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-}
-
-.sidebar_on_hover{
-  display: none;
-  margin: 2px;
-  margin-bottom:3px ;
-}
-.sidebar_on_hover:hover{
-  display: inline;
-
-} */
 * {
   margin: 0;
   padding: 0;
   outline: none;
-  border: none;
-  text-decoration: none;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
@@ -43,6 +11,7 @@ body {
 
 nav {
   position: fixed;
+  z-index: 1;
   top: 0;
   bottom: 0;
   height: 100%;
@@ -76,7 +45,6 @@ a {
   color: rgb(85, 83, 83);
   font-size: 14px;
   display: table;
-  width: 300px;
   padding: 10px;
 }
 .fas {
@@ -94,22 +62,12 @@ a {
   top: -14px;
 }
 a:hover {
-  background-color: #eee;
+  background-color: #828486b9;
 }
 nav:hover {
   width: 210px;
   transform: all 0.5s ease;
 }
-
-.logoout {
-  position: absolute;
-  bottom: 0;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
-}
-
 /* .sidebar .element :hover{
     width: 150px;
     
