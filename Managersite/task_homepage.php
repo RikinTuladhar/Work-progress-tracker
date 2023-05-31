@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -109,7 +110,7 @@
       <div id="task_card" class="blur-effect">
         <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;" onclick="showPopup()">Add Task</button></span></div>
         <div class="search_show">
-         <span  class="showbar">Showbar <select style="margin:0px 5px;">
+         <span  class="showbar">Showbar <select id="popo" style="margin:0px 5px;">
           
           <option value="10">10</option>
           <option value="25">25</option>
@@ -130,6 +131,7 @@
               <th>e-id</th>
               <th>Delete</th>
             </tr>
+            <table id="yy">
             <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
                     $sql_task = "select * from tasks";
                     $result_task = mysqli_query($conn,$sql_task);
@@ -137,16 +139,16 @@
                     {
                       while($row = $result_task->fetch_assoc())
                       {
-                        echo "<tr>
-                        <td>".$row['task_id']."</td>
-                        <td>".$row['task_title']."</td>
-                        <td>".$row['status']."</td>
-                        <td>".$row['start_date']."</td>
-                        <td>".$row['end_date']."</td>
-                        <td>".$row['task_description']."</td>
-                        <td>".$row['e_id']."</td>
-                        <td> <a href ='tasskdelete.php?task_id=".$row["task_id"]."'>Delete</a></td>
-                        <tr>";
+                        // echo "<tr>
+                        // <td>".$row['task_id']."</td>
+                        // <td>".$row['task_title']."</td>
+                        // <td>".$row['status']."</td>
+                        // <td>".$row['start_date']."</td>
+                        // <td>".$row['end_date']."</td>
+                        // <td>".$row['task_description']."</td>
+                        // <td>".$row['e_id']."</td>
+                        // <td> <a href ='tasskdelete.php?task_id=".$row["task_id"]."'>Delete</a></td>
+                        // <tr>";
                       }
                     }
                     else{
@@ -256,6 +258,40 @@ function hidePopup() {
   
 }
 
+    </script>
+    <script>
+
+$(document).ready(function(){
+
+
+  
+  $.ajax({
+url:"sel2.php",
+type:"post",
+success:function(data){
+$("#yy").html(data);
+}
+
+});
+
+$("#popo").change(function(){
+
+  var sel= $(this).children("option:selected").val();
+  
+$.ajax({
+url:"sel.php",
+type:"post",
+data:{data:sel},
+success:function(data){
+$("#yy").html(data);
+}
+
+});
+
+
+});
+
+});
     </script>
   </body>
 </html>
