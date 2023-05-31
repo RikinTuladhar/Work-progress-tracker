@@ -65,7 +65,7 @@
       <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
       <div id="employee_card" class="blur-effect">
         <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;" onclick="showPopup()">Add Employee</button></span></div>
-        <div class="search_show">
+        <!-- <div class="search_show">
          <span  class="showbar">Showbar <select style="margin:0px 5px;">
           
           <option value="10">10</option>
@@ -74,7 +74,7 @@
           
          </select>entries</span>
           <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 10px;text-align: center;"></span>
-        </div>
+        </div> -->
         <div id="employee_table">
           <table border="1px black solid" cellspacing="15px" >
           <tr>
@@ -117,7 +117,7 @@
             <?php foreach($row as $row):?>
             <tr>
               <td><?php echo $i++ ;?></td>
-              <td> <img src="uploads/<?php echo $row["em_img"]; ?>" width = 200px title="<?php echo $row['em_img']; ?>"> </td>
+              <td> <img src="uploads/<?php echo $row["em_img"]; ?>" width = 100px height= 80px title="<?php echo $row['em_img']; ?>"> </td>
               <td><?php echo $row['emp_name']  ;?></td>
               <td><?php echo  $row['emp_email'];?></td>
               <td><?php echo  $row['emp_lastname'];?></td>
