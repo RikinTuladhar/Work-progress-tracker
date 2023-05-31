@@ -9,8 +9,6 @@ $sql_task = "select * from tasks";
 $result_task = mysqli_query($conn,$sql_task);
 
 
-
-
 for($a=0;$a<10;$a++){
     $rows = $result_task->fetch_assoc();
     if($rows['task_id']==''){
