@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <title>Document</title>
 
     <link
@@ -49,7 +50,8 @@
       <div id="employee_card" class="blur-effect">
         <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;" onclick="showPopup()">Add Employee</button></span></div>
         <div class="search_show">
-         <span  class="showbar">Showbar <select style="margin:0px 5px;">
+         <span  class="showbar">Showbar <select 
+         id="popo" style="margin:0px 5px;">
           
           <option value="10">10</option>
           <option value="25">25</option>
@@ -59,7 +61,7 @@
           <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 10px;text-align: center;"></span>
         </div>
         <div id="employee_table">
-        <table border="1px black solid" cellspacing="15px"> 
+        <table border="1px black solid" cellspacing="15px" id="yy"> 
           <tr>
               <th>#</th>
               <th>Image</th>
@@ -175,5 +177,35 @@ function hidePopup() {
 }
 
     </script>
+    <script >
+      $(document).ready(function(){
+        $.ajax({
+          url:"el2.php",
+          type:"post",
+          success:function(data)
+          {
+            $("#yy").html(data);
+          }
+        })
+
+        $("#popo").change(function(){
+          var sel = $(this).children("option:selected").val();
+          $.ajax({
+            url:"el.php",
+            type:"post",
+            data:{data:sel},
+            success:function(data)
+            {
+              $("#yy").html(data);
+            }
+          });
+          
+        })
+
+
+      });
+
+    </script>
+
   </body>
 </html>

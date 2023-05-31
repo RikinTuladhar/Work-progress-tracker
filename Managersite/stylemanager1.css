@@ -46,6 +46,7 @@ a {
   font-size: 14px;
   display: table;
   padding: 10px;
+  text-decoration: none;
 }
 .fas {
   position: relative;
