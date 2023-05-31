@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <div class="sidebar">
+    <!-- <div class="sidebar">
       <div class="element">
         <a href="manager_homepage.php"
           ><span
@@ -55,7 +55,35 @@
           </span></a
         >
       </div>
-    </div>
+    </div> -->
+    <nav>
+      <ul>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php#" class="logo">
+            <img src="icons/home.png" alt="" />
+            <span class="nav-item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php" class="logo">
+            <img src="icons/employee.png" alt="" />
+            <span class="nav-item">Employee</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php" class="logo">
+            <img src="icons/task.png" alt="" />
+            <span class="nav-item">Task</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="logo">
+            <img src="icons/logout.png" alt="" />
+            <span class="nav-item">Log-out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
     <div class="websitename">Welcome Manager</div>
 
     <div class="container">
