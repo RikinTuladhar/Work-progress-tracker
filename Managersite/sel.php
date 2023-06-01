@@ -5,7 +5,7 @@ $conn = mysqli_connect("localhost","root","","workprogresstracker");
 
 $val=$_POST['data'];
 
-$sql_task = "select task_id,task_title,emp_name,status,start_date,end_date,task_description from tasks INNER JOIN employee on tasks.e_id =employee.eid ";
+$sql_task = "select task_id,task_title,emp_name,status,start_date,end_date,task_description from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid ";
 
 $result_task = mysqli_query($conn,$sql_task);
 
@@ -16,7 +16,7 @@ echo "<tr>
 <th>status</th>
 <th>start date</th>
 <th>end date</th>
-<th>TDescription</th>
+<th>Description</th>
 <th>E-name</th>
 <th>Delete</th>
 
