@@ -46,6 +46,7 @@ a {
   font-size: 14px;
   display: table;
   padding: 10px;
+  text-decoration: none;
 }
 .fas {
   position: relative;
@@ -80,6 +81,11 @@ nav:hover {
   align-items: flex-start;
 }
 
+#viewlogin a {
+}
+#viewlogin a:hover {
+  background-color: transparent;
+}
 .content {
   margin: auto;
   padding: 30px;
@@ -114,6 +120,7 @@ td {
   font-size: 32px;
   font-weight: bolder;
   background-color: #d9d9d9;
+  margin-left: 60px;
 }
 #add {
   margin: 10px;
@@ -179,14 +186,13 @@ div#total {
 }
 .add_emp_button {
   width: 100%;
-  height: 42px;
+  height: 57px;
   border: 0.5px solid black;
   border-radius: 9px;
-  right: 30px;
 }
 .search_show {
   width: 100%;
-  height: 40px;
+  height: 57px;
   background-color: #f0f0f0;
   display: flex;
   flex-wrap: nowrap;
@@ -220,7 +226,7 @@ td {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #b2b2b24e;
+  background-color: transparent;
 }
 
 .popup-content {
@@ -270,12 +276,4 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-a {
-  text-decoration: none;
-  color: rgba(88, 14, 46, 0.831);
-}
-a:hover {
-  background-color: aliceblue;
-  color: black;
 }

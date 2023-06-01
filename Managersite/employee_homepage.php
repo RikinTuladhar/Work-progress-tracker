@@ -46,19 +46,29 @@
     <h1 id="top-heading" style="background-color: #d7d7d7;">Employee List</h1>
   
     <div class="container">
+      <div id="viewlogin">
       <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/displaydata.php" style="text-decoration: none;"><span id="add">View Log-In</span></a>
+      </div>
       <div id="employee_card" class="blur-effect">
-        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style="width: 150px;height:20px;font-size:14px;border-radius: 20px;padding-bottom: 10px;" onclick="showPopup()">Add Employee</button></span></div>
+        <div class="add_emp_button"><span style=" float: right;padding: 10px;"><button style=" width: 150px;
+    height: 39px;
+    font-size: 14px;
+    border-radius: 20px;
+    padding-bottom: -2px;" onclick="showPopup()">Add Employee</button></span></div>
         <div class="search_show">
          <span  class="showbar">Showbar <select 
-         id="popo" style="margin:0px 5px;">
+         id="popo" style="margin: 11px 5px;">
           
           <option value="10">10</option>
           <option value="25">25</option>
           <option value="50">50</option>
           
          </select>entries</span>
-          <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 10px;text-align: center;"></span>
+          <span class="search_bar"><input type="text" placeholder="search" style="    width: 200px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;"></span>
         </div>
         <div id="employee_table">
         <table border="1px black solid" cellspacing="15px" id="yy"> 

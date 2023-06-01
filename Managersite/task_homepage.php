@@ -22,7 +22,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #b2b2b24e;
+      background-color: transparent;
       
     }
     
@@ -86,22 +86,27 @@
 
 
       <div id="task_card" class="blur-effect">
-        <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="width: 100px;height:20px;font-size:16px;border-radius: 20px;padding-bottom: 5px;" onclick="showPopup()">Add Task</button></span></div>
+        <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="  width: 150px;
+    height: 39px;
+    font-size: 14px;
+    border-radius: 20px;" onclick="showPopup()">Add Task</button></span></div>
         <div class="search_show">
-         <span  class="showbar">Showbar <select id="popo" style="margin:0px 5px;">
+         <span  class="showbar">Showbar <select id="popo" style="margin: 11px 5px;">
           
           <option value="10">10</option>
           <option value="25">25</option>
           <option value="50">50</option>
           
          </select>entries</span>
-          <span class="search_bar"><input type="text" placeholder="search" style="width: 200px;height: 20px; font-size: 16px;border-radius: 20px;text-align: center;"></span>
+          <span class="search_bar"><input type="text" placeholder="search" style=" width: 200px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 10px;
+    text-align: center;"></span>
         </div>
         <div id="task_table">
         <table border="1px black solid" cellspacing="15px" id="yy" >
     
-      
-            
           </table>
             <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker"); 
                     $sql_task = "select * from tasks";
@@ -246,6 +251,7 @@ $("#yy").html(data);
 $("#popo").change(function(){
 
   var sel= $(this).children("option:selected").val();
+  // alert(sel);
   
 $.ajax({
 url:"sel.php",

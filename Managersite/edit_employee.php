@@ -52,7 +52,7 @@ if($result->num_rows > 0)
         <tr>
 
             <td>Password</td>
-            <td><input type="password" name="password" value="<?php echo $row['e_pw'] ?>"></td>
+            <td><input type="password" name="password" disabled  value="<?php echo $row['e_pw'] ?>"></td>
         </tr>
     </table>
         <input type="submit" value="submit">

@@ -1,11 +1,12 @@
 <?php
-
+// echo "helo";
 $conn = mysqli_connect("localhost","root","","workprogresstracker");
 
 
 $val=$_POST['data'];
 
-$sql_task = "select * from tasks";
+$sql_task = "select task_id,task_title,emp_name,status,start_date,end_date,task_description from tasks INNER JOIN employee on tasks.e_id =employee.eid ";
+
 $result_task = mysqli_query($conn,$sql_task);
 
 $idnum = 1;
@@ -15,8 +16,8 @@ echo "<tr>
 <th>status</th>
 <th>start date</th>
 <th>end date</th>
-<th>task description</th>
-<th>e-id</th>
+<th>TDescription</th>
+<th>E-name</th>
 <th>Delete</th>
 
 </tr>";
@@ -35,7 +36,7 @@ for($a=0;$a<$val;$a++){
     <td>".$rows['start_date']."</td>
     <td>".$rows['end_date']."</td>
     <td>".$rows['task_description']."</td>
-    <td>".$rows['e_id']."</td>
+    <td>".$rows['emp_name']."</td>
     <td> <a href ='tasskdelete.php?task_id=".$rows["task_id"]."'>Delete</a></td>
     <tr>";
     $idnum++;
