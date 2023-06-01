@@ -65,7 +65,7 @@ class datacontainer extends crud{
                 <td>"  .$data["email"]. "</td>
                 <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
-                <td><a id='mylink' onclick='disable()' href='approve_employee_toDb.php?id=" .$data["id"]."'>Approve</a></td></tr>";
+                <td><a id='mylink' onclick='disable()' href='approve_employee_toDb.php?email=" .$data["email"]."'>Approve</a></td></tr>";
                 $idnum++;
             }
         }
