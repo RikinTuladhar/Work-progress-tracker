@@ -12,50 +12,9 @@
     />
   </head>
   <body>
-    <!-- <div class="sidebar">
-      <div class="element">
-        <a href="manager_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black;"
-          >
-            home 
-          </span><span class="sidebar_on_hover">Home</span> </a
-        >
-      </div>
-      <div class="element">
-        <a
-          href="employee_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            person
-          </span></a
-        >
-      </div>
-      <div class="element">
-        <a href="task_homepage.php"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            task
-          </span></a
-        >
-      </div>
-
-      <div class="element">
-        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html"
-          ><span
-            class="material-symbols-outlined"
-            style="font-size: 40px; color: black"
-          >
-            logout
-          </span></a
-        >
-      </div>
-    </div> -->
+    <?php 
+       $conn = mysqli_connect("localhost","root","","workprogresstracker");
+    ?>
     <nav>
       <ul>
         <li>
@@ -87,39 +46,68 @@
     <div class="websitename">Welcome Manager</div>
 
     <div class="container">
+    <div id="total">
+      <?php 
+      if($conn->connect_error)
+      {
+        die($conn->connect_error);
+      }
+      $sql_tasks="select *  from  tasks";
+      $task = mysqli_query($conn,$sql_tasks);
+      $result_task  = $task -> num_rows;
+
+      $sql_department = "select * from department";
+      $department = mysqli_query($conn,$sql_department);
+      $result_department = $department->num_rows;
+
+      $sql_employee = "select * from employee";
+      $employee = mysqli_query($conn,$sql_employee);
+      $result_employee = $employee -> num_rows;
+
+      ?>
+      <div class="total_container"> <h3>Total Department <?php echo $result_department; ?></h3></div>
+      <div class="total_container"> <h3>Total Tasks <?php echo "$result_task";?></h3></div>
+      <div class="total_container"> <h3>Total Employee <?php echo $result_employee; ?></h3></div>
+      
+    </div>
       <div class="details">
         <h2>Task Progress</h2>
         <div class="project_table">
           <table>
             <tr>
               <th>#</th>
-              <th>Task</th>
-              <th>Progress</th>
+              <th>Task Title</th>
+              <th>Assigned</th>
+              <!-- <th>Progress</th> -->
+              <th>Start-Date</th>
+              <th>End-Date</th>
               <th>Status</th>
               <th>View</th>
-              
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Frontend</td>
-              <td>50%</td>
-              <td>started</td>
-              <th>View</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Frontend</td>
-              <td>50%</td>
-              <td>started</td>
-              <th>View</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Frontend</td>
-              <td>50%</td>
-              <td>started</td>
-              <th>View</th>
-            </tr>
+            <?php 
+            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks INNER JOIN employee on tasks.e_id =employee.eid ";
+            $result  =  mysqli_query($conn,$sql_task_list);
+            $idnum= 1;
+            for($a=0 ; $a<10 ; $a++)
+            {
+              $row = $result->fetch_assoc();
+              ?>
+              <tr>
+                <td><?php echo $idnum ?></td>
+                <td><?php  echo $row['task_title'] ?></td>
+                <td><?php  echo $row['emp_name'] ?></td>
+                <td><?php  echo $row['status'] ?></td>
+                <td><?php  echo $row['start_date'] ?></td>
+                <td><?php  echo $row['end_date'] ?></td>
+                <td><?php  echo "view"; ?></td>
+              </tr>
+
+              <?php 
+              $idnum++;
+            }
+
+            ?>
+
           </table>
         </div>
 
@@ -145,13 +133,7 @@
           </tr>
         </table> -->
       </div>
-      <div id="total">
-      
-      <div class="total_container"> <h3>Total Department 3</h3></div>
-      <div class="total_container"> <h3>Total Tasks 4</h3></div>
-      
-       
-    </div>
+
   
   </body>
 </html>
