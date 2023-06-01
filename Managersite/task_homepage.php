@@ -72,7 +72,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
