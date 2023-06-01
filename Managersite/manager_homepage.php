@@ -36,7 +36,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
@@ -85,12 +85,15 @@
               <th>View</th>
             </tr>
             <?php 
-            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks INNER JOIN employee on tasks.e_id =employee.eid ";
+            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid";
             $result  =  mysqli_query($conn,$sql_task_list);
             $idnum= 1;
+            if($result->num_rows > 0 )
+            {
             for($a=0 ; $a<10 ; $a++)
             {
               $row = $result->fetch_assoc();
+             
               ?>
               <tr>
                 <td><?php echo $idnum ?></td>
@@ -105,6 +108,10 @@
               <?php 
               $idnum++;
             }
+          }
+          else{
+              echo '';
+          }
 
             ?>
 
