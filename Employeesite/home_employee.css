@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #dfe9f5;
+  background-color: #506379;
 }
 
 nav {
@@ -101,4 +101,30 @@ ul li:hover {
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  background-color: gainsboro;
+  display: flex;
+}
+.card {
+  margin-top: 100px;
+  z-index: 99999;
+
+  display: inline-flex;
+  margin-left: 40px;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  background-color: aqua;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.card:first-child {
+  margin-left: 230px;
+
+  z-index: 1;
 }

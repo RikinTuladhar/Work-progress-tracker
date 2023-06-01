@@ -26,9 +26,7 @@ if($result_task -> num_rows > 0)
 for($a=0;$a<$val;$a++){
     $rows = $result_task->fetch_assoc();
     if($rows['task_id']==''){
-
     }else{
-
     echo "<tr>
     <td>".$idnum ."</td>
     <td>".$rows['task_title']."</td>

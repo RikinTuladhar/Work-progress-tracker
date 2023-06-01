@@ -48,5 +48,34 @@
         </li>
       </ul>
     </nav>
+
+    <div id="container">
+        <div class="flex_cards">
+            <?php
+           $conn = mysqli_connect("localhost","root","","workprogresstracker");
+           if($conn->connect_error)
+           {
+            die($conn->connect_error);
+           }
+           $sqlpending= "select * from tasks where status='Pending'";
+           $result_pending= mysqli_query($conn,$sqlpending);
+           $rowpending = $result_pending->num_rows;
+
+           $sql_going= "select * from tasks where status='On-going'";
+           $result_going = mysqli_query($conn,$sql_going);
+           $rowgoing = $result_going->num_rows;
+
+           $sql_done= "select * from tasks where status='Done'";
+           $result_done = mysqli_query($conn,$sql_done);
+           $rowdone = $result_done->num_rows;
+            ?>
+
+            <div class="card">Pending Task <?php echo $rowpending ?></div>
+            <div class="card">On-Going Task <?php  echo $rowgoing  ?></div>
+            <div class="card">Completed <?php  echo $rowdone  ?></div>
+            <div class="card">All <?php  ?></div>
+        </div>
+
+    </div>
   </body>
 </html>
