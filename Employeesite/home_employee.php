@@ -8,12 +8,22 @@
     <title>Document</title>
   </head>
   <body>
+    <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
+        session_start();
+
+         if($conn->connect_error)
+         {
+          die($conn->connect_error);
+         }
+        
+
+    ?>
     <nav>
       <ul>
         <li>
           <a href="#" class="logo first">
             <img src="icons_emp/user.png" alt="" />
-            <span class="nav-item">Employee Name</span>
+            <span class="nav-item"><?php echo $_SESSION['username'];?></span>
           </a>
         </li>
         <li>
@@ -52,11 +62,8 @@
     <div id="container">
         <div class="flex_cards">
             <?php
-           $conn = mysqli_connect("localhost","root","","workprogresstracker");
-           if($conn->connect_error)
-           {
-            die($conn->connect_error);
-           }
+          
+          
            $sqlpending= "select * from tasks where status='Pending'";
            $result_pending= mysqli_query($conn,$sqlpending);
            $rowpending = $result_pending->num_rows;

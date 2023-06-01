@@ -2,6 +2,7 @@
 
 // if(isset($_GET['vername']) && isset($_GET['verpassword']))
 // {
+    session_start();
 $username=$_GET['vername'];
 $password=$_GET['verpassword'];
 $count = 0;
@@ -23,12 +24,12 @@ if($result->num_rows > 0)
         {
             // var_dump($row['eid'] );
             $count = 1;
+            if(isset($_SESSION['username']))
+            $_SESSION['username'] = $username;
             ?>
-
             <script>alert("Log in success");
-          window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php"</script>
+          window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php?<?php echo $_SESSION['username'];?>"</script>
           
-"
          <?php
 
         }
