@@ -18,6 +18,7 @@ echo "<tr>
 <th>end date</th>
 <th>Description</th>
 <th>E-name</th>
+<th>Edit</th>
 <th>Delete</th>
 
 </tr>";
@@ -35,6 +36,7 @@ for($a=0;$a<$val;$a++){
     <td>".$rows['end_date']."</td>
     <td>".$rows['task_description']."</td>
     <td>".$rows['emp_name']."</td>
+    <td> <a href ='tasskedit.php?task_id=".$rows["task_id"]."'>Edit</a></td>
     <td> <a href ='tasskdelete.php?task_id=".$rows["task_id"]."'>Delete</a></td>
     <tr>";
     $idnum++;

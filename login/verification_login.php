@@ -52,7 +52,7 @@ if($managercheck->num_rows > 0)
     while($rows = $managercheck->fetch_assoc())
     if(($rows['m_name'] ==  $username &&  $rows['m_pw'] == $password))
     {
-        echo $rows['m_name'];
+        // echo $rows['m_name'];
         $count = 1;
         ?>
     <script>alert("Log in success for manager");

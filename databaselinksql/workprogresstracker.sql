@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 06:12 PM
+-- Generation Time: Jun 02, 2023 at 03:25 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,103 @@ SET time_zone = "+00:00";
 --
 -- Database: `workprogresstracker`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `department`
+--
+
+CREATE TABLE `department` (
+  `dep_id` int(11) NOT NULL,
+  `dep_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`dep_id`, `dep_name`) VALUES
+(1, 'Front-End');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `eid` int(50) NOT NULL,
+  `emp_name` varchar(50) NOT NULL,
+  `emp_email` varchar(50) NOT NULL,
+  `emp_lastname` varchar(50) NOT NULL,
+  `emp_phone` varchar(50) DEFAULT NULL,
+  `e_pw` varchar(50) NOT NULL,
+  `em_img` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`eid`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`) VALUES
+(71, 'sam', 'admin@admin.com', 'maharjan', 'admin123', '1', NULL),
+(92, 'sam', 'admin@admin.com', 'maharjan', 'admin123', '', NULL),
+(93, 'sam', 'admin@admin.com', 'maharjan', 'admin123', '', NULL),
+(94, 'salina', 'salinamaharjan@gmail.com', '', NULL, '123', NULL),
+(95, 'admin@admin.com', 'sita@gmail.com', '', NULL, 'admin123', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
+(17, 'salina', '123', 'salinamaharjan@gmail.com'),
+(28, 'admin@admin.com', 'admin123', 'sita@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manager`
+--
+
+CREATE TABLE `manager` (
+  `m_id` int(50) NOT NULL,
+  `m_name` varchar(50) NOT NULL,
+  `m_email` varchar(50) NOT NULL,
+  `m_phone` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`m_id`, `m_name`, `m_email`, `m_phone`) VALUES
+(1, 'sizen', 'sizen@gmail.com', '9843652356');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permission`
+--
+
+CREATE TABLE `permission` (
+  `per_id` int(11) NOT NULL,
+  `per_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -60,6 +157,36 @@ INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `sta
 --
 
 --
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`dep_id`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`eid`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `manager`
+--
+ALTER TABLE `manager`
+  ADD PRIMARY KEY (`m_id`);
+
+--
+-- Indexes for table `permission`
+--
+ALTER TABLE `permission`
+  ADD PRIMARY KEY (`per_id`);
+
+--
 -- Indexes for table `tasks`
 --
 ALTER TABLE `tasks`
@@ -70,6 +197,36 @@ ALTER TABLE `tasks`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `dep_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `manager`
+--
+ALTER TABLE `manager`
+  MODIFY `m_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `permission`
+--
+ALTER TABLE `permission`
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tasks`
