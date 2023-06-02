@@ -238,6 +238,9 @@ function hidePopup() {
     <script>
 
 $(document).ready(function(){
+
+
+  
   $.ajax({
 url:"sel2.php",
 type:"post",
@@ -246,7 +249,6 @@ $("#yy").html(data);
 }
 
 });
-
 
 $("#popo").change(function(){
 
