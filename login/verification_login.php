@@ -15,6 +15,11 @@ if($con->connect_error)
 }
 $sql = "SELECT * FROM employee";
 $result = mysqli_query($con,$sql);
+
+
+
+
+
 if($result->num_rows > 0)
 {
     while($row = $result->fetch_assoc())
@@ -22,7 +27,7 @@ if($result->num_rows > 0)
         
         if($row['emp_name'] == $username && $row['e_pw'] == $password)
         {
-            var_dump($row['eid'] );
+            // var_dump($row['eid'] );
             $count = 1;
             // if(isset($_SESSION['username']))
             $_SESSION['username'] = $username;
@@ -34,20 +39,41 @@ if($result->num_rows > 0)
 
         }
         
-    }
-        
-    if($count == 0)
-    {
-        
-        header('location:login.html');
-    }
+    } 
     
+    
+    
+}
+$managersql = "SELECT * FROM manager";
+$managercheck = mysqli_query($con,$managersql);
 
+if($managercheck->num_rows > 0)
+{
+    while($rows = $managercheck->fetch_assoc())
+    if(($rows['m_name'] ==  $username &&  $rows['m_pw'] == $password))
+    {
+        echo $rows['m_name'];
+        $count = 1;
+        ?>
+    <script>alert("Log in success for manager");
+      window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php?<?php echo $_SESSION['username'];?>"</script>
+
+     <?php
+        
+    }
 
 }
+
+
+if($count == 0)
+{
+header('location:login.html');
+}
+
+
 
 // }
-else{
-    echo "Value not received";
-}
+// else{
+    // echo "Value not received";
+    // }
 ?>
