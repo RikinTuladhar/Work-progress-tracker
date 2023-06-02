@@ -37,8 +37,8 @@ if($result_task->num_rows > 0)
               <td><?php echo  $row['emp_email'];?></td>
               <td><?php echo  $row['emp_lastname'];?></td>
               <td><?php echo  $row['emp_phone'];?></td>
-              <td><a href="edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
-              <td><a href="delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
+              <td><a href="emp_action/edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
+              <td><a href="emp_action/delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
             </tr>
 
             <?php

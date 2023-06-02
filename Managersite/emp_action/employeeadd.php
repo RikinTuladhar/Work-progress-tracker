@@ -1,5 +1,5 @@
 <?php
-require "../database/crud.php";
+require "../../database/crud.php";
 
 if($_FILES["image"]["error"] == 4){
     echo

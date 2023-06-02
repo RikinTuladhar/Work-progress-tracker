@@ -1,5 +1,5 @@
 <?php
-require "../database/crud.php";
+require "../../database/crud.php";
 
 $login = new crud();
 $table = "tasks";
@@ -27,7 +27,12 @@ $items = [
 $login -> insert($table,$items);
 if($login)
 {
-    header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php');
+   ?>
+    <script>
+        alert("Inserted");
+        location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    </script>
+   <?php 
 }
 else{
     echo "error";
