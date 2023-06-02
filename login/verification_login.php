@@ -6,7 +6,7 @@
 $username=$_GET['vername'];
 $password=$_GET['verpassword'];
 $count = 0;
-// var_dump($username);
+var_dump($username);
 
 $con = mysqli_connect("localhost","root","","workprogresstracker");
 if($con->connect_error)
@@ -22,9 +22,9 @@ if($result->num_rows > 0)
         
         if($row['emp_name'] == $username && $row['e_pw'] == $password)
         {
-            // var_dump($row['eid'] );
+            var_dump($row['eid'] );
             $count = 1;
-            if(isset($_SESSION['username']))
+            // if(isset($_SESSION['username']))
             $_SESSION['username'] = $username;
             ?>
             <script>alert("Log in success");

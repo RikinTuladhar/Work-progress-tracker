@@ -90,7 +90,6 @@
               }
               $sql = "SELECT * FROM employee";
               $row = mysqli_query($conn,$sql);
-              $i=1;
               // $result=mysqli_query($conn,$sql);
               // if($result->num_rows > 0)
               // {
@@ -110,18 +109,6 @@
               // ?
             ?>  
  
-            <?php foreach($row as $row):?>
-            <tr>
-              <td><?php echo $i++ ;?></td>
-              <td> <img src="uploads/<?php echo $row["em_img"]; ?>" width = 100px height= 80px title="<?php echo $row['em_img']; ?>"> </td>
-              <td><?php echo $row['emp_name']  ;?></td>
-              <td><?php echo  $row['emp_email'];?></td>
-              <td><?php echo  $row['emp_lastname'];?></td>
-              <td><?php echo  $row['emp_phone'];?></td>
-              <td><a href="edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
-              <td><a href="delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
-            </tr>
-            <?php endforeach ?>
           </table>
         </div>
       </div>
