@@ -13,6 +13,7 @@
   </head>
   <body>
     <?php 
+      session_start();
        $conn = mysqli_connect("localhost","root","","workprogresstracker");
     ?>
     <nav>
@@ -43,7 +44,7 @@
         </li>
       </ul>
     </nav>
-    <div class="websitename">Welcome Manager</div>
+    <div class="websitename">Welcome <?php echo $_SESSION['username']?></div>
 
     <div class="container">
     <div id="total">

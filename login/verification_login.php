@@ -53,6 +53,7 @@ if($managercheck->num_rows > 0)
     if(($rows['m_name'] ==  $username &&  $rows['m_pw'] == $password))
     {
         // echo $rows['m_name'];
+        $_SESSION['username'] = $username;
         $count = 1;
         ?>
     <script>alert("Log in success for manager");
