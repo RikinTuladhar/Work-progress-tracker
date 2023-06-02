@@ -29,17 +29,29 @@ if($result_task->num_rows > 0)
         {
 
         }
-        else{
-        echo "<tr>
-        <td>".$idnum."</td>
-        <td>" .$row['em_img']. "</td>
-        <td>" .$row['emp_name']. "</td>
-        <td>" .$row['emp_email']. "</td>
-        <td>" .$row['emp_lastname']."</td>
-        <td>".$row['emp_phone']."</td>
-        <td> <a href='edit_employee.php?eid=".$rows['eid']."'>Edit</a></td>
-        <td> <a href='delete_employee.php?eid=".$rows['eid']."'>Delete</a></td>
-        </tr>";
+        else{   ?>
+              <tr>
+              <td><?php echo $idnum;?></td>
+              <td> <img src="uploads/<?php echo $row["em_img"]; ?>" width = 100px height= 80px title="<?php echo $row['em_img']; ?>"> </td>
+              <td><?php echo $row['emp_name']  ;?></td>
+              <td><?php echo  $row['emp_email'];?></td>
+              <td><?php echo  $row['emp_lastname'];?></td>
+              <td><?php echo  $row['emp_phone'];?></td>
+              <td><a href="edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
+              <td><a href="delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
+            </tr>
+
+            <?php
+        // echo "<tr>
+        // <td>".$idnum."</td>
+        // <td>" .$row['em_img']. "</td>
+        // <td>" .$row['emp_name']. "</td>
+        // <td>" .$row['emp_email']. "</td>
+        // <td>" .$row['emp_lastname']."</td>
+        // <td>".$row['emp_phone']."</td>
+        // <td> <a href='edit_employee.php?eid=".$rows['eid']."'>Edit</a></td>
+        // <td> <a href='delete_employee.php?eid=".$rows['eid']."'>Delete</a></td>
+        // </tr>";
         $idnum++;
         }
     }   

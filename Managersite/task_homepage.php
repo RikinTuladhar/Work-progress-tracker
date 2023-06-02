@@ -149,7 +149,7 @@
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
           <option value="Pending">Pending</option>
-          <option value="On-hold">On-hold</option>
+          <option value="On-hold">On-going</option>
           <option value="<?php echo"Done";?>">Done</option>
         </select> </div><br>
       </div>
@@ -238,6 +238,9 @@ function hidePopup() {
     <script>
 
 $(document).ready(function(){
+
+
+  
   $.ajax({
 url:"sel2.php",
 type:"post",
@@ -246,7 +249,6 @@ $("#yy").html(data);
 }
 
 });
-
 
 $("#popo").change(function(){
 

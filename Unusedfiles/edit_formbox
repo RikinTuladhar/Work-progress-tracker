@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #flex-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #container{
+            display: flex;
+            width: 454px;
+            height: 438px;
+             background: aqua;
+                flex-direction: row;
+             flex-wrap: wrap;
+             align-content: center;
+             justify-content: center;
+             border-radius: 30px;
+
+        }
+        input[type="text"] {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+    </style>
+</head>
+<body>
+        <div id="flex-container">
+
+            <div id="container">
+                
+                <form action="task_edit_content.php" method="post">
+                    <label for="">Task</label>    
+                    <input type="text"><br>
+                    <label for="">status</label>    
+                    <input type="text"><br>
+                    <label for="">start date</label>    
+                    <input type="text"><br>
+                    <label for="">end date</label>    
+                    <input type="text"><br>
+                    <label for="">Description</label>    
+                    <input type="text"><br>
+                    <label for="">E-Name</label>    
+                    <input type="text"><br>
+                    <input type="submit" value="submit">
+                </form>    
+            </div>
+                
+            </div>
+</body>
+</html>
