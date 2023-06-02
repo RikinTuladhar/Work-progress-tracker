@@ -8,7 +8,12 @@ $sql = "delete from tasks where task_id =".$id;
 $stm=mysqli_query($con,$sql);
 if($stm)
 {
-    header('location:task_homepage.php');
+    ?>
+    <script>
+        alert("Deleted");
+        location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    </script>
+    <?php 
 
 }
 ?>

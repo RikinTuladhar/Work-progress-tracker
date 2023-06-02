@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     
-    <link rel="stylesheet" href="task_homepage.css">
+    <link rel="stylesheet" href="cssfile/task_homepage.css">
     <style>
     .popup {
       display: none;
@@ -140,7 +140,7 @@
     <span class="close" onclick="hidePopup()">&times;</span>
     <h2 style="text-align: center;margin-bottom: 2px;">Add New Task </h2>
     <hr>
-    <form action="taskadd.php" method="post">
+    <form action="task_action/taskadd.php" method="post">
       <div class="row">
         <div class="margin-content">
         <br><label for="Name" class="large-input">Task Name</label><br>
@@ -242,7 +242,7 @@ $(document).ready(function(){
 
   
   $.ajax({
-url:"sel2.php",
+url:"ajaxfile/sel2.php",
 type:"post",
 success:function(data){
 $("#yy").html(data);
@@ -256,7 +256,7 @@ $("#popo").change(function(){
   // alert(sel);
   
 $.ajax({
-url:"sel.php",
+url:"ajaxfile/sel.php",
 type:"post",
 data:{data:sel},
 success:function(data){

@@ -11,7 +11,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="employee_homepage.css" />
+    <link rel="stylesheet" href="cssfile/employee_homepage.css" />
   </head>
   <nav>
       <ul>
@@ -117,7 +117,7 @@
           <span class="close" onclick="hidePopup()">&times;</span>
           <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
           <hr>
-          <form action="employeeadd.php" method="post" enctype="multipart/form-data">
+          <form action="emp_action/employeeadd.php" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Name">Name</label><br>
@@ -177,7 +177,7 @@ function hidePopup() {
     <script >
       $(document).ready(function(){
         $.ajax({
-          url:"el2.php",
+          url:"ajaxfile/el2.php",
           type:"post",
           success:function(data)
           {
@@ -188,7 +188,7 @@ function hidePopup() {
         $("#popo").change(function(){
           var sel = $(this).children("option:selected").val();
           $.ajax({
-            url:"el.php",
+            url:"ajaxfile/el.php",
             type:"post",
             data:{data:sel},
             success:function(data)
