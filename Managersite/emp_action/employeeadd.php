@@ -34,7 +34,7 @@ if($_FILES["image"]["error"] == 4){
       $newImageName = uniqid();
       $newImageName .= '.' . $imageExtension;
 
-      move_uploaded_file($tmpName, 'uploads/' . $newImageName);
+      move_uploaded_file($tmpName, '../uploads/'. $newImageName);
     }
 }
     $login = new crud();
@@ -50,8 +50,8 @@ if($_FILES["image"]["error"] == 4){
         "emp_name"=>$Name,
         "emp_email"=>$Email ,
         "emp_lastname"=>$LastName,
-        "emp_phone"=>$Password,
-        "e_pw"=>$Phone,
+        "emp_phone"=>$Phone,
+        "e_pw"=>$Password,
         "em_img"=>$newImageName
     ];
     $login -> insert($table,$items);

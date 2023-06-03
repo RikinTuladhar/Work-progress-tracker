@@ -117,7 +117,7 @@
           <span class="close" onclick="hidePopup()">&times;</span>
           <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
           <hr>
-          <form action="emp_action/employeeadd.php" method="post" enctype="multipart/form-data">
+          <form action="emp_action/employeeadd.php" name="emp_validate" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Name">Name</label><br>
@@ -203,6 +203,7 @@ function hidePopup() {
       });
 
     </script>
+    <script src="validation.js"></script>
 
   </body>
 </html>
