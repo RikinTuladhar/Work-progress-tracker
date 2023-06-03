@@ -27,10 +27,11 @@ if($result->num_rows > 0)
         
         if($row['emp_name'] == $username && $row['e_pw'] == $password)
         {
+            $_SESSION['username'] = $username;
             // var_dump($row['eid'] );
             $count = 1;
             // if(isset($_SESSION['username']))
-            $_SESSION['username'] = $username;
+           
             ?>
             <script>alert("Log in success");
           window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php?<?php echo $_SESSION['username'];?>"</script>
