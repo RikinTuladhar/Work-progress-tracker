@@ -114,7 +114,7 @@
       </div>
       <div id="popup" class="popup">
         <div class="popup-content">
-          <span class="close" onclick="hidePopup()">&times;</span>
+          <span class="close" onclick="hidePopup()">x</span>
           <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
           <hr>
           <form action="emp_action/employeeadd.php" name="emp_validate" method="post" enctype="multipart/form-data">
@@ -163,8 +163,8 @@
     </div>
     <script>
       function showPopup() {
-  document.getElementById("popup").style.display = "block";
-  document.querySelector(".blur-effect").style.filter= "blur(8px)";
+      document.getElementById("popup").style.display = "block";
+     document.querySelector(".blur-effect").style.filter= "blur(8px)";
 }
 
 function hidePopup() {

@@ -80,9 +80,9 @@
               <th>Task Title</th>
               <th>Assigned</th>
               <!-- <th>Progress</th> -->
+              <th>Status</th>
               <th>Start-Date</th>
               <th>End-Date</th>
-              <th>Status</th>
               <th>View</th>
             </tr>
             <?php 

@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/home_employee.css" />
+    <link rel="stylesheet" href="css/task_employee.css" />
     <title>Document</title>
   </head>
   <body>
     <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
+      
         session_start();
 
          if($conn->connect_error)
          {
           die($conn->connect_error);
          }
+         $sessionid =$_SESSION['id']
         
 
     ?>
@@ -60,29 +62,58 @@
     </nav>
 
     <div id="container">
-        <div class="flex_cards">
-            <?php
-          
-          
-           $sqlpending= "select * from tasks where status='Pending'";
-           $result_pending= mysqli_query($conn,$sqlpending);
-           $rowpending = $result_pending->num_rows;
-
-           $sql_going= "select * from tasks where status='On-going'";
-           $result_going = mysqli_query($conn,$sql_going);
-           $rowgoing = $result_going->num_rows;
-
-           $sql_done= "select * from tasks where status='Done'";
-           $result_done = mysqli_query($conn,$sql_done);
-           $rowdone = $result_done->num_rows;
-            ?>
-
-            <div class="card">Pending Task <?php echo $rowpending ?></div>
-            <div class="card">On-Going Task <?php  echo $rowgoing  ?></div>
-            <div class="card">Completed <?php  echo $rowdone  ?></div>
-            <div class="card">All <?php  ?></div>
+      <?php
+            
+              // $sql ="SELECT *
+              // FROM tasks
+              // INNER JOIN employee
+              // ON tasks.e_id  = employee.eid 
+              // WHERE tasks.e_id= $sessionid";
+              $sql = "Select * from tasks where e_id =$sessionid";
+              $result = mysqli_query($conn,$sql);
+              ?>
+              <div id="table_data">
+            <table border= 1px solid black >
+              <tr>
+                <th>#</th>
+                <th>Task_title</th>
+                <th>Task_description</th>
+                <th>Start_date</th>
+                <th>End_date</th>
+                <th>Status</th>
+                <th>Edit</th>
+              </tr>
+                <?php 
+                $idnum=1;
+                while($row = $result->fetch_assoc()){
+                  
+                 if($result->num_rows < 0)
+                 {
+                  echo '';
+                 }
+                 else{
+                  
+                ?>
+              <tr>
+                <td><?php echo $idnum?> </td>
+                <td><?php echo $row['task_title'];?></td>
+                <td><?php echo $row['task_description'];?></td>
+                <td><?php echo $row['start_date'];?></td>
+                <td><?php echo $row['end_date'];?></td>
+                <td><?php echo $row['status'];?></td>
+                <td><a href="">Edit</a> </td>
+                
+              </tr>
+              <?php
+                $idnum++;
+                }
+              }
+              $conn->close();
+                ?>
+            </table>
         </div>
 
     </div>
+  
   </body>
 </html>
