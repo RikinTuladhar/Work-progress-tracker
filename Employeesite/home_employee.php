@@ -45,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/feedback_home.php#" class="logo">
             <img src="icons_emp/feedback.png" alt="" />
             <span class=" nav-text">Feedback</span>
           </a>

@@ -76,7 +76,7 @@
               ?>
               <div id="table_data">
             <table border= 1px solid black >
-              <h1 style="text-align:center;">TASKS</h1>
+              <h1 style="text-align:center;">FEED-BACK</h1>
               <tr>
                 <th>#</th>
                 <th>Task_title</th>
@@ -84,7 +84,7 @@
                 <th>Start_date</th>
                 <th>End_date</th>
                 <th>Status</th>
-                <th>Action</th>
+                <th>Feedback</th>
                 
               </tr>
                 <?php 
@@ -106,8 +106,7 @@
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
-                 
-                  <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
+                <td><?php  echo $row['feedback']?></td>
 
               
                 <!-- <td> -->
@@ -128,21 +127,7 @@
 
     </div>
     <script>
-      $(document).ready(function()
-      {
-       $("#status").change(function(){
-        var selected_value= $(this).children("option:selected").val();
-        $.ajax({
-          url:status.php,
-          type:"post",
-          data:{data:selected_value},
-          success:function(data)
-          {
-            
-          }
-        })
-       });
-      });
+
     </script>
   </body>
 </html>

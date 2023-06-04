@@ -15,6 +15,7 @@ session_start();
             ?>
                 <script>
                     alert("Feed back submitted");
+                    location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/feedback_homepage.php"
                 </script>
 
             <?php
