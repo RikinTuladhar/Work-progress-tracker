@@ -17,7 +17,7 @@ nav {
   height: 100%;
   left: 0;
   background: #fff;
-  width: 90px;
+  width: 100px;
   overflow: hidden;
   transition: width 0.2s linear;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -26,7 +26,7 @@ nav {
   text-align: center;
   display: flex;
   transition: all 0.5s ease;
-  margin: 10px 0 0 10px;
+  margin: 10px 5px 0 10px;
 }
 .logo img {
   width: 45px;

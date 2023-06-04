@@ -105,6 +105,7 @@
                  <?php  
                   $data = array(
                     'task_id' => $row['task_id'],
+                    'task_title'=>$row['task_title'],
                     'emp_name' => $row['emp_name'],
                     'status' => $row['status'],
                     'start_date'=> $row['start_date'],

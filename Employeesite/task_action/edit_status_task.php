@@ -71,16 +71,16 @@ button[type="submit"]
                   <label for="Task_description">Task_description</label>
                 </div>
                 <div class="flex_row">
-                    <input type="text" name="task_title"  value="<?php echo $row['task_title'];?>">
-                    <input type="text" name="task_description"  value="<?php echo $row['task_description'];?>">
+                    <input type="text" name="task_title"  value="<?php echo $row['task_title'];?>" disabled>
+                    <input type="text" name="task_description"  value="<?php echo $row['task_description'];?>" disabled>
                  </div>
                  <div class="flex_row">
                  <label for="Start_date">Start_date</label>
                  <label for="End_date">End_date</label>
                  </div>
                  <div class="flex_row">
-                <input type="text" name="start_date"  value="<?php echo $row['start_date'];?>">
-                <input type="text" name="end_date"  value="<?php echo $row['end_date'];?>">
+                <input type="text" name="start_date"  value="<?php echo $row['start_date'];?>" disabled>
+                <input type="text" name="end_date"  value="<?php echo $row['end_date'];?>" disabled>
             </div>
             <div>
                 <label for="">Status</label>
@@ -102,5 +102,24 @@ button[type="submit"]
         </form>
         </div>
     </div>
+    <script>
+        var form = document.querySelector("form");
+
+        // Function to enable all disabled elements
+        function enableDisabledElements() {
+            // Select all elements with the disabled attribute within the form
+            var disabledElements = form.querySelectorAll("[disabled]");
+
+            // Iterate over the disabled elements and remove the disabled attribute
+            disabledElements.forEach(function(element) {
+                element.removeAttribute("disabled");
+            });
+        }
+
+        // Add an event listener to the form submission
+        form.addEventListener("submit", function(event) {
+        enableDisabledElements();
+        });
+    </script>
 </body>
 </html>

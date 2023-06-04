@@ -48,10 +48,21 @@ button[type="submit"]
           die($conn->connect_error);
          }
                 // $sessionid =$_SESSION['id'];
-                $task_id = $_GET['task_id'];
                 // echo $task_id;
-                $sql = "";
-                $result = mysqli_query($conn,$sql);
+                // $sql = "SELECT * from tasks";
+                // $result = mysqli_query($conn,$sql);
+               $task_id= $_GET['task_id'];
+               $task_title=$_GET['task_title'];
+                $emp_name=$_GET['emp_name'];
+               $status= $_GET['status'];
+               $start_date= $_GET['start_date'];
+              $end_date=  $_GET['end_date'];
+            //   echo $task_title;
+              
+
+
+
+
             ?>
     <div id="container">
         <div id="form_data">
@@ -59,22 +70,22 @@ button[type="submit"]
         <div class="flex_row">
                     <input type="hidden" name="task_id" value="<?php echo $task_id?>">
                   <label for="Task_title">Task_title</label>
-                  <label for="Task_description">Task Assigend</label>
+                  <label for="Assigend Employee ">Assigend Employee </label>
                 </div>
                 <div class="flex_row">
-                    <input type="text" name="task_title"  value="">
-                    <input type="text" name="task_description"  value="">
+                    <input type="text" name="task_title"  value="<?php echo $task_title?>" disabled>
+                    <input type="text" name="Assigend Employee"  value="<?php echo $emp_name?>" disabled>
                  </div>
                  <div class="flex_row">
                  <label for="Start_date">Start_date</label>
                  <label for="End_date">End_date</label>
                  </div>
                  <div class="flex_row">
-                <input type="text" name="start_date"  value="">
-                <input type="text" name="end_date"  value="">
+                <input type="text" name="start_date"  value="<?php  echo $start_date ?>" disabled>
+                <input type="text" name="end_date"  value="<?php  echo $end_date ?>" disabled>
             </div>
             <div>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="feedback" id="feedback" style ="width: 371px;height: 186px;" ></textarea>
                     <br>
 
             <button type="submit">submit</button>
@@ -82,4 +93,25 @@ button[type="submit"]
         </div>
     </div>
 </body>
+<script>
+    // Select the form element
+var form = document.querySelector("form");
+
+// Function to enable all disabled elements
+function enableDisabledElements() {
+  // Select all elements with the disabled attribute within the form
+  var disabledElements = form.querySelectorAll("[disabled]");
+
+  // Iterate over the disabled elements and remove the disabled attribute
+  disabledElements.forEach(function(element) {
+    element.removeAttribute("disabled");
+  });
+}
+
+// Add an event listener to the form submission
+form.addEventListener("submit", function(event) {
+  enableDisabledElements();
+});
+
+</script>
 </html>
