@@ -72,11 +72,10 @@
            $result_going = mysqli_query($conn,$sql_going);
            $rowgoing = $result_going->num_rows;
 
-           $sql_done= "select * from tasks where status='Done'";
+           $sql_done= "select * from tasks where status='Completed'";
            $result_done = mysqli_query($conn,$sql_done);
            $rowdone = $result_done->num_rows;
             ?>
-
             <div class="card">Pending Task <?php echo $rowpending ?></div>
             <div class="card">On-Going Task <?php  echo $rowgoing  ?></div>
             <div class="card">Completed <?php  echo $rowdone  ?></div>

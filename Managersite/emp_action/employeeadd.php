@@ -1,5 +1,29 @@
 <?php
 require "../../database/crud.php";
+$Email =$_POST['Email'];
+$count = 0;
+// echo $Email;
+$conn = mysqli_connect("localhost","root","","workprogresstracker");
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($conn,$sql);
+while($row = $result->fetch_assoc())
+{
+// echo $row['emp_name'];
+  if($row['emp_email'] == $Email )
+  {
+    $count =1;
+  ?>
+  <script>
+    alert("Email exist");
+    location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php";
+  </script>
+  <?php
+  break;
+}
+}
+
+if($count == 0)
+{
 
 if($_FILES["image"]["error"] == 4){
     echo
@@ -41,10 +65,11 @@ if($_FILES["image"]["error"] == 4){
     $table = "employee";
     
     $Name=$_POST['Name'];
-    $Email =$_POST['Email'];
+  
     $LastName=$_POST['Last-Name'];
     $Password = $_POST['Password'];
     $Phone = $_POST['Phone'];
+  
     
     $items = [
         "emp_name"=>$Name,
@@ -64,6 +89,6 @@ if($_FILES["image"]["error"] == 4){
     }
     
 
-    
+  }
     ?>
     

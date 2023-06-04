@@ -154,9 +154,9 @@
         <div class="margin-content">
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
-          <option value="Pending">Pending</option>
-          <option value="On-going">On-going</option>
-          <option value="Completed">Completed</option>
+          <option value="Pending">To do</option>
+          <!-- <option value="On-going">On-going</option>
+          <option value="Completed">Completed</option> -->
         </select> </div><br>
       </div>
 

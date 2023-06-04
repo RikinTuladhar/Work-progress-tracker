@@ -127,29 +127,29 @@
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Name">Name</label><br>
-              <br><input type="text" id="Name" name="Name" class="large-input"placeholder="Name"  class="large-input" required></div><br>
+              <br><input type="text" id="Name" name="Name" class="large-input" placeholder="Name"  class="large-input" ></div><br>
               <div class="margin-content">
               <br><label class="large-input" for="Email"> Email</label><br>
-              <br><input type="Email" id="Email" name="Email" placeholder="Email"  class="large-input" required></div><br>
+              <br><input type="Email" id="Email" name="Email" placeholder="Email"  class="large-input" ></div><br>
               </div>
            
       
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Last-Name">Last-Name</label><br>
-              <br><input type="text" id="Last-Name" name="Last-Name" class="large-input"placeholder="Last-Name"  class="large-input" required></div><br>
+              <br><input type="text" id="Last-Name" name="Last-Name" class="large-input"placeholder="Last-Name"  class="large-input" ></div><br>
               <div class="margin-content">
               <br><label class="large-input" for="Password"> Password</label><br>
-              <br><input type="password" id="Password" name="Password" placeholder="Password"  class="large-input" required></div><br>
+              <br><input type="password" id="Password" name="Password" placeholder="Password"  class="large-input" ></div><br>
               </div>
              
             <div class="row">
               <div class="margin-content">
               <br><label  class="large-input" for="Phone">Phone</label><br>
-              <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
+              <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" ></div><br>
               <div class="margin-content">
               <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
-              <br><input type="file" id="image" name="image"  accept=".jpg, .jpeg ,.png" required style="margin-left: 100px;"></div><br>
+              <br><input type="file" id="image" name="image"  accept=".jpg, .jpeg ,.png"  style="margin-left: 100px;"></div><br>
             </div>
       
 
@@ -209,7 +209,24 @@ function hidePopup() {
       });
 
     </script>
-    <script src="validation.js"></script>
+    <script >
+      let form = document.querySelector("form");
+      form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let Phonenumber = document.querySelector("#Phone").value;
+          // alert(Phonenumber);
+          if(Phonenumber.length === 10)
+          {
+
+          }
+          else{
+            alert("Invalid Phone number");
+            return false;
+          }
+        form.submit();
+      })
+
+    </script>
 
   </body>
 </html>
