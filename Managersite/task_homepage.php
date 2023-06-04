@@ -149,8 +149,8 @@
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
           <option value="Pending">Pending</option>
-          <option value="On-hold">On-going</option>
-          <option value="<?php echo"Done";?>">Done</option>
+          <option value="On-going">On-going</option>
+          <option value="Completed">Completed</option>
         </select> </div><br>
       </div>
 
