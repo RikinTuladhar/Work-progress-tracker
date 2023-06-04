@@ -72,10 +72,10 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
-          <th>View</th>
+          <th>Feedback</th>
         </tr>
         <?php 
-        $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid";
+        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
         $result  =  mysqli_query($conn,$sql_task_list);
         $idnum= 1;
         if($result->num_rows > 0 )
@@ -96,7 +96,25 @@
             <td><?php  echo $row['status'] ?></td>
             <td><?php  echo $row['start_date'] ?></td>
             <td><?php  echo $row['end_date'] ?></td>
-            <td><?php  echo "view"; ?></td>
+            <!-- <td> -->
+                <?php
+                //  echo $row['task_id'];
+                 ?>
+                 <!-- </td> -->
+                 <!-- to send from url -->
+                 <?php  
+                  $data = array(
+                    'task_id' => $row['task_id'],
+                    'emp_name' => $row['emp_name'],
+                    'status' => $row['status'],
+                    'start_date'=> $row['start_date'],
+                    'end_date'=>$row['end_date']
+                  );
+                  $baseurl = "emp_action/feedback_home.php";
+                  //data send garrna lai from URL 
+                  $url = $baseurl . '?' . http_build_query($data);
+                  ?>
+            <td><a href="<?php echo $url ?>">GIVE feedback</a> </td>
           </tr>
 
           <?php 
