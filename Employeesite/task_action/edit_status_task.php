@@ -48,7 +48,8 @@ button[type="submit"]
           die($conn->connect_error);
          }
                 $sessionid =$_SESSION['id'];
-                $sql = "Select * from tasks where e_id =$sessionid";
+                $task_id = $_GET['task_id'];
+                $sql = "Select * from tasks where task_id  =$task_id";
                 $result = mysqli_query($conn,$sql);
             ?>
     <div id="container">
@@ -62,8 +63,10 @@ button[type="submit"]
                   echo '';
                  }
                  else{
+                    //taskid from url 
                 ?>    
                  <div class="flex_row">
+                    <input type="hidden" name="task_id" value="<?php echo $task_id?>">
                   <label for="Task_title">Task_title</label>
                   <label for="Task_description">Task_description</label>
                 </div>

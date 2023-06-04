@@ -57,7 +57,7 @@ if($managercheck->num_rows > 0)
     {
         // echo $rows['m_name'];
         $_SESSION['username'] = $username;
-        $_SESSION['id']=$row['m_id '];
+        $_SESSION['id']=$rows['m_id'];
         $count = 1;
         ?>
     <script>alert("Log in success for manager");

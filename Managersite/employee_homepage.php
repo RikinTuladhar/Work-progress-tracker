@@ -34,6 +34,12 @@
           </a>
         </li>
         <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/feedback_homepage.php" class="logo">
+            <img src="icons/feedback.png" alt="" />
+            <span class="nav-item">Feedback</span>
+          </a>
+        </li>
+        <li>
           <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>

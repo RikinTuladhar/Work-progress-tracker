@@ -62,6 +62,7 @@
       </ul>
     </nav>
 
+    
     <div id="container">
       <?php
             
@@ -75,6 +76,7 @@
               ?>
               <div id="table_data">
             <table border= 1px solid black >
+              <h1 style="text-align:center;">TASKS</h1>
               <tr>
                 <th>#</th>
                 <th>Task_title</th>
@@ -94,6 +96,7 @@
                   echo '';
                  }
                  else{
+                  $task_id=$row['task_id'];
                   
                 ?>
               <tr>
@@ -103,8 +106,8 @@
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
-              
-                  <td><a href="task_action/edit_status_task.php">Edit</a></td>
+                 
+                  <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
 
               
                 <!-- <td> -->
