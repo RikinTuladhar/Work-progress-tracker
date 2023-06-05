@@ -1,0 +1,4 @@
+ $_SESSION['username']
+
+  $_SESSION['id']
+

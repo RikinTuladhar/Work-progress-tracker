@@ -13,6 +13,7 @@
   </head>
   <body>
     <?php 
+      session_start();
        $conn = mysqli_connect("localhost","root","","workprogresstracker");
     ?>
     <nav>
@@ -36,14 +37,20 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/feedback_homepage.php" class="logo">
+            <img src="icons/feedback.png" alt="" />
+            <span class="nav-item">Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
         </li>
       </ul>
     </nav>
-    <div class="websitename">Welcome Manager</div>
+    <div class="websitename">Welcome <?php echo $_SESSION['username']?></div>
 
     <div class="container">
     <div id="total">
@@ -79,13 +86,13 @@
               <th>Task Title</th>
               <th>Assigned</th>
               <!-- <th>Progress</th> -->
+              <th>Status</th>
               <th>Start-Date</th>
               <th>End-Date</th>
-              <th>Status</th>
-              <th>View</th>
+              <!-- <th>View</th> -->
             </tr>
             <?php 
-            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid";
+            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid ";
             $result  =  mysqli_query($conn,$sql_task_list);
             $idnum= 1;
             if($result->num_rows > 0 )
@@ -106,7 +113,11 @@
                 <td><?php  echo $row['status'] ?></td>
                 <td><?php  echo $row['start_date'] ?></td>
                 <td><?php  echo $row['end_date'] ?></td>
-                <td><?php  echo "view"; ?></td>
+                <!-- <td> -->
+                  <?php  
+                  // echo "view";
+                   ?>
+              <!-- </td> -->
               </tr>
 
               <?php 

@@ -19,7 +19,6 @@ $result = mysqli_query($con,$sql);
 
 
 
-
 if($result->num_rows > 0)
 {
     while($row = $result->fetch_assoc())
@@ -27,13 +26,16 @@ if($result->num_rows > 0)
         
         if($row['emp_name'] == $username && $row['e_pw'] == $password)
         {
+            
+            $_SESSION['username'] = $username;
+            $_SESSION['id']=$row['eid'];
             // var_dump($row['eid'] );
             $count = 1;
             // if(isset($_SESSION['username']))
-            $_SESSION['username'] = $username;
+           
             ?>
-            <script>alert("Log in success");
-          window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php?<?php echo $_SESSION['username'];?>"</script>
+            <script>alert("Log in success <?php echo $_SESSION['id']?>");
+          window.location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php?"</script>
           
          <?php
 
@@ -53,6 +55,8 @@ if($managercheck->num_rows > 0)
     if(($rows['m_name'] ==  $username &&  $rows['m_pw'] == $password))
     {
         // echo $rows['m_name'];
+        $_SESSION['username'] = $username;
+        $_SESSION['id']=$rows['m_id'];
         $count = 1;
         ?>
     <script>alert("Log in success for manager");

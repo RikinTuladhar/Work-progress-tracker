@@ -22,7 +22,7 @@
     //   die ("<h2>Access Denied!</h2> This file is protected and not available to public.");
     //   }
     ?>
-    <h3 style="margin-left: 22px;margin-top:30px;color:red;">Note: Use Edit before Approve if necessary</h3>
+    
 
     <?php
      $testobj = new datacontainer();

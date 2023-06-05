@@ -34,7 +34,13 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/feedback_homepage.php" class="logo">
+            <img src="icons/feedback.png" alt="" />
+            <span class="nav-item">Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
@@ -114,36 +120,36 @@
       </div>
       <div id="popup" class="popup">
         <div class="popup-content">
-          <span class="close" onclick="hidePopup()">&times;</span>
+          <span class="close" onclick="hidePopup()">x</span>
           <h2 style="text-align: center;margin-bottom: 2px;">Add Employee</h2>
           <hr>
-          <form action="emp_action/employeeadd.php" method="post" enctype="multipart/form-data">
+          <form action="emp_action/employeeadd.php" name="emp_validate" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Name">Name</label><br>
-              <br><input type="text" id="Name" name="Name" class="large-input"placeholder="Name"  class="large-input" required></div><br>
+              <br><input type="text" id="Name" name="Name" class="large-input" placeholder="Name"  class="large-input" ></div><br>
               <div class="margin-content">
               <br><label class="large-input" for="Email"> Email</label><br>
-              <br><input type="Email" id="Email" name="Email" placeholder="Email"  class="large-input" required></div><br>
+              <br><input type="Email" id="Email" name="Email" placeholder="Email"  class="large-input" ></div><br>
               </div>
            
       
             <div class="row">
               <div class="margin-content">
               <br><label class="large-input" for="Last-Name">Last-Name</label><br>
-              <br><input type="text" id="Last-Name" name="Last-Name" class="large-input"placeholder="Last-Name"  class="large-input" required></div><br>
+              <br><input type="text" id="Last-Name" name="Last-Name" class="large-input"placeholder="Last-Name"  class="large-input" ></div><br>
               <div class="margin-content">
               <br><label class="large-input" for="Password"> Password</label><br>
-              <br><input type="password" id="Password" name="Password" placeholder="Password"  class="large-input" required></div><br>
+              <br><input type="password" id="Password" name="Password" placeholder="Password"  class="large-input" ></div><br>
               </div>
              
             <div class="row">
               <div class="margin-content">
               <br><label  class="large-input" for="Phone">Phone</label><br>
-              <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" required></div><br>
+              <br><input type="text" id="Phone" name="Phone"class="large-input" placeholder="Phone" ></div><br>
               <div class="margin-content">
               <br><label  class="large-input  avatar"for="Avatar" style="margin-left: 100px;">Avatar</label><br>
-              <br><input type="file" id="image" name="image"  accept=".jpg, .jpeg ,.png" required style="margin-left: 100px;"></div><br>
+              <br><input type="file" id="image" name="image"  accept=".jpg, .jpeg ,.png"  style="margin-left: 100px;"></div><br>
             </div>
       
 
@@ -163,8 +169,8 @@
     </div>
     <script>
       function showPopup() {
-  document.getElementById("popup").style.display = "block";
-  document.querySelector(".blur-effect").style.filter= "blur(8px)";
+      document.getElementById("popup").style.display = "block";
+     document.querySelector(".blur-effect").style.filter= "blur(8px)";
 }
 
 function hidePopup() {
@@ -201,6 +207,24 @@ function hidePopup() {
 
 
       });
+
+    </script>
+    <script >
+      let form = document.querySelector("form");
+      form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let Phonenumber = document.querySelector("#Phone").value;
+          // alert(Phonenumber);
+          if(Phonenumber.length === 10)
+          {
+
+          }
+          else{
+            alert("Invalid Phone number");
+            return false;
+          }
+        form.submit();
+      })
 
     </script>
 

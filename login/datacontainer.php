@@ -4,6 +4,9 @@
     *{
         background-color: #d9d9d9;
     }
+
+
+    
 #addcontact{
     width: 300px;
     border: 2px;
@@ -35,10 +38,10 @@ class datacontainer extends crud{
     public function showAllUsersOfLogin(){
        $datas = $this->getUsers("login");
        ?>
-       <div >
+       <div id="container">
+
         <a href="login.html" id="addcontact">Add Contact</a>
         
-     </div>
         <table border="1" cellspacing="10px" cellpadding="20px" >
             
             <tr>
@@ -77,6 +80,7 @@ class datacontainer extends crud{
 }
 ?>
         </table>
+</div>
        
         <script >
         

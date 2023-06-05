@@ -72,7 +72,13 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/feedback_homepage.php" class="logo">
+            <img src="icons/feedback.png" alt="" />
+            <span class="nav-item">Feedback</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
@@ -83,8 +89,7 @@
     <h1 id="top-heading">Task List</h1>
     <div class="container ">
       <!-- <div class="blur-effect"> -->
-
-
+        
       <div id="task_card" class="blur-effect">
         <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="  width: 150px;
     height: 39px;
@@ -148,9 +153,9 @@
         <div class="margin-content">
         <br><label class="large-input" for="Status">Status</label><br>
         <br><select class="large-input"name="Status" id="Status">
-          <option value="Pending">Pending</option>
-          <option value="On-hold">On-going</option>
-          <option value="<?php echo"Done";?>">Done</option>
+          <option value="Pending">To do</option>
+          <!-- <option value="On-going">On-going</option>
+          <option value="Completed">Completed</option> -->
         </select> </div><br>
       </div>
 

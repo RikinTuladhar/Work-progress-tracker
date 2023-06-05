@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="home_employee.css" />
+    <link rel="stylesheet" href="css/home_employee.css" />
     <title>Document</title>
   </head>
   <body>
@@ -27,13 +27,13 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/home_employee.php" class="logo">
             <img src="icons_emp/home.png" alt="" />
             <span class=" nav-text">Home</span>
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/task_employee.php" class="logo">
             <img src="icons_emp/task.png" alt="" />
             <span class=" nav-text">Task</span>
           </a>
@@ -45,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/feedback_home.php#" class="logo">
             <img src="icons_emp/feedback.png" alt="" />
             <span class=" nav-text">Feedback</span>
           </a>
@@ -62,8 +62,6 @@
     <div id="container">
         <div class="flex_cards">
             <?php
-          
-          
            $sqlpending= "select * from tasks where status='Pending'";
            $result_pending= mysqli_query($conn,$sqlpending);
            $rowpending = $result_pending->num_rows;
@@ -72,11 +70,10 @@
            $result_going = mysqli_query($conn,$sql_going);
            $rowgoing = $result_going->num_rows;
 
-           $sql_done= "select * from tasks where status='Done'";
+           $sql_done= "select * from tasks where status='Completed'";
            $result_done = mysqli_query($conn,$sql_done);
            $rowdone = $result_done->num_rows;
             ?>
-
             <div class="card">Pending Task <?php echo $rowpending ?></div>
             <div class="card">On-Going Task <?php  echo $rowgoing  ?></div>
             <div class="card">Completed <?php  echo $rowdone  ?></div>
