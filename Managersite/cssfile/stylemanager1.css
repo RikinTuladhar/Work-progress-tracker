@@ -70,6 +70,11 @@ nav:hover {
   width: 210px;
   transform: all 0.5s ease;
 }
+.last {
+  position: absolute;
+  bottom: 10px;
+}
+
 /* .sidebar .element :hover{
     width: 150px;
     

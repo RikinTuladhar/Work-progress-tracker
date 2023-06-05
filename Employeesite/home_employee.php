@@ -62,8 +62,6 @@
     <div id="container">
         <div class="flex_cards">
             <?php
-          
-          
            $sqlpending= "select * from tasks where status='Pending'";
            $result_pending= mysqli_query($conn,$sqlpending);
            $rowpending = $result_pending->num_rows;

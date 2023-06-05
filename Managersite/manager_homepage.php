@@ -43,7 +43,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>

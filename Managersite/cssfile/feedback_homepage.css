@@ -22,6 +22,11 @@
     transition: width 0.2s linear;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
   }
+
+  .last {
+    position: absolute;
+    bottom: 10px;
+}
   .logo {
     text-align: center;
     display: flex;

@@ -78,7 +78,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
@@ -89,8 +89,7 @@
     <h1 id="top-heading">Task List</h1>
     <div class="container ">
       <!-- <div class="blur-effect"> -->
-
-
+        
       <div id="task_card" class="blur-effect">
         <div class="add_task_button"><span style=" float: right;padding: 10px;"><button style="  width: 150px;
     height: 39px;
