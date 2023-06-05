@@ -19,6 +19,7 @@ form_login.addEventListener("submit", function (event) {
 
   let username = document.getElementById("name-login").value;
   let password = document.getElementById("password-login").value;
+
   if (username.trim() === "") {
     alert("Please enter a username l");
     return;
@@ -42,8 +43,12 @@ form_register.addEventListener("submit", function (event) {
   // Get the input field values
   let username = document.getElementById("name-register").value;
   let password = document.getElementById("password-register").value;
+  let confirmpw = document.getElementById("confirmpw").value;
   let email = document.getElementById("email-register").value;
   let agreeCheckbox = document.querySelector("#checkbox");
+
+    
+
 
   // Validate the username
   if (username.trim() === "") {
@@ -60,6 +65,19 @@ form_register.addEventListener("submit", function (event) {
     alert("Password should content more than 6 characters");
     return;
   }
+
+
+  if(confirmpw.trim()==="")
+  {
+    alert("Please enter a Re-Enter password");
+    return;
+  }
+  if(password !== confirmpw)
+  {
+    alert("Please enter same password");
+    return;
+  }
+
   // Password should contain at least one uppercase letter
   // if (!/[A-Z]/.test(password)) {
   //   return false;
@@ -74,6 +92,8 @@ form_register.addEventListener("submit", function (event) {
   // if (!/[0-9]/.test(password)) {
   //   return false;
   // }
+
+
 
   // // Validate the email  /^[a-zA-Z0-9]+@[A-Z0-9]+\.[A-Z]{2,}$/i
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
