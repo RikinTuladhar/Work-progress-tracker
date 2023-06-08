@@ -222,7 +222,8 @@ function hidePopup() {
             data:{data:search_input},
             success:function(data)
             {
-              alert(data);
+              // alert(data);
+              $("#yy").html(data);
             }
           });
         });
