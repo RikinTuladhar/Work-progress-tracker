@@ -6,7 +6,6 @@ if ($conn->connect_error) {
 $seach_input = $_POST['data'];
 $sql = "SELECT * FROM employee WHERE emp_name LIKE '%{$seach_input}%'";
 $result = mysqli_query($conn, $sql);
-$idnum= 1;
 $idnum = 1;
 
 echo "<tr>

@@ -110,7 +110,7 @@
           <option value="50">50</option>
           
          </select>entries</span>
-          <span class="search_bar"><input type="text" placeholder="search" style=" width: 200px;
+          <span class="search_bar"><input type="text" id="search_input" placeholder="search" style=" width: 200px;
     height: 35px;
     font-size: 16px;
     border-radius: 10px;
@@ -235,7 +235,7 @@
     
 
     <script>
-      function showPopup() {
+function showPopup() {
   document.getElementById("popup").style.display = "block";
   document.querySelector(".blur-effect").style.filter= "blur(8px)";
 }
@@ -250,36 +250,47 @@ function hidePopup() {
     <script>
 
 $(document).ready(function(){
-
-
-  
-  $.ajax({
+  function fetchData() {
+$.ajax({
 url:"ajaxfile/sel2.php",
 type:"post",
 success:function(data){
-$("#yy").html(data);
+  $("#yy").empty();
+  $("#yy").html(data);
 }
-
 });
+  }
 
 $("#popo").change(function(){
-
   var sel= $(this).children("option:selected").val();
   // alert(sel);
-  
 $.ajax({
 url:"ajaxfile/sel.php",
 type:"post",
 data:{data:sel},
 success:function(data){
-$("#yy").html(data);
+  $("#yy").empty();
+  $("#yy").html(data);
 }
-
+});
 });
 
-
-});
-
+$("#search_input").keyup(function(){
+    var search_input= $(this).val();
+    // alert();
+    $.ajax({
+      url:"ajaxfile/search_task.php",
+      type:"post",
+      data:{data:search_input},
+      success:function(data)
+      {
+        $("#yy").empty();
+        $("#yy").append(data);
+      }
+    })
+  });
+  
+  fetchData();
 });
     </script>
     <?php
