@@ -50,6 +50,13 @@
     }
     </style>
   </head>
+  <body>
+  <?php
+  session_start(); 
+  if(isset($_SESSION['username']))
+  {
+    ?>
+    
   
   <nav>
       <ul>
@@ -275,5 +282,11 @@ $("#yy").html(data);
 
 });
     </script>
+    <?php
+    }
+    else{
+      echo "";
+    }
+?>
   </body>
 </html>

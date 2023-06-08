@@ -13,6 +13,12 @@
     />
     <link rel="stylesheet" href="cssfile/employee_homepage.css" />
   </head>
+  <body>
+  <?php
+  session_start(); 
+  if(isset($_SESSION['username']))
+  {
+    ?>
   <nav>
       <ul>
         <li>
@@ -70,11 +76,12 @@
           <option value="50">50</option>
           
          </select>entries</span>
-          <span class="search_bar"><input type="text" placeholder="search" style="    width: 200px;
+          <span class="search_bar"><input type="text" id="search_input" placeholder="search" style="    width: 200px;
     height: 35px;
     font-size: 16px;
     border-radius: 10px;
-    text-align: center;"></span>
+    text-align: center;"
+    ></span>
         </div>
         <div id="employee_table">
         <table border="1px black solid" cellspacing="15px" id="yy"> 
@@ -162,6 +169,7 @@
             <div class="row submit-flex">
               <input type="submit" value="submit" class="submit-input" >
             </div>
+            
           </form>
           
         </div>
@@ -203,7 +211,22 @@ function hidePopup() {
             }
           });
           
-        })
+        });
+
+        $("#search_input").keyup(function(){
+          var search_input = $(this).val();
+          //alert(search_input);
+          $.ajax({
+            url:"ajaxfile/search_emp.php",
+            type:"post",
+            data:{data:search_input},
+            success:function(data)
+            {
+              alert(data);
+            }
+          });
+        });
+        
 
 
       });
@@ -227,6 +250,12 @@ function hidePopup() {
       })
 
     </script>
-
+<?php
+    }
+    else{
+      echo "";
+    }
+?>
   </body>
+
 </html>

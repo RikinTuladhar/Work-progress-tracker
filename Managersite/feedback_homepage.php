@@ -10,7 +10,9 @@
 </head>
 <body>  
 <?php 
-      session_start();
+  session_start(); 
+  if(isset($_SESSION['username']))
+  {
        $conn = mysqli_connect("localhost","root","","workprogresstracker");
     ?>
     <nav>
@@ -157,7 +159,12 @@
         <?php
       $conn->close();
       ?>
-
+<?php
+    }
+    else{
+      echo "";
+    }
+?>
     
 </body>
 </html>
