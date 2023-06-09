@@ -190,6 +190,7 @@ function hidePopup() {
     </script>
     <script >
       $(document).ready(function(){
+        function fetchdata(){
         $.ajax({
           url:"ajaxfile/el2.php",
           type:"post",
@@ -197,7 +198,8 @@ function hidePopup() {
           {
             $("#yy").html(data);
           }
-        })
+        });
+      }
 
         $("#popo").change(function(){
           var sel = $(this).children("option:selected").val();
@@ -216,6 +218,8 @@ function hidePopup() {
         $("#search_input").keyup(function(){
           var search_input = $(this).val();
           //alert(search_input);
+          if(search_input != '')
+          {
           $.ajax({
             url:"ajaxfile/search_emp.php",
             type:"post",
@@ -226,10 +230,15 @@ function hidePopup() {
               $("#yy").html(data);
             }
           });
+        }
+        else if(search_input == '')
+        {
+          fetchdata();
+        }
         });
         
 
-
+        fetchdata();
       });
 
     </script>

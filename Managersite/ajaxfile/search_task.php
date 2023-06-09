@@ -1,4 +1,5 @@
 <?php 
+
 $conn = mysqli_connect("localhost","root","","workprogresstracker");
 if($conn->connect_error)
 {
@@ -33,9 +34,7 @@ if($result->num_rows > 0 )
             <td><?php echo $row['start_date']  ?> </td>
             <td><?php echo $row['end_date'] ?></td>
             <td><?php echo $row['task_description']  ?></td>
-            <td><?php 
-            $row['emp_name']?>
-            </td>
+            <td><?php echo $row['emp_name']?> </td>
             <td><a href="task_action/tasskedit.php?task_id=<?php echo $row["task_id"] ?>">Edit</a> </td>
             <td><a href="task_action/tasskdelete.php?task_id=<?php echo $row["task_id"] ?>">Delete</a> </td>
             </tr>

@@ -278,19 +278,23 @@ success:function(data){
 $("#search_input").keyup(function(){
     var search_input= $(this).val();
     // alert();
-    $.ajax({
+    if(search_input!=''){
+      $.ajax({
       url:"ajaxfile/search_task.php",
       type:"post",
       data:{data:search_input},
       success:function(data)
       {
         $("#yy").empty();
-        $("#yy").append(data);
+        $("#yy").html(data);
       }
-    })
-  });
+    });
   
-  fetchData();
+    }else if(search_input==''){
+      fetchData();
+    }
+  });
+    fetchData();
 });
     </script>
     <?php
