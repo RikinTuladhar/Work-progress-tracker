@@ -71,7 +71,7 @@
               // INNER JOIN employee
               // ON tasks.e_id  = employee.eid 
               // WHERE tasks.e_id= $sessionid";
-              $sql = "Select * from tasks where e_id =$sessionid";
+              $sql = "Select * from tasks where e_id =$sessionid and (status='Pending' or status='On-going')";
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
@@ -107,7 +107,7 @@
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
                  
-                  <td><a href="../task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
+                  <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
 
               
                 <!-- <td> -->
