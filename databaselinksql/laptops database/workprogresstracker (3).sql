@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 02:52 PM
+-- Generation Time: Jun 10, 2023 at 05:36 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,18 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `workprogresstracker`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `completed_task`
---
-
-CREATE TABLE `completed_task` (
-  `cmp_id` int(11) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `e_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -73,7 +61,17 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`) VALUES
-(110, 'salina', 'ravi@gmail.com', '', NULL, '123456', NULL);
+(143, 'salina', 'salinamaharjan@gmail.com', '', NULL, '123456', NULL),
+(144, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png'),
+(145, 'design', 'rikin@gmail.com', 'ewqe', '9869452356', '123', ''),
+(146, 'ziva', 'ziva@gmail.com', 'ziva', '9869452356', '123', ''),
+(147, 'ziva', 'ziva1@gmail.com', 'ziva', '9869452356', '123', ''),
+(148, 'ziva', 'ziva12@gmail.com', 'qweqwe', '9869452356', '123', ''),
+(149, 'wqe', 'a@gmail.com', '213', '9869452356', '12323', ''),
+(150, 'gg', 'gg@gmail.com', 'wqewqe', '9869452356', '123', ''),
+(151, 'qwewqe', 'ghh@gmail.com', 'wqewqe', '9869452356', '1234', ''),
+(152, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', ''),
+(153, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '');
 
 -- --------------------------------------------------------
 
@@ -93,9 +91,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
-(30, 'salina', '123456', 'salinamaharjan@gmail.com'),
-(31, 'salina', '123456', 'senyadta2@gmail.com'),
-(32, 'salina', '123456', 'ravi@gmail.com');
+(39, 'salina', '123456', 'salinamaharjan@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -121,17 +117,6 @@ INSERT INTO `manager` (`m_id`, `m_name`, `m_email`, `m_phone`, `m_pw`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission`
---
-
-CREATE TABLE `permission` (
-  `per_id` int(11) NOT NULL,
-  `per_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tasks`
 --
 
@@ -153,17 +138,21 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `feedback`) VALUES
-(29, 'design ', 'Completed', 'design homepage', '2023-06-30', '2023-06-07', 1, 110, 1, 'good\r\n');
+(34, 'design', 'Completed', 'design frontpage', '2023-06-05', '2023-06-10', 1, 143, 1, 'good job'),
+(35, 'abc', 'Pending', 'do it', '2023-06-08', '2023-06-10', 1, 143, 0, NULL),
+(36, 'gg', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
+(37, 'go awaya', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
+(38, 'break code', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
+(39, 'ha', 'Pending', 'gg', '2023-06-08', '2023-06-08', 1, 144, 0, NULL),
+(40, 'ya', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
+(41, 'jaja', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
+(42, 'dodo', 'Pending', 'haha', '2023-06-08', '2023-06-08', 1, 145, 0, NULL),
+(43, 'how feel', 'Pending', 'ww', '2023-06-15', '2023-06-21', 1, 143, 0, NULL),
+(44, 'wahts', 'Pending', '', '2023-06-24', '2023-06-21', 1, 143, 0, NULL);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `completed_task`
---
-ALTER TABLE `completed_task`
-  ADD PRIMARY KEY (`cmp_id`);
 
 --
 -- Indexes for table `department`
@@ -191,12 +180,6 @@ ALTER TABLE `manager`
   ADD PRIMARY KEY (`m_id`);
 
 --
--- Indexes for table `permission`
---
-ALTER TABLE `permission`
-  ADD PRIMARY KEY (`per_id`);
-
---
 -- Indexes for table `tasks`
 --
 ALTER TABLE `tasks`
@@ -209,12 +192,6 @@ ALTER TABLE `tasks`
 --
 
 --
--- AUTO_INCREMENT for table `completed_task`
---
-ALTER TABLE `completed_task`
-  MODIFY `cmp_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
@@ -224,13 +201,13 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `manager`
@@ -239,16 +216,10 @@ ALTER TABLE `manager`
   MODIFY `m_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `permission`
---
-ALTER TABLE `permission`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables
