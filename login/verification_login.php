@@ -3,7 +3,7 @@
 // if(isset($_GET['vername']) && isset($_GET['verpassword']))
 // {
     session_start();
-$username=$_GET['vername'];
+$emailname=$_GET['vername'];
 $password=$_GET['verpassword'];
 $count = 0;
 var_dump($username);
@@ -24,10 +24,10 @@ if($result->num_rows > 0)
     while($row = $result->fetch_assoc())
     {
         
-        if($row['emp_name'] == $username && $row['e_pw'] == $password)
+        if($row['emp_email'] == $emailname && $row['e_pw'] == $password)
         {
             
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $row['emp_name'];
             $_SESSION['id']=$row['eid'];
             // var_dump($row['eid'] );
             $count = 1;
@@ -52,10 +52,10 @@ $managercheck = mysqli_query($con,$managersql);
 if($managercheck->num_rows > 0)
 {
     while($rows = $managercheck->fetch_assoc())
-    if(($rows['m_name'] ==  $username &&  $rows['m_pw'] == $password))
+    if(($rows['m_email'] ==  $emailname &&  $rows['m_pw'] == $password))
     {
         // echo $rows['m_name'];
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $rows['m_name'];
         $_SESSION['id']=$rows['m_id'];
         $count = 1;
         ?>

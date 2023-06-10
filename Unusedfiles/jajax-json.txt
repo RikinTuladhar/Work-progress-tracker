@@ -1,0 +1,34 @@
+$.ajax({
+  url: "ajax/home_emp.php",
+  type: "post",
+  dataType: "json",    //imp
+  success: function (data) {
+    $("#pending").html(data.pending);
+    // alert();
+    $("#ongoing").html(data.ongoing);
+
+    $("#completed").html(data.done);
+  },
+});
+---------------------------------------------
+
+$sqlpending= "select * from tasks where status='Pending' AND e_id =  {$_SESSION['id']}";
+$result_pending= mysqli_query($conn,$sqlpending);
+$rowpending = $result_pending->num_rows;
+
+$sql_going= "select * from tasks where status='On-going' AND e_id =  {$_SESSION['id']}";
+$result_going = mysqli_query($conn,$sql_going);
+$rowgoing = $result_going->num_rows;
+          
+$sql_done= "select * from tasks where status='Completed' AND e_id =  {$_SESSION['id']}";
+$result_done = mysqli_query($conn,$sql_done);
+$rowdone = $result_done->num_rows;
+
+$response =[     //assosiative array
+'pending'=>$rowpending,
+ 'ongoing'=>$rowgoing,
+'done'=>$rowdone
+ ];
+echo json_encode($response);   //encode
+       
+ ?>

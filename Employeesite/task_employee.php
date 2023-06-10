@@ -107,7 +107,7 @@
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
                  
-                  <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
+                  <td><a href="../task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
 
               
                 <!-- <td> -->
@@ -133,12 +133,11 @@
        $("#status").change(function(){
         var selected_value= $(this).children("option:selected").val();
         $.ajax({
-          url:status.php,
+          url:'status.php',
           type:"post",
           data:{data:selected_value},
           success:function(data)
           {
-            
           }
         })
        });
