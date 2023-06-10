@@ -40,7 +40,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/update_employee.php" class="logo">
             <img src="icons_emp/new.png" alt="" />
             <span class=" nav-text">Update</span>
           </a>

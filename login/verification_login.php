@@ -6,7 +6,7 @@
 $emailname=$_GET['vername'];
 $password=$_GET['verpassword'];
 $count = 0;
-var_dump($username);
+// var_dump($emailname);
 
 $con = mysqli_connect("localhost","root","","workprogresstracker");
 if($con->connect_error)
