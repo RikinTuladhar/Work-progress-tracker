@@ -12,6 +12,8 @@
     <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
       
         session_start();
+        if(isset($_SESSION['username']))
+        {
 
          if($conn->connect_error)
          {
@@ -145,5 +147,11 @@
        });
       });
     </script>
+    <?php
+        }
+        else{
+          echo "";
+        }
+    ?>
   </body>
 </html>

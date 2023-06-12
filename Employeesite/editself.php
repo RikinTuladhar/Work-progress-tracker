@@ -72,6 +72,11 @@
     </style>
 </head>
 <body>
+    <?php
+    session_start();
+        if(isset($_SESSION['username']))
+        {
+    ?>
     <main>
 
         <header>
@@ -120,5 +125,10 @@
         </article>
         <footer>Footer</footer>
     </main>
+    <?php
+        }
+        else {
+                echo "";
+        }?>
 </body>
 </html>
