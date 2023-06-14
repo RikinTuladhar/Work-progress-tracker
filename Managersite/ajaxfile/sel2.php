@@ -24,8 +24,6 @@ echo "<tr>
 </tr>";
 if($result_task->num_rows > 0)
 {
-
-    
     for($a=0;$a<10;$a++){
         $rows = $result_task->fetch_assoc();
         if($rows['task_id']==''){

@@ -1,6 +1,7 @@
 <?php 
 $feedback= $_POST['feedback'];
 $task_id = $_POST['task_id'];
+$status = $_POST['status'];
 // echo $feedback;
 // echo $task_id;
 session_start();
@@ -9,7 +10,8 @@ session_start();
          {
           die($conn->connect_error);
          }
-         $sql = "UPDATE tasks SET feedback='$feedback' where task_id =$task_id";
+         $sql = "UPDATE tasks SET feedback='$feedback',status='$status' where task_id =$task_id";
+         
          if(mysqli_query($conn,$sql))
          {
             ?>

@@ -87,6 +87,10 @@ button[type="submit"]
             <div>
                     <textarea name="feedback" id="feedback" style ="width: 371px;height: 186px;" ></textarea>
                     <br>
+                    <select name="status" id="status">
+                        <option value="Completed">Completed</option>
+                        <option value="Pending">Re-Assign</option>
+                    </select>
 
             <button type="submit">submit</button>
         </form>

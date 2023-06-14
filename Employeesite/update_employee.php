@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/task_employee.css" />
-    <title>Document</title>
+    <title>Update</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   </head>
   <body>
     <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
       
         session_start();
-            if(isset($_SESSION['username']))
-            {
+        if(isset($_SESSION['username']))
+        {
+
          if($conn->connect_error)
          {
           die($conn->connect_error);
@@ -43,7 +44,7 @@
           </a>
         </li>
         <li>
-        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/update_employee.php" class="logo">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/update_employee.php" class="logo">
             <img src="icons_emp/new.png" alt="" />
             <span class=" nav-text">Update</span>
           </a>
@@ -72,12 +73,12 @@
               // INNER JOIN employee
               // ON tasks.e_id  = employee.eid 
               // WHERE tasks.e_id= $sessionid";
-              $sql = "Select * from tasks where e_id =$sessionid and status= 'Completed'" ;
+              $sql = "Select * from tasks where e_id =$sessionid and (status='Pending' and completed_task=1)";
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
             <table border= 1px solid black >
-              <h1 style="text-align:center;">FEED-BACK</h1>
+              <h1 style="text-align:center;">Update Task</h1>
               <tr>
                 <th>#</th>
                 <th>Task_title</th>
@@ -86,6 +87,7 @@
                 <th>End_date</th>
                 <th>Status</th>
                 <th>Feedback</th>
+                <th>Action</th>
                 
               </tr>
                 <?php 
@@ -107,7 +109,9 @@
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
-                <td><?php  echo $row['feedback']?></td>
+                <td><?php echo $row['feedback'];?></td>
+                 
+                  <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
 
               
                 <!-- <td> -->
@@ -128,13 +132,26 @@
 
     </div>
     <script>
-
+      $(document).ready(function()
+      {
+       $("#status").change(function(){
+        var selected_value= $(this).children("option:selected").val();
+        $.ajax({
+          url:'status.php',
+          type:"post",
+          data:{data:selected_value},
+          success:function(data)
+          {
+          }
+        })
+       });
+      });
     </script>
-    <?php 
-            }
-            else{
-              echo "";
-            }
-            ?>
+    <?php
+        }
+        else{
+          echo "";
+        }
+    ?>
   </body>
 </html>

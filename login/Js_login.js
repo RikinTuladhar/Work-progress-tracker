@@ -47,9 +47,6 @@ form_register.addEventListener("submit", function (event) {
   let email = document.getElementById("email-register").value;
   let agreeCheckbox = document.querySelector("#checkbox");
 
-    
-
-
   // Validate the username
   if (username.trim() === "") {
     alert("Please enter a username");
@@ -66,14 +63,11 @@ form_register.addEventListener("submit", function (event) {
     return;
   }
 
-
-  if(confirmpw.trim()==="")
-  {
+  if (confirmpw.trim() === "") {
     alert("Please enter a Re-Enter password");
     return;
   }
-  if(password !== confirmpw)
-  {
+  if (password !== confirmpw) {
     alert("Please enter same password");
     return;
   }
@@ -92,8 +86,6 @@ form_register.addEventListener("submit", function (event) {
   // if (!/[0-9]/.test(password)) {
   //   return false;
   // }
-
-
 
   // // Validate the email  /^[a-zA-Z0-9]+@[A-Z0-9]+\.[A-Z]{2,}$/i
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;

@@ -28,7 +28,7 @@
          }  
      else{
         echo "no";
-        $sql_com = "UPDATE tasks SET status='$status',completed_task='1' where e_id = $sessionid AND task_id =$task_id";
+        $sql_com = "UPDATE tasks SET status='$status',completed_task='1' , feedback ='' where e_id = $sessionid AND task_id =$task_id";
         $result_com = mysqli_query($conn,$sql_com);
         ?>
              <script>

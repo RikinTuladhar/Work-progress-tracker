@@ -38,6 +38,12 @@
         background: white;
         padding: 5px;
         border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -13px 45px 0px inset,
+          rgba(0, 0, 0, 0.15) 0px -16px 30px 0px inset,
+          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+          rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+          rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 1px 8px,
+          rgba(0, 0, 0, 0) 0px 1px 16px;
         overflow: hidden; /*if yo use garena vane both log in ra register ko dekhau xha*/
       }
       .button-box {
@@ -69,7 +75,7 @@
         transition: 0.5s;
       }
       .input-group {
-        top: 180px;
+        top: 150px;
         position: absolute;
         width: 280px;
         transition: 0.5s;
@@ -138,7 +144,7 @@
           <input
             type="text"
             class="input-field"
-            placeholder="Enter username"
+            placeholder="Enter Email"
             id="name-login"
             name="vername"
           />
@@ -149,11 +155,26 @@
             id="password-login"
             name="verpassword"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibility()"
+            style="cursor: pointer; right: -1px; top: 60px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
 
           <!-- <input type="checkbox" class="checkbox" /><span
             >Remember password</span
           > -->
-          <button type="submit" value="submit" class="submit-btn">
+          <button
+            type="submit"
+            value="submit"
+            class="submit-btn"
+            style="margin: 36px"
+          >
             Log In
           </button>
         </form>
@@ -161,10 +182,9 @@
           class="input-group"
           name="form_register"
           id="form_register"
-          style="left: 450px"
+          style="left: 450px; top: 124px"
           method="post"
           action="insert_login_todatabase.php"
-          
         >
           <input
             type="text"
@@ -180,6 +200,16 @@
             id="password-register"
             name="password"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibilityregister()"
+            style="cursor: pointer; right: -1px; top: 60px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
           <input
             type="password"
             class="input-field"
@@ -187,6 +217,17 @@
             id="confirmpw"
             name="confirmpw"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibilityconfirm()"
+            style="cursor: pointer; right: -1px; top: 105px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
+
           <input
             type="text"
             class="input-field"
@@ -204,5 +245,31 @@
       </div>
     </div>
     <script src="Js_login.js"></script>
+    <script>
+      function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password-login");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+      function togglePasswordVisibilityregister() {
+        var passwordField = document.getElementById("password-register");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+      function togglePasswordVisibilityconfirm() {
+        var passwordField = document.getElementById("confirmpw");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+    </script>
   </body>
 </html>

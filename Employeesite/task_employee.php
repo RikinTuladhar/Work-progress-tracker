@@ -12,6 +12,8 @@
     <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
       
         session_start();
+        if(isset($_SESSION['username']))
+        {
 
          if($conn->connect_error)
          {
@@ -24,7 +26,7 @@
     <nav>
       <ul>
         <li>
-          <a href="#" class="logo first">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/editself.php" class="logo first">
             <img src="icons_emp/user.png" alt="" />
             <span class="nav-item"><?php echo $_SESSION['username'];?></span>
           </a>
@@ -42,7 +44,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="logo">
+        <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/update_employee.php" class="logo">
             <img src="icons_emp/new.png" alt="" />
             <span class=" nav-text">Update</span>
           </a>
@@ -71,7 +73,7 @@
               // INNER JOIN employee
               // ON tasks.e_id  = employee.eid 
               // WHERE tasks.e_id= $sessionid";
-              $sql = "Select * from tasks where e_id =$sessionid";
+              $sql = "Select * from tasks where e_id =$sessionid and (status='Pending' or status='On-going')";
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
@@ -133,16 +135,21 @@
        $("#status").change(function(){
         var selected_value= $(this).children("option:selected").val();
         $.ajax({
-          url:status.php,
+          url:'status.php',
           type:"post",
           data:{data:selected_value},
           success:function(data)
           {
-            
           }
         })
        });
       });
     </script>
+    <?php
+        }
+        else{
+          echo "";
+        }
+        ?>
   </body>
 </html>
