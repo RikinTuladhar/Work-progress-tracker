@@ -149,6 +149,16 @@
             id="password-login"
             name="verpassword"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibility()"
+            style="cursor: pointer; right: -1px; top: 60px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
 
           <!-- <input type="checkbox" class="checkbox" /><span
             >Remember password</span
@@ -179,6 +189,16 @@
             id="password-register"
             name="password"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibility()"
+            style="cursor: pointer; right: -1px; top: 60px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
           <input
             type="password"
             class="input-field"
@@ -186,6 +206,17 @@
             id="confirmpw"
             name="confirmpw"
           />
+          <span
+            id="showpassword"
+            onclick="togglePasswordVisibilityconfirm()"
+            style="cursor: pointer; right: -1px; top: 105px"
+            ><img
+              src="./icons/eye.png"
+              alt="hide/show"
+              height="20px"
+              width="20px"
+          /></span>
+
           <input
             type="text"
             class="input-field"
@@ -203,5 +234,31 @@
       </div>
     </div>
     <script src="Js_login.js"></script>
+    <script>
+      function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password-login");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+      function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password-register");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+      function togglePasswordVisibilityconfirm() {
+        var passwordField = document.getElementById("confirmpw");
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+        } else {
+          passwordField.type = "password";
+        }
+      }
+    </script>
   </body>
 </html>

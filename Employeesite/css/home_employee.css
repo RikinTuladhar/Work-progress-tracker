@@ -124,7 +124,7 @@ ul li:hover {
   align-items: center;
   width: 200px;
   height: 120px;
-  background-color: aqua;
+  background-color: #f6f6f6;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
