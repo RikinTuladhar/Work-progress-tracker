@@ -100,7 +100,7 @@
         background-color: transparent;
     }
     .popup-content{
-        box-shadow: 0px 13px 15px 28px rgba(115, 114, 117, 0.562);
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
         border-radius: 5px;
         background-color: #EBF0F6;
         max-width: 700px;
@@ -254,7 +254,7 @@
 
 
 
-    <main>
+    <main id="blur_bg">
 
         <header>
             <h1>Profile</h1>
@@ -268,7 +268,7 @@
                 <div><h3>Name: <?php echo $row['emp_name'];?></h3></div>
                 <div><h3>Age: <?php echo $row['Age'];?></h3></div>
                 <div><h3>Location: <?php echo isset($row['location']) ? $row['location'] : 'no location'; ?></h3></div>
-                <div><h3>Experence: <?php echo isset($row['Experence']) ? $row['Experence']."years" : '-'; ?></h3></div>
+                <div><h3>Experence: <?php echo isset($row['Experence']) ? $row['Experence']."years" :'-'; ?></h3></div>
                 <div><h3>Degree: <?php echo isset($row['Degree']) ? $row['Degree']: "-";?></h3></div>
               
                 
@@ -318,9 +318,11 @@
 <script>
     function showpopup(){
         document.getElementById("popup").style.display="block";
+        document.getElementById("blur_bg").style.filter="blur(5px)";
     }
     function hidePopup(){
         document.getElementById("popup").style.display="none";
+        document.getElementById("blur_bg").style.filter="";
     }
     var form = document.querySelector("form");
     form.addEventListener("submit",function(e){

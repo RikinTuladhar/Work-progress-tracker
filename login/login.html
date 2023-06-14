@@ -69,7 +69,7 @@
         transition: 0.5s;
       }
       .input-group {
-        top: 180px;
+        top: 150px;
         position: absolute;
         width: 280px;
         transition: 0.5s;
@@ -163,7 +163,12 @@
           <!-- <input type="checkbox" class="checkbox" /><span
             >Remember password</span
           > -->
-          <button type="submit" value="submit" class="submit-btn">
+          <button
+            type="submit"
+            value="submit"
+            class="submit-btn"
+            style="margin: 36px"
+          >
             Log In
           </button>
         </form>
@@ -171,7 +176,7 @@
           class="input-group"
           name="form_register"
           id="form_register"
-          style="left: 450px"
+          style="left: 450px; top: 124px"
           method="post"
           action="insert_login_todatabase.php"
         >
@@ -191,7 +196,7 @@
           />
           <span
             id="showpassword"
-            onclick="togglePasswordVisibility()"
+            onclick="togglePasswordVisibilityregister()"
             style="cursor: pointer; right: -1px; top: 60px"
             ><img
               src="./icons/eye.png"
@@ -243,7 +248,7 @@
           passwordField.type = "password";
         }
       }
-      function togglePasswordVisibility() {
+      function togglePasswordVisibilityregister() {
         var passwordField = document.getElementById("password-register");
         if (passwordField.type === "password") {
           passwordField.type = "text";
