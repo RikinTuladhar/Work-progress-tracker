@@ -25,7 +25,7 @@
     <nav>
       <ul>
         <li>
-          <a href="#" class="logo first">
+          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/editself.php" class="logo first">
             <img src="icons_emp/user.png" alt="" />
             <span class="nav-item"><?php echo $_SESSION['username'];?></span>
           </a>

@@ -57,6 +57,25 @@ if($result->num_rows > 0)
     </table>
         <input type="submit" value="submit">
     </form>
+    <script>
+       var form = document.querySelector("form");
+
+        // Function to enable all disabled elements
+    function enableDisabledElements() {
+         // Select all elements with the disabled attribute within the form
+    var disabledElements = form.querySelectorAll("[disabled]");
+
+         // Iterate over the disabled elements and remove the disabled attribute
+    disabledElements.forEach(function(element) {
+    element.removeAttribute("disabled");
+  });
+}
+
+        // Add an event listener to the form submission
+    form.addEventListener("submit", function(event) {
+    enableDisabledElements();
+});
+    </script>
     
 </body>
 </html>
