@@ -74,11 +74,14 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
+          <th>Files</th>
           <th>Feedback</th>
         </tr>
         <?php 
-        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
+        //data of employee
+        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,file_name from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
         $result  =  mysqli_query($conn,$sql_task_list);
+
         $idnum= 1;
         if($result->num_rows > 0 )
         {
@@ -98,6 +101,24 @@
             <td><?php  echo $row['status'] ?></td>
             <td><?php  echo $row['start_date'] ?></td>
             <td><?php  echo $row['end_date'] ?></td>
+            <!-- for file to be downloaded -->
+            <script>
+              var fileUrl = new URL("../xlshfiles/",window.location.href);
+              //create a link element 
+              var downloadlink = document.createElement('a');
+              //set the link attribute 
+              downloadlink.href = fileUrl.href;
+              downloadlink.download = '<?php echo $row['file_name'];?>';
+              downloadlink.textContent = 'Download File';
+            </script>
+
+            <td id="file_here<?php echo $a; ?>"></td>
+            <script>
+              var file_here = document.getElementById("file_here<?php echo $a; ?>");
+              file_here.appendChild(downloadlink);
+            </script>
+
+
             <!-- <td> -->
                 <?php
                 //  echo $row['task_id'];

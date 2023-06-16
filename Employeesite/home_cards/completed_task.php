@@ -75,7 +75,7 @@
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
-            <table border= 1px solid black >
+            <table style="border: none; border-collapse: collapse;" >
               <h1 style="text-align:center;">Completed Task</h1>
               <tr>
                 <th>#</th>
@@ -121,7 +121,7 @@
                 $idnum++;
                 }
               }
-              $conn->close();
+              
                 ?>
             </table>
         </div>
@@ -148,6 +148,8 @@
         else{
           echo "";
         }
+        $conn->close();
     ?>
+    
   </body>
 </html>

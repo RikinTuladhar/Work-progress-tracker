@@ -68,7 +68,7 @@
             
             <div class="card pending">Pending Task <span id="pending"></span></div>
             <div class="card ongoing">On-Going Task <span id="ongoing"></span></div>
-            <div class="card completed">Completed <span id="completed"> </span></div>
+            <div class="card completed">Completed Task<span id="completed"> </span></div>
         </div>
 
     </div>

@@ -54,7 +54,7 @@ button[type="submit"]
             ?>
     <div id="container">
         <div id="form_data">
-        <form action="edit_submit.php" method="post">
+        <form action="edit_submit.php" method="post" enctype="multipart/form-data"> 
         <?php 
                 $row = $result->fetch_assoc();
                   
@@ -89,9 +89,10 @@ button[type="submit"]
                   <option value="On-going">On-going</option>
                   <option value="Completed">Completed</option>
                   </select> 
+                  <input type="file" id="fileInput" name="xlsh" accept=".xlsx, .xls">
+                  <button type="submit">submit</button>
                   </div>
 
-            <button type="submit">submit</button>
 
             <?php
                
@@ -104,7 +105,25 @@ button[type="submit"]
     </div>
     <script>
         var form = document.querySelector("form");
+        //select select tag for change 
+        var statusSelect = document.getElementById('status');
+        var fileInput = document.getElementById('fileInput');
+        // Add an event listener to detect changes in the select element
+        fileInput.disabled = true;
+     statusSelect.addEventListener('change', function() {
+     var selectedValue = statusSelect.value;
 
+         // Enable or disable the file input based on the selected value
+       if (selectedValue === 'Completed') {
+          fileInput.disabled = false;
+        } 
+        else {
+        fileInput.disabled = true;
+      }
+     });
+
+        
+        
         // Function to enable all disabled elements
         function enableDisabledElements() {
             // Select all elements with the disabled attribute within the form
@@ -115,11 +134,11 @@ button[type="submit"]
                 element.removeAttribute("disabled");
             });
         }
-
         // Add an event listener to the form submission
         form.addEventListener("submit", function(event) {
         enableDisabledElements();
         });
+
     </script>
 </body>
 </html>
