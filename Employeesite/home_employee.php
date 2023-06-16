@@ -55,7 +55,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
+          <a href="../unsetvariable.php?unset=true" class="logo last">
             <img src="icons_emp/logout.png" style="width: 44px;height: 35px;" alt="" />
             <span class=" nav-text">Log-Out</span>
           </a>
