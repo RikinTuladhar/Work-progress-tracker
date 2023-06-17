@@ -79,7 +79,7 @@
         </tr>
         <?php 
         //data of employee
-        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,file_name from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
+        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
         $result  =  mysqli_query($conn,$sql_task_list);
 
         $idnum= 1;
@@ -119,7 +119,8 @@
                     'emp_name' => $row['emp_name'],
                     'status' => $row['status'],
                     'start_date'=> $row['start_date'],
-                    'end_date'=>$row['end_date']
+                    'end_date'=>$row['end_date'],
+                    'feedback'=>$row['feedback']
                   );
                   $baseurl = "emp_action/feedback_home.php";
                   //data send garrna lai from URL 
