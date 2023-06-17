@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 05:36 AM
+-- Generation Time: Jun 17, 2023 at 02:49 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -53,25 +53,33 @@ CREATE TABLE `employee` (
   `emp_lastname` varchar(50) NOT NULL,
   `emp_phone` varchar(50) DEFAULT NULL,
   `e_pw` varchar(50) NOT NULL,
-  `em_img` varchar(60) DEFAULT NULL
+  `em_img` varchar(60) DEFAULT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  `Age` tinyint(100) DEFAULT NULL,
+  `Experence` varchar(50) DEFAULT NULL,
+  `Degree` varchar(50) DEFAULT NULL,
+  `Short-detail` varchar(50) DEFAULT NULL,
+  `About-Your-Self` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`eid`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`) VALUES
-(143, 'salina', 'salinamaharjan@gmail.com', '', NULL, '123456', NULL),
-(144, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png'),
-(145, 'design', 'rikin@gmail.com', 'ewqe', '9869452356', '123', ''),
-(146, 'ziva', 'ziva@gmail.com', 'ziva', '9869452356', '123', ''),
-(147, 'ziva', 'ziva1@gmail.com', 'ziva', '9869452356', '123', ''),
-(148, 'ziva', 'ziva12@gmail.com', 'qweqwe', '9869452356', '123', ''),
-(149, 'wqe', 'a@gmail.com', '213', '9869452356', '12323', ''),
-(150, 'gg', 'gg@gmail.com', 'wqewqe', '9869452356', '123', ''),
-(151, 'qwewqe', 'ghh@gmail.com', 'wqewqe', '9869452356', '1234', ''),
-(152, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', ''),
-(153, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '');
+INSERT INTO `employee` (`eid`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
+(143, 'salina', 'salinamaharjan@gmail.com', 'maharjan', '', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(144, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png', NULL, NULL, NULL, NULL, NULL, NULL),
+(145, 'design', 'rikin@gmail.com', 'ewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(146, 'ziva', 'ziva@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(147, 'ziva', 'ziva1@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(148, 'ziva', 'ziva12@gmail.com', 'qweqwe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(149, 'wqe', 'a@gmail.com', '213', '9869452356', '12323', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(150, 'gg', 'gg@gmail.com', 'wqewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(151, 'qwewqe', 'ghh@gmail.com', 'wqewqe', '9869452356', '1234', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(152, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(153, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(154, 'labi', 'labi@gmail.com', '', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(155, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', NULL, 'Kalimati', 21, 'Hawa', 'Bca', 'I am cool ', 'I like reading books and playing games.');
 
 -- --------------------------------------------------------
 
@@ -91,7 +99,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
-(39, 'salina', '123456', 'salinamaharjan@gmail.com');
+(39, 'salina', '123456', 'salinamaharjan@gmail.com'),
+(40, 'labi', '123456', 'labi@gmail.com'),
+(41, 'suraj', '123456', 'suraj@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -112,7 +122,8 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`m_id`, `m_name`, `m_email`, `m_phone`, `m_pw`) VALUES
-(1, 'sizen', 'sizen@gmail.com', '9843652356', '123456');
+(1, 'sizen', 'sizen@gmail.com', '9843652356', '123456'),
+(2, 'rikin', 'rikin@gmail.com', '9856342365', '123456');
 
 -- --------------------------------------------------------
 
@@ -130,6 +141,7 @@ CREATE TABLE `tasks` (
   `m_id` int(11) DEFAULT NULL,
   `e_id` int(11) DEFAULT NULL,
   `completed_task` tinyint(1) NOT NULL,
+  `file_name` varchar(60) DEFAULT NULL,
   `feedback` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -137,18 +149,10 @@ CREATE TABLE `tasks` (
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `feedback`) VALUES
-(34, 'design', 'Completed', 'design frontpage', '2023-06-05', '2023-06-10', 1, 143, 1, 'good job'),
-(35, 'abc', 'Pending', 'do it', '2023-06-08', '2023-06-10', 1, 143, 0, NULL),
-(36, 'gg', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
-(37, 'go awaya', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
-(38, 'break code', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
-(39, 'ha', 'Pending', 'gg', '2023-06-08', '2023-06-08', 1, 144, 0, NULL),
-(40, 'ya', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
-(41, 'jaja', 'Pending', '', '2023-06-08', '2023-06-08', 1, 143, 0, NULL),
-(42, 'dodo', 'Pending', 'haha', '2023-06-08', '2023-06-08', 1, 145, 0, NULL),
-(43, 'how feel', 'Pending', 'ww', '2023-06-15', '2023-06-21', 1, 143, 0, NULL),
-(44, 'wahts', 'Pending', '', '2023-06-24', '2023-06-21', 1, 143, 0, NULL);
+INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`) VALUES
+(59, '`1', 'Completed', '', '2023-06-17', '2023-06-17', 1, 155, 1, '648daa60b0845.pdf', ''),
+(60, '2', 'Completed', '', '2023-06-17', '2023-06-17', 1, 155, 1, '648d918e74a5b.pdf', ''),
+(61, 'pdf see', 'Completed', 'complete it on time ', '2023-06-17', '2023-06-17', 1, 155, 1, '648daab1ad145.pdf', 'good job ');
 
 --
 -- Indexes for dumped tables
@@ -201,25 +205,25 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
-  MODIFY `m_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `m_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Constraints for dumped tables
