@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #506379;
+  background-color: #d9ff00;
 }
 
 nav {
@@ -117,15 +117,20 @@ nav:hover {
   height: auto;
   margin: 30px;
   padding: 20px;
-  background-color: #bdcdd6;
+  background-color: #b8bd9b;
 }
+tr:nth-child(even){
+  background-color: #b8bd9bb5;
+}
+tr:nth-child(odd){
+  background-color: #6d725594;
+}
+
+
 th {
-  background-color: blanchedalmond;
+  background-color: #6d7255;
 }
 th,
 td {
   padding: 15px;
-}
-table {
-  border-spacing: 5px;
 }

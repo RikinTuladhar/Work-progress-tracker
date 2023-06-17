@@ -57,6 +57,7 @@ button[type="submit"]
                $status= $_GET['status'];
                $start_date= $_GET['start_date'];
               $end_date=  $_GET['end_date'];
+              $feedback = $_GET['feedback'];
             //   echo $task_title;
               
 
@@ -85,7 +86,7 @@ button[type="submit"]
                 <input type="text" name="end_date"  value="<?php  echo $end_date ?>" disabled>
             </div>
             <div>
-                    <textarea name="feedback" id="feedback" style ="width: 371px;height: 186px;" ></textarea>
+                    <textarea name="feedback" id="feedback" style ="width: 371px;height: 186px;" ><?php echo $feedback;?></textarea>
                     <br>
                     <select name="status" id="status">
                         <option value="Completed">Completed</option>

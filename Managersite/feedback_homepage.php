@@ -42,7 +42,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
+          <a href="../unsetvariable.php?unset=true" class="logo last">
             <img src="icons/logout.png" alt="" />
             <span class="nav-item">Log-out</span>
           </a>
@@ -74,11 +74,14 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
+          <th>Files</th>
           <th>Feedback</th>
         </tr>
         <?php 
-        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
+        //data of employee
+        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
         $result  =  mysqli_query($conn,$sql_task_list);
+
         $idnum= 1;
         if($result->num_rows > 0 )
         {
@@ -98,6 +101,11 @@
             <td><?php  echo $row['status'] ?></td>
             <td><?php  echo $row['start_date'] ?></td>
             <td><?php  echo $row['end_date'] ?></td>
+            <!-- for file to be downloaded -->
+            <script>
+              </script>
+              <!-- can download file -->
+              <td><a href="../xlshfiles/<?php echo $row['file_name']?>" download >Download</a></td>
             <!-- <td> -->
                 <?php
                 //  echo $row['task_id'];
@@ -111,7 +119,8 @@
                     'emp_name' => $row['emp_name'],
                     'status' => $row['status'],
                     'start_date'=> $row['start_date'],
-                    'end_date'=>$row['end_date']
+                    'end_date'=>$row['end_date'],
+                    'feedback'=>$row['feedback']
                   );
                   $baseurl = "emp_action/feedback_home.php";
                   //data send garrna lai from URL 

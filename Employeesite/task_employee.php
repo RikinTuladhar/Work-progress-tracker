@@ -56,7 +56,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
+          <a href="../unsetvariable.php?unset=true" class="logo last">
             <img src="icons_emp/logout.png" style="width: 44px;height: 35px;" alt="" />
             <span class=" nav-text">Log-Out</span>
           </a>
@@ -77,7 +77,7 @@
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
-            <table border= 1px solid black >
+            <table style="border: none; border-collapse: collapse;">
               <h1 style="text-align:center;">TASKS</h1>
               <tr>
                 <th>#</th>
@@ -86,6 +86,7 @@
                 <th>Start_date</th>
                 <th>End_date</th>
                 <th>Status</th>
+                
                 <th>Action</th>
                 
               </tr>
@@ -130,20 +131,6 @@
 
     </div>
     <script>
-      $(document).ready(function()
-      {
-       $("#status").change(function(){
-        var selected_value= $(this).children("option:selected").val();
-        $.ajax({
-          url:'status.php',
-          type:"post",
-          data:{data:selected_value},
-          success:function(data)
-          {
-          }
-        })
-       });
-      });
     </script>
     <?php
         }

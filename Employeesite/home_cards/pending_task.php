@@ -12,12 +12,14 @@
     <?php  $conn = mysqli_connect("localhost","root","","workprogresstracker");
       
         session_start();
+        if(isset($_SESSION['username']))
+        {
+           if($conn->connect_error)
+            {
+               die($conn->connect_error);
+             }
+              $sessionid =$_SESSION['id'];
 
-         if($conn->connect_error)
-         {
-          die($conn->connect_error);
-         }
-         $sessionid =$_SESSION['id']
         
 
     ?>
@@ -54,7 +56,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
+          <a href="../../unsetvariable.php?unset=true" class="logo last">
             <img src="../icons_emp/logout.png" style="width: 44px;height: 35px;" alt="" />
             <span class=" nav-text">Log-Out</span>
           </a>
@@ -75,7 +77,7 @@
               $result = mysqli_query($conn,$sql);
               ?>
               <div id="table_data">
-            <table border= 1px solid black >
+            <table style="border: none; border-collapse: collapse;">
               <h1 style="text-align:center;">Pending Task</h1>
               <tr>
                 <th>#</th>
@@ -143,5 +145,12 @@
        });
       });
     </script>
+    <?php
+     }
+     else{
+       echo "";
+     }
+     $conn->close();
+    ?>
   </body>
 </html>

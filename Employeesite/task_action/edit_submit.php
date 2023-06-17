@@ -1,42 +1,71 @@
 <?php
-    if($_SERVER["REQUEST_METHOD"]=="POST" ||$_SERVER["REQUEST_METHOD"]=="GET" ){
-    // $task_title = $_POST['task_title'];
-    // $task_description = $_POST['task_description'];
-    // $start_date = $_POST['start_date'];
-    // $end_date = $_POST['end_date'];
-    $task_id = $_POST['task_id'];
-    $status = $_POST['status'];
-    echo $status;
-    session_start();
-    $conn = mysqli_connect("localhost","root","","workprogresstracker");
-    if($conn->connect_error)
-     {
-      die($conn->connect_error);
-     }
-     $sessionid =$_SESSION['id'];
-     if($status != "Completed"){
-            $sql = "UPDATE tasks SET
-            status='$status' where e_id = $sessionid AND task_id =$task_id";
-            // echo "done";
-            $result = mysqli_query($conn,$sql);
-            ?>
-            <script>
-                alert("Updated");
-                location.href ="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/task_employee.php";
-            </script>
-            <?php
-         }  
-     else{
-        echo "no";
-        $sql_com = "UPDATE tasks SET status='$status',completed_task='1' , feedback ='' where e_id = $sessionid AND task_id =$task_id";
-        $result_com = mysqli_query($conn,$sql_com);
+session_start();
+$sessionid = $_SESSION["id"];
+$task_id = $_POST["task_id"];
+$status = $_POST["status"];
+$conn = mysqli_connect("localhost","root","","workprogresstracker");
+// if(isset($_POST['submit'])){}
+if($status == "Completed")
+{
+  $sql_com = "UPDATE tasks SET status='$status', completed_task='1', feedback='' WHERE e_id=$sessionid AND task_id=$task_id";
+        $result_com = mysqli_query($conn, $sql_com);
         ?>
-             <script>
-                alert("Updated as Completed");
-                location.href ="http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/task_employee.php";
-            </script>
+        <script>
+            alert("Updated as Completed");
+        </script>
         <?php
-     }
+if($_FILES["pdfFile"]["error"] == UPLOAD_ERR_NO_FILE){
+  echo '<script>alert("PDF Does Not Exist");</script>';
+}
+else{
+  $fileName = $_FILES["pdfFile"]["name"];
+  $fileSize = $_FILES["pdfFile"]["size"];
+  $tmpName = $_FILES["pdfFile"]["tmp_name"];
+
+  $validImageExtension = ['pdf'];
+  $imageExtension = explode('.', $fileName);
+  $imageExtension = strtolower(end($imageExtension));
+
+  if (!in_array($imageExtension, $validImageExtension)){
+    echo '<script>alert("Invalid PDF Extension");</script>';
+  }
+  else{
+    $newImageName = uniqid();
+    $newImageName .= '.' . $imageExtension;
+
+    move_uploaded_file($tmpName, '../../xlshfiles/' . $newImageName);
+
+    $query = "UPDATE `tasks` SET `file_name` = '$newImageName' WHERE task_id = '$task_id'";
+    $stmt = mysqli_prepare($conn, $query);
+
+    // mysqli_stmt_bind_param($stmt, 'ss',$newImageName,$task_id);
+    $result = mysqli_stmt_execute($stmt);
+
+    if($result){
+      echo "Inserted into database";
+    }
+    else{
+      echo "Not inserted";
     }
     
+    echo '<script>alert("PDF uploaded successfully.");</script>';
+  }
+}
+?>
+  <script>
+    location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/task_employee.php";
+  </script>
+<?php
+}
+else
+{
+  $sql = "UPDATE tasks SET status='$status' WHERE e_id=$sessionid AND task_id=$task_id";
+        $result = mysqli_query($conn, $sql);
+        ?>
+        <script>
+            alert("Updated as <?php echo $status; ?>");
+            location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Employeesite/task_employee.php";
+        </script>
+        <?php
+}
 ?>

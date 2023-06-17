@@ -55,7 +55,7 @@
           </a>
         </li>
         <li>
-          <a href="http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html" class="logo last">
+          <a href="../unsetvariable.php?unset=true" class="logo last">
             <img src="icons_emp/logout.png" style="width: 44px;height: 35px;" alt="" />
             <span class=" nav-text">Log-Out</span>
           </a>
@@ -68,7 +68,7 @@
             
             <div class="card pending">Pending Task <span id="pending"></span></div>
             <div class="card ongoing">On-Going Task <span id="ongoing"></span></div>
-            <div class="card completed">Completed <span id="completed"> </span></div>
+            <div class="card completed">Completed Task<span id="completed"> </span></div>
         </div>
 
     </div>
