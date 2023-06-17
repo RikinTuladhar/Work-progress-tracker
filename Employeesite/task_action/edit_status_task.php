@@ -89,7 +89,9 @@ button[type="submit"]
                   <option value="On-going">On-going</option>
                   <option value="Completed">Completed</option>
                   </select> 
-                  <input type="file" id="fileInput" name="xlsh" accept=".xlsx, .xls">
+                  <!-- <input type="file" id="fileInput" name="xlsh" accept=".xlsx, .xls"> -->
+                  <!-- <input type="file" id="fileInput" name="xlsh" accept="application/pdf> -->
+                  <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf">
                   <button type="submit">submit</button>
                   </div>
 
@@ -107,15 +109,15 @@ button[type="submit"]
         var form = document.querySelector("form");
         //select select tag for change 
         var statusSelect = document.getElementById('status');
-        var fileInput = document.getElementById('fileInput');
+        var pdfFile = document.getElementById('pdfFile');
         // Add an event listener to detect changes in the select element
-        fileInput.disabled = true;
+        pdfFile.disabled = true;
      statusSelect.addEventListener('change', function() {
      var selectedValue = statusSelect.value;
 
          // Enable or disable the file input based on the selected value
        if (selectedValue === 'Completed') {
-          fileInput.disabled = false;
+        pdfFile.disabled = false;
         } 
         else {
         fileInput.disabled = true;

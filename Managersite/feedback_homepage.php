@@ -103,22 +103,9 @@
             <td><?php  echo $row['end_date'] ?></td>
             <!-- for file to be downloaded -->
             <script>
-              var fileUrl = new URL("../xlshfiles/",window.location.href);
-              //create a link element 
-              var downloadlink = document.createElement('a');
-              //set the link attribute 
-              downloadlink.href = fileUrl.href;
-              downloadlink.download = '<?php echo $row['file_name'];?>';
-              downloadlink.textContent = 'Download File';
-            </script>
-
-            <td id="file_here<?php echo $a; ?>"></td>
-            <script>
-              var file_here = document.getElementById("file_here<?php echo $a; ?>");
-              file_here.appendChild(downloadlink);
-            </script>
-
-
+              </script>
+              <!-- can download file -->
+              <td><a href="../xlshfiles/<?php echo $row['file_name']?>" download >Download</a></td>
             <!-- <td> -->
                 <?php
                 //  echo $row['task_id'];
