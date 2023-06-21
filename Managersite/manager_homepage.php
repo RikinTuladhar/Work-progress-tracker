@@ -76,8 +76,8 @@
 
       ?>
       <div class="total_container"> <h3>Total Department <?php echo $result_department; ?></h3></div>
-      <div class="total_container"> <h3>Total Tasks <?php echo "$result_task";?></h3></div>
-      <div class="total_container"> <h3>Total Employee <?php echo $result_employee; ?></h3></div>
+      <div class="total_container" id="total_tasks"> <h3>Total Tasks <?php echo "$result_task";?></h3></div>
+      <div class="total_container" id="total_employee"> <h3>Total Employee <?php echo $result_employee; ?></h3></div>
       
     </div>
       <div class="details">
@@ -167,4 +167,17 @@
     }
 ?>
   </body>
+  <script>
+    var total_tasks = document.getElementById("total_tasks");
+    total_tasks.addEventListener("click",function(){
+      total_tasks.style.cursor="pointer";
+      location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    })
+    var total_employee = document.getElementById("total_employee");
+    total_employee.addEventListener("click",function(){
+      total_tasks.style.cursor="pointer";
+      location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php";
+    })
+
+  </script>
 </html>

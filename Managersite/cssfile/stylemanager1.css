@@ -27,7 +27,6 @@ nav {
   display: flex;
   transition: all 0.5s ease;
   margin: 10px 5px 0 10px;
-
 }
 .logo img {
   width: 45px;
@@ -67,7 +66,7 @@ a:hover {
   background-color: #828486b9;
 }
 nav:hover {
-  width: 210px;
+  width: 250px;
   transform: all 0.5s ease;
 }
 .last {
@@ -96,7 +95,9 @@ nav:hover {
   justify-content: center;
   align-items: flex-start;
 }
-
+.total_container {
+  border-radius: 20px;
+}
 .content {
   margin: auto;
   padding: 30px;
