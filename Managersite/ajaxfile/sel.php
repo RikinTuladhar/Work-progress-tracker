@@ -50,4 +50,4 @@ else
 }
 
 
-?>
+?><?php  $conn->close();  ?>

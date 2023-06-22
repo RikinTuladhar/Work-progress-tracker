@@ -89,6 +89,6 @@ if($_FILES["image"]["error"] == 4){
     }
     
 
-  }
+  }$conn->close();
     ?>
     

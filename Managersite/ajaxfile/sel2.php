@@ -52,4 +52,4 @@ else
 }
     
     
-    ?>
+    ?><?php  $conn->close();  ?>

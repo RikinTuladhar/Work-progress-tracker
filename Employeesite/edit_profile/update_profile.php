@@ -54,4 +54,4 @@ else{
     echo "";
 }
 
-?>
+?><?php  $conn->close();  ?>

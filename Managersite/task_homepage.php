@@ -304,4 +304,5 @@ $("#search_input").keyup(function(){
     }
 ?>
   </body>
+  <?php  $conn->close();  ?>
 </html>

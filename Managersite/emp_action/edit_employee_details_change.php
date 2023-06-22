@@ -24,3 +24,4 @@ if($result)
     header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
 }
 }
+$conn->close();  ?>

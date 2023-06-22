@@ -160,7 +160,7 @@
         </table> -->
       </div>
             <?php
-          $conn->close();
+         
     }
     else{
       echo "";
@@ -180,4 +180,5 @@
     })
 
   </script>
+  <?php  $conn->close();  ?>
 </html>

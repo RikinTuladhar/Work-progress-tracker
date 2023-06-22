@@ -92,6 +92,7 @@
               <th>Email</th>
               <th>Last Name</th>
               <th>Phone</th>
+              <th>View</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -265,6 +266,7 @@ function hidePopup() {
     else{
       echo "";
     }
+    $conn->close();
 ?>
   </body>
 

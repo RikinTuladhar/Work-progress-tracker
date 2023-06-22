@@ -23,4 +23,5 @@ session_start();
             <?php
 
          }
+        $conn->close();
 ?>

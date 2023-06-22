@@ -166,13 +166,14 @@
     </table> -->
   </div>
         <?php
-      $conn->close();
+ 
       ?>
 <?php
     }
     else{
       echo "";
     }
+    $conn->close();
 ?>
     
 </body>

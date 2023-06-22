@@ -1,7 +1,0 @@
-<?php 
-
-$var;
-echo $var;
-
-
-?>
