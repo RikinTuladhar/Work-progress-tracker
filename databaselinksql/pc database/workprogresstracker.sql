@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2023 at 01:54 PM
+-- Generation Time: Jun 22, 2023 at 07:05 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -80,7 +80,7 @@ INSERT INTO `employee` (`eid`, `d_id`, `emp_name`, `emp_email`, `emp_lastname`, 
 (152, NULL, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (153, NULL, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (154, NULL, 'labi', 'labi@gmail.com', '', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', NULL, 'Kalimati', 21, 'Hawa', 'Bca', 'I am cool ', 'I like reading books and playing games.');
+(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.');
 
 -- --------------------------------------------------------
 
@@ -153,10 +153,10 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`) VALUES
-(59, NULL, '`1', 'Completed', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648daa60b0845.pdf', ''),
-(60, NULL, '2', 'Completed', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648d918e74a5b.pdf', ''),
-(61, NULL, 'pdf see', 'Completed', 'complete it on time ', '2023-06-17', '2023-06-17', NULL, 155, 1, '648daab1ad145.pdf', 'good job '),
-(62, NULL, 'change css', 'Completed', 'do it in proper way', '2023-06-18', '2023-06-18', NULL, 155, 1, '648dfa767cd07.pdf', 'well  ');
+(59, NULL, '`1', 'Pending', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648daa60b0845.pdf', ''),
+(60, NULL, '2', 'On-going', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648d918e74a5b.pdf', ''),
+(61, NULL, 'pdf see   ', 'Completed', 'complete it on time ', '2023-06-17', '2023-06-17', NULL, 155, 1, '64946a535104f.pdf', ''),
+(62, NULL, 'change css', 'Completed', 'do it in proper way', '2023-06-18', '2023-06-18', NULL, 155, 1, '64946a9522ec7.pdf', '');
 
 --
 -- Indexes for dumped tables

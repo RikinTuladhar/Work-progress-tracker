@@ -71,10 +71,9 @@
             font-weight: 100;
             }
         .flex-box {
-                     display: flex;
-                      justify-content: space-evenly;
-                     align-content: center;
-                    flex-wrap: wrap;
+                     display: grid;
+                    grid-template-columns: auto  max-content;
+                    flex-wrap: wrap; 
                     margin: 20px;
         }
         .spacingtop{
@@ -244,6 +243,8 @@
                         <br>
                         <textarea name="About_Your_Self" id="About_Your_Self" style="width: 691px;height: 110px;"><?php echo $row['About-Your-Self'];?></textarea>
                     </div>
+                    <label for="image">Image</label><br>
+                    <input type="file" name="image" accept=".jpg, .png, .jpeg">
                     <div id="button_middle">
                         <button type="submit" style="padding: 10px; border-radius:10px;" >Submit</button>
                     </div>
@@ -262,10 +263,8 @@
 
         <aside>
             <div class="card">
-            
                 <h1> Details </h1>
-                <?php echo $row['em_img'];?>
-                <img src="/Managersite/uploads/<?php echo $row['em_img'];?>" alt="profile" height="150px" width="150px">
+                <img src="../Managersite/uploads/<?php echo $row["em_img"];?>"  alt="profile" height="150px" width="150px">
                 <div><h3>Name: <?php echo $row['emp_name'];?></h3></div>
                 <div><h3>Age: <?php echo $row['Age'];?></h3></div>
                 <div><h3>Location: <?php echo isset($row['location']) ? $row['location'] : 'no location'; ?></h3></div>
