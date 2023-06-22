@@ -264,7 +264,8 @@
             <div class="card">
             
                 <h1> Details </h1>
-                <img src="icons_emp/employee.png" alt="profile" height="150px" width="150px">
+                <?php echo $row['em_img'];?>
+                <img src="/Managersite/uploads/<?php echo $row['em_img'];?>" alt="profile" height="150px" width="150px">
                 <div><h3>Name: <?php echo $row['emp_name'];?></h3></div>
                 <div><h3>Age: <?php echo $row['Age'];?></h3></div>
                 <div><h3>Location: <?php echo isset($row['location']) ? $row['location'] : 'no location'; ?></h3></div>
