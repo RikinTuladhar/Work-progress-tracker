@@ -102,7 +102,7 @@
               <tr>
                 <td><?php echo $idnum?> </td>
                 <td><?php echo $row['task_title'];?></td>
-                <td><?php echo $row['task_description'];?></td>
+                <td><a href="../../description_tasks/<?php echo $row['task_description']?>" download >Download</a></td>
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>

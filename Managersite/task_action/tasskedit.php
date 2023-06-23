@@ -67,7 +67,7 @@ select#E-Name {
 
             <div id="container">
                 
-                <form action="task_edit_content.php" method="post">
+                <form action="task_edit_content.php" method="post" enctype="multipart/form-data" >
 
 
 
@@ -80,9 +80,9 @@ select#E-Name {
                     <input type="text" name="status" value="<?php echo $row['status'] ?>"><br>
                     
                     <label for="">Description</label>   
-                    <textarea name="Description" id="Description" cols="30" rows="10" value=""><?php echo  $row['task_description']?></textarea>
+                    <input type="file" name="desc_file" accept=".pdf, .xls, .xlsx, .ppt, .docx, .pptx ">
                     <br>
-                    
+                    <br>
                     <label for="">start date</label>    
                     <input type="date" name="startdate" value="<?php echo $row['start_date'] ?>"><br>
                     <br>
