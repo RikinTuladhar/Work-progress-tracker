@@ -152,7 +152,7 @@
     <span class="close" onclick="hidePopup()">&times;</span>
     <h2 style="text-align: center;margin-bottom: 2px;">Add New Task </h2>
     <hr>
-    <form action="task_action/taskadd.php" method="post">
+    <form action="task_action/taskadd.php" method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="margin-content">
         <br><label for="Name" class="large-input">Task Name</label><br>
@@ -220,7 +220,12 @@
       <div class="row">
         <div class="margin-content">
       <br><label class="large-input" for="Description">Description</label><br>
-      <br><textarea name="Description" id="" cols="30" rows="10" style="height: 43px; width: 334px;"></textarea><br>
+      <br>
+      <!-- <textarea name="Description" id="" cols="30" rows="10" style="height: 43px; width: 334px;"></textarea> -->
+       <!-- chnaged to uploading file -->
+       <input type="file" name="desc_file" accept=".pdf, .xls, .xlsx, .ppt, .docx, .pptx ">
+      <br>
+      <br>
       </div>
       </div>
       <div class="row">
@@ -304,4 +309,5 @@ $("#search_input").keyup(function(){
     }
 ?>
   </body>
+  <?php  $conn->close();  ?>
 </html>

@@ -71,9 +71,10 @@
             font-weight: 100;
             }
         .flex-box {
-                     display: grid;
-                    grid-template-columns: auto  max-content;
-                    flex-wrap: wrap; 
+                     display: flex;
+                      justify-content: space-evenly;
+                     align-content: center;
+                    flex-wrap: wrap;
                     margin: 20px;
         }
         .spacingtop{
@@ -135,9 +136,8 @@
             if($conn->connect_error){
                 die('Connection failed'.mysqli_connect_error());
             }
-            $sessionid = $_SESSION['username'];
-            $sessionid =$_SESSION['id'];
-            $sql = "SELECT * FROM employee WHERE eid = $sessionid";
+            $e_id =$_GET['eid']; 
+            $sql = "SELECT * FROM employee WHERE eid = $e_id";
             $result = mysqli_query($conn,$sql);
             if(!$result){
                 echo "Query error";
@@ -146,111 +146,7 @@
 
             
     ?>
-        <div class="popup" id="popup">
-            <div class="popup-content">
-                <span style="float: right;font-size:20px" class="close" onclick="hidePopup() ">x</span>
-                <h2 >Edit Profile</h2>
-                <hr>
-                <form action="./edit_profile/update_profile.php" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="margin-content">
-                            <br>
-                            <label for="">Name</label>
-                            <br>
-                            <br>
-                            <input type="text" name="emp_name" placeholder="Name" value="<?php echo $row['emp_name'];?>"><br>
-                        </div>
-                        <div class="margin-content">
-                            <br>
-                            <label for="">Last Name</label>
-                            <br>
-                            <br>
-                            <input type="text" name="emp_lastname" placeholder="Last Name" value="<?php echo $row['emp_lastname'];?>"><br> 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Email</label>
-                            <br>
-                            <br>
-                            <input type="text" id="email"  name="emp_email" placeholder="Email" value="<?php echo $row['emp_email'];?>" required><br>
-                        </div>
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Phone</label>
-                            <br>
-                            <br>
-                            <input type="text" name="emp_phone" id="phone" placeholder="Phone" value="<?php echo $row['emp_phone'];?>"><br>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Location</label>
-                            <br>
-                            <br>
-                            <input type="text" name="location" placeholder="Location" value="<?php echo $row['location'];?>"><br>
-                        </div>
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Age</label>
-                            <br>
-                            <br>
-                            <input type="text" name="Age" id="Age" placeholder="Age" value="<?php echo $row['Age'];?>"><br>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Experence</label>
-                            <br>
-                            <br>
-
-                            <input type="text" name="Experence" placeholder="Experence" value="<?php echo "{$row['Experence']}";?>"><br>
-                        </div>
-                        <div class="margin-content">
-                        <br>
-                        
-                            <label for="">Degree</label>
-                            <br>
-                            <br>
-                            <input type="text" name="Degree" placeholder="Degree" value="<?php echo $row['Degree'];?>"><br>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="margin-content">
-                        <br>
-                            <label for="">Short-detail</label>
-                            <br>
-                            <br>
-                            <input type="text" name="Short_detail" placeholder="Short-detail" value="<?php echo $row['Short-detail'];?>"><br>
-                        </div>
-                        <div class="margin-content" >
-                        <br>
-                            <!-- <label for="">Profile-Pic</label> -->
-                            <label for="">Password</label>
-                            <br>
-                            <br>
-                            <!-- <input name="profile_pic" type="file"><br> -->
-                            <input type="text" name="e_pw" id="e_pw" value="<?php echo $row['e_pw'] ?>">
-                        </div>
-                    </div>
-                    <div class="margin-content">
-                    <br>
-                        <label for="">About Your Self</label>
-                        <br>
-                        <br>
-                        <textarea name="About_Your_Self" id="About_Your_Self" style="width: 691px;height: 110px;"><?php echo $row['About-Your-Self'];?></textarea>
-                    </div>
-                    <label for="image">Image</label><br>
-                    <input type="file" name="image" accept=".jpg, .png, .jpeg">
-                    <div id="button_middle">
-                        <button type="submit" style="padding: 10px; border-radius:10px;" >Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+      
 
 
 
@@ -263,8 +159,9 @@
 
         <aside>
             <div class="card">
+            
                 <h1> Details </h1>
-                <img src="../Managersite/uploads/<?php echo $row["em_img"];?>"  alt="profile" height="150px" width="150px">
+                <img src="uploads/<?php echo $row['em_img'];?>" alt="profile" height="150px" width="150px">
                 <div><h3>Name: <?php echo $row['emp_name'];?></h3></div>
                 <div><h3>Age: <?php echo $row['Age'];?></h3></div>
                 <div><h3>Location: <?php echo isset($row['location']) ? $row['location'] : 'no location'; ?></h3></div>
@@ -273,8 +170,7 @@
               
                 
             </div>
-            <button onclick="showpopup()" 
-            style="margin-top:10px;padding: 3px; border-radius:10px;">Edit Profile</button>
+
         </aside>
 
 

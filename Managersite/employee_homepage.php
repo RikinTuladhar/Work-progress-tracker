@@ -92,6 +92,7 @@
               <th>Email</th>
               <th>Last Name</th>
               <th>Phone</th>
+              <th>View</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -246,11 +247,18 @@ function hidePopup() {
       let form = document.querySelector("form");
       form.addEventListener("submit",function(event){
         event.preventDefault();
+        let name = document.querySelector("#Name").value;
         let Phonenumber = document.querySelector("#Phone").value;
+        let email =document.querySelector("#Email").value;
+        let password =document.querySelector("#Password").value;
+        if(name === '' ||Phonenumber==='' || email ==='' ||password==='')
+        {
+          alert("Fill form");
+          return;
+        }
           // alert(Phonenumber);
           if(Phonenumber.length === 10)
           {
-
           }
           else{
             alert("Invalid Phone number");
@@ -265,6 +273,7 @@ function hidePopup() {
     else{
       echo "";
     }
+    $conn->close();
 ?>
   </body>
 

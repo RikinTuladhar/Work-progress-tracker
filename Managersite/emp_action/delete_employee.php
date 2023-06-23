@@ -11,4 +11,4 @@ if($stm)
     header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
 }
 
-?>
+?><?php  $conn->close();  ?>

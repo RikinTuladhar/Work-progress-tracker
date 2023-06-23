@@ -119,4 +119,5 @@ form.addEventListener("submit", function(event) {
 });
 
 </script>
+<?php  $conn->close();  ?>
 </html>

@@ -66,10 +66,9 @@ a:hover {
   background-color: #828486b9;
 }
 nav:hover {
-  width: 210px;
+  width: 250px;
   transform: all 0.5s ease;
 }
-
 .last {
   position: absolute;
   bottom: 10px;
@@ -246,4 +245,5 @@ td {
   width: 80px;
   height: 40px;
   font-size: 15px;
+  margin-left: 295px;
 }

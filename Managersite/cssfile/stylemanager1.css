@@ -27,7 +27,6 @@ nav {
   display: flex;
   transition: all 0.5s ease;
   margin: 10px 5px 0 10px;
-
 }
 .logo img {
   width: 45px;
@@ -67,7 +66,7 @@ a:hover {
   background-color: #828486b9;
 }
 nav:hover {
-  width: 210px;
+  width: 250px;
   transform: all 0.5s ease;
 }
 .last {
@@ -87,16 +86,15 @@ nav:hover {
   padding: 10px;
 }
 .container {
-  display: flex;
   width: auto;
   min-height: 100vh;
   background-color: #d9d9d9;
   margin-left: 68px;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
 }
-
+.total_container {
+  border-radius: 20px;
+}
 .content {
   margin: auto;
   padding: 30px;
@@ -174,7 +172,7 @@ td {
 
 .total_container {
   margin: 29px;
-  padding: 26px;
+  padding: 54px;
 }
 #total {
   background-color: #d9d9d9;
@@ -182,12 +180,11 @@ td {
   height: 30px;
 }
 div#total {
-  display: flex;
-  margin-top: 7px;
+  display: grid;
+  margin-left: 20px;
+  grid-template-columns: auto auto auto;
   margin-bottom: 91px;
   padding: 0px;
-  flex-direction: row;
-  align-items: flex-start;
 }
 .total_container {
   background-color: #9f84b4;

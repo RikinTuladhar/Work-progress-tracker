@@ -28,7 +28,6 @@ if($count > 0 )
 <?php
 } 
 else{
-    
     $insert = "insert into login (username,	password,email)values('$username','$password','$email')";
    if( mysqli_query($conn,$insert))
    {
@@ -38,7 +37,6 @@ window.location.href = "http://localhost/work-progress-tracker/Work-progress-tra
     <?php
    }
 }
-
 $conn->close();
 
 ?>

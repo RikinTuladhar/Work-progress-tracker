@@ -62,80 +62,44 @@
       {
         die($conn->connect_error);
       }
+      //total tasks
       $sql_tasks="select *  from  tasks";
       $task = mysqli_query($conn,$sql_tasks);
       $result_task  = $task -> num_rows;
 
+      //total Department
       $sql_department = "select * from department";
       $department = mysqli_query($conn,$sql_department);
       $result_department = $department->num_rows;
-
+ 
+      //total employee
       $sql_employee = "select * from employee";
       $employee = mysqli_query($conn,$sql_employee);
       $result_employee = $employee -> num_rows;
 
+      //for total tasks status
+      $sql_pending = "SELECT * FROM `tasks` WHERE status = 'Pending';";
+      $pending = mysqli_query($conn,$sql_pending);
+      $result_pending = $pending ->num_rows;
+      $sql_on_going = "select * from tasks where status='On-going'";
+      $on_going =mysqli_query($conn,$sql_on_going);
+      $result_on_going= $on_going->num_rows; 
+      $sql_completed = "select * from tasks where status= 'Completed'";
+      $completed = mysqli_query($conn,$sql_completed);
+      $result_completed=$completed ->num_rows;
       ?>
       <div class="total_container"> <h3>Total Department <?php echo $result_department; ?></h3></div>
-      <div class="total_container"> <h3>Total Tasks <?php echo "$result_task";?></h3></div>
-      <div class="total_container"> <h3>Total Employee <?php echo $result_employee; ?></h3></div>
+      <div class="total_container" id="total_tasks"> <h3>Total Tasks <?php echo "$result_task";?></h3></div>
+      <div class="total_container" id="total_employee"> <h3>Total Employee <?php echo $result_employee; ?></h3></div>
+      <div class="total_container" id="total_employee"> <h3>Total Pending tasks <?php echo $result_pending ; ?></h3></div>
+      <div class="total_container" id="total_employee"> <h3>Total On-going tasks <?php echo $result_on_going ; ?></h3></div>
+      <div class="total_container" id="total_employee"> <h3>Total Completed tasks <?php echo $result_completed ; ?></h3></div>
       
     </div>
-      <div class="details">
-        <h2>Task Progress</h2>
-        <div class="project_table">
-          <table>
-            <tr>
-              <th>#</th>
-              <th>Task Title</th>
-              <th>Assigned</th>
-              <!-- <th>Progress</th> -->
-              <th>Status</th>
-              <th>Start-Date</th>
-              <th>End-Date</th>
-              <!-- <th>View</th> -->
-            </tr>
-            <?php 
-            $sql_task_list = "select task_title,emp_name,status,start_date,end_date from tasks LEFT OUTER JOIN employee on tasks.e_id =employee.eid ";
-            $result  =  mysqli_query($conn,$sql_task_list);
-            $idnum= 1;
-            if($result->num_rows > 0 )
-            {
-            for($a=0 ; $a<10 ; $a++)
-            {
-              $row = $result->fetch_assoc();
-              if(empty($row['task_title'])){
-                echo '';
-              }
-              else
-              {
-              ?>
-              <tr>
-                <td><?php echo $idnum ?></td>
-                <td><?php  echo $row['task_title'] ?></td>
-                <td><?php  echo $row['emp_name'] ?></td>
-                <td><?php  echo $row['status'] ?></td>
-                <td><?php  echo $row['start_date'] ?></td>
-                <td><?php  echo $row['end_date'] ?></td>
-                <!-- <td> -->
-                  <?php  
-                  // echo "view";
-                   ?>
-              <!-- </td> -->
-              </tr>
-
-              <?php 
-              $idnum++;
-              }
-            }
-          }
-          else{
-              echo '';
-          }
-
-            ?>
-
-          </table>
-        </div>
+      <!-- <div class="details"> -->
+  
+        
+          
 
         <!-- <img src="" alt="imgemp" />
         
@@ -160,11 +124,25 @@
         </table> -->
       </div>
             <?php
-          $conn->close();
+         
     }
     else{
       echo "";
     }
 ?>
   </body>
+  <script>
+    var total_tasks = document.getElementById("total_tasks");
+    total_tasks.addEventListener("click",function(){
+      total_tasks.style.cursor="pointer";
+      location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    })
+    var total_employee = document.getElementById("total_employee");
+    total_employee.addEventListener("click",function(){
+      total_tasks.style.cursor="pointer";
+      location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php";
+    })
+
+  </script>
+  <?php  $conn->close();  ?>
 </html>
