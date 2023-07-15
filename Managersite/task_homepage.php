@@ -208,7 +208,7 @@
             while($row_employee = $result_employee->fetch_assoc())
             {
               ?>
-              <option value="<?php echo $row_employee['eid'];?>"><?php echo $row_employee['emp_name'];?></option>
+              <option value="<?php echo $row_employee['eid'];?>"><?php echo $row_employee['emp_name'] ."\t" .$row_employee['emp_lastname'] ;?></option>
               <?php
             }
           }
@@ -247,9 +247,54 @@ function showPopup() {
 
 function hidePopup() {
   document.getElementById("popup").style.display = "none";
-  document.querySelector(".blur-effect").style.filter= "none";
-  
+  document.querySelector(".blur-effect").style.filter= "none"; 
 }
+//validation for date
+var form = document.querySelector("form");
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+  var Start_date = document.getElementById("Start-Date").value;
+  var End_Date = document.getElementById("End-Date").value;
+
+  // Parse the dates as Date objects for comparison
+  var startDateObj = new Date(Start_date);
+  var endDateObj = new Date(End_Date);
+
+  // Get the current date as a string in the format "yyyy-MM-dd"
+  var currentDate = new Date();
+  var currentFullYear = currentDate.getFullYear();
+  var currentMonth = currentDate.getMonth() + 1;
+  var currentDateOfMonth = currentDate.getDate();
+  // var currentDateStr = currentFullYear + "-" + currentMonth + "-" + currentDateOfMonth;
+
+  // Compare the end date with the current date
+  if (endDateObj < startDateObj) {
+    alert("End date is in the past.");
+  } else {
+    // alert("End date is either today or in the future.");
+    var diff = calculateDateDifference(startDateObj, endDateObj);
+    alert("Days left:"+ diff);
+    form.submit();
+  }
+  function calculateDateDifference(startDateStr, endDateStr) {
+  // Parse the input dates as Date objects
+  const startDate = new Date(startDateStr);
+  const endDate = new Date(endDateStr);
+
+  // Calculate the difference between the two dates in milliseconds
+  const differenceInMs = endDate - startDate;
+
+  // Convert the difference to days
+  const differenceInDays = differenceInMs / (1000 * 60 * 60 * 24);
+
+  // Return the difference in days as a positive integer (rounded down)
+  return Math.floor(differenceInDays);
+}
+
+
+
+})
+
 
     </script>
     <script>

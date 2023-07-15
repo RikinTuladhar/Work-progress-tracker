@@ -117,18 +117,17 @@ nav:hover {
   height: auto;
   margin: 30px;
   padding: 20px;
-  background-color: #b8bd9b;
+  background-color: #f6f6f6;
 }
-tr:nth-child(even){
+tr:nth-child(even) {
   background-color: #b8bd9bb5;
 }
-tr:nth-child(odd){
+tr:nth-child(odd) {
   background-color: #6d725594;
 }
 
-
 th {
-  background-color: #6d7255;
+  background-color: #77776c;
 }
 th,
 td {
