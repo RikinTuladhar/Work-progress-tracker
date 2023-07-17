@@ -126,7 +126,7 @@
                 $idnum++;
                 }
               }
-              $conn->close();
+      
                 ?>
             </table>
         </div>
@@ -157,4 +157,3 @@
     ?>
   </body>
 </html>
-<?php  $conn->close();  ?>

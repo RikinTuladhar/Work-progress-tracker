@@ -123,7 +123,7 @@
                 $idnum++;
                 }
               }
-              $conn->close();
+      
                 ?>
             </table>
         </div>

@@ -15,11 +15,11 @@
             
         }
         #form_data{
-        
+            border-radius: 10%;
             width:auto;
             height:400px;
             background-color:gray;
-            padding:20px;
+            padding:40px;
         }
         .flex_row{
             display: flex;
@@ -32,10 +32,15 @@
 }
 select#status {
     margin-top: 20px;
+    padding: 5px;
+    border-radius: 15%;
 }
 button[type="submit"]
 {
     margin-top:30px;
+    padding: 10px;
+  border-radius: 20%;
+  margin-left: 163px;
 }
     </style>
 </head>
@@ -92,8 +97,8 @@ button[type="submit"]
                   <!-- <input type="file" id="fileInput" name="xlsh" accept=".xlsx, .xls"> -->
                   <!-- <input type="file" id="fileInput" name="xlsh" accept="application/pdf> -->
                   <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf">
-                  <button type="submit">submit</button>
-                  </div>
+                </div>
+                <button type="submit">submit</button>
 
 
             <?php

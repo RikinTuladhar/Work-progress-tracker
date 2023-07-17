@@ -74,20 +74,40 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
+          <th>Days-Took</th>
           <th>Files</th>
           <th>Feedback</th>
         </tr>
         <?php 
         //data of employee
-        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
+        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name,started_task,finished_task from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
         $result  =  mysqli_query($conn,$sql_task_list);
+
 
         $idnum= 1;
         if($result->num_rows > 0 )
         {
-        for($a=0 ; $a<10 ; $a++)
+        while($row = $result->fetch_assoc())
         {
-          $row = $result->fetch_assoc();
+          //days difference working
+          $started_task_db= $row['started_task'];
+          if(!isset($row['started_task']))
+          {
+            $started_task_db = "";
+          }
+          $started_task_db = $row['started_task'] ?? "";
+          $finished_task_db = $row['finished_task'] ?? "";
+          $started_task= new DateTime($started_task_db);
+          $finished_task= new DateTime($finished_task_db);
+  
+          $dateInterval = $finished_task->diff($started_task);
+          
+          
+          $daysDifference = $dateInterval->days;
+          $monthsDifference = $dateInterval->m;
+          $yearsDifference = $dateInterval->y;
+
+
           if(empty($row['task_title'])){
             echo '';
           }
@@ -101,6 +121,7 @@
             <td><?php  echo $row['status'] ?></td>
             <td><?php  echo $row['start_date'] ?></td>
             <td><?php  echo $row['end_date'] ?></td>
+            <td><?php  echo $daysDifference ?></td>
             <!-- for file to be downloaded -->
             <script>
               </script>
