@@ -10,7 +10,8 @@ session_start();
          {
           die($conn->connect_error);
          }
-         $sql = "UPDATE tasks SET feedback='$feedback',status='$status' where task_id =$task_id";
+         $null= NULL;
+         $sql = "UPDATE tasks SET feedback='$feedback',status='$status',started_task='$null', finished_task ='$null' where task_id =$task_id";
          
          if(mysqli_query($conn,$sql))
          {

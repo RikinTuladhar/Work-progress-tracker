@@ -168,7 +168,7 @@ td {
 }
 th,
 td {
-  padding: 15px;
+  padding: 10px;
 }
 
 .total_container {
@@ -193,4 +193,10 @@ div#total {
 }
 .total_container:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+button[type="submit"] {
+  margin-top: 47px;
+  padding: 10px;
+  border-radius: 20%;
+  margin-left: 163px;
 }

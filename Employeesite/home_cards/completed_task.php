@@ -148,7 +148,7 @@
         else{
           echo "";
         }
-        $conn->close();
+        
     ?>
     
   </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 07:05 PM
+-- Generation Time: Jul 17, 2023 at 09:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -68,19 +68,11 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `d_id`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
-(143, NULL, 'salina', 'salinamaharjan@gmail.com', 'maharjan', '', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(143, NULL, 'Salina', 'salinamaharjan@gmail.com', 'Maharjan', '9869456323', '123456', '64947f8a6a1fa.jpg', '', 21, '', '', '', ''),
 (144, NULL, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png', NULL, NULL, NULL, NULL, NULL, NULL),
-(145, NULL, 'design', 'rikin@gmail.com', 'ewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(146, NULL, 'ziva', 'ziva@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(147, NULL, 'ziva', 'ziva1@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(148, NULL, 'ziva', 'ziva12@gmail.com', 'qweqwe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(149, NULL, 'wqe', 'a@gmail.com', '213', '9869452356', '12323', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(150, NULL, 'gg', 'gg@gmail.com', 'wqewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(151, NULL, 'qwewqe', 'ghh@gmail.com', 'wqewqe', '9869452356', '1234', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(152, NULL, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(153, NULL, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (154, NULL, 'labi', 'labi@gmail.com', '', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.');
+(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.'),
+(156, NULL, 'Shuvaa', 'Shuvaa@gmail.com', 'maharjan', '9845345323', '123456', '64958bbbd369c.jpg', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,18 +137,18 @@ CREATE TABLE `tasks` (
   `e_id` int(11) DEFAULT NULL,
   `completed_task` tinyint(1) NOT NULL,
   `file_name` varchar(60) DEFAULT NULL,
-  `feedback` varchar(500) DEFAULT NULL
+  `feedback` varchar(500) DEFAULT NULL,
+  `started_task` date DEFAULT NULL,
+  `finished_task` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`) VALUES
-(59, NULL, '`1', 'Pending', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648daa60b0845.pdf', ''),
-(60, NULL, '2', 'On-going', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648d918e74a5b.pdf', ''),
-(61, NULL, 'pdf see   ', 'Completed', 'complete it on time ', '2023-06-17', '2023-06-17', NULL, 155, 1, '64946a535104f.pdf', ''),
-(62, NULL, 'change css', 'Completed', 'do it in proper way', '2023-06-18', '2023-06-18', NULL, 155, 1, '64946a9522ec7.pdf', '');
+INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`, `started_task`, `finished_task`) VALUES
+(78, NULL, 'Check', 'On-going', '', '2023-07-17', '2023-07-18', 1, 155, 1, NULL, '', '2023-07-17', '0000-00-00'),
+(79, NULL, 'Check 2', 'On-going', '', '2023-07-17', '2023-07-22', 1, 155, 0, NULL, NULL, '2023-07-17', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -211,7 +203,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -229,7 +221,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- Constraints for dumped tables

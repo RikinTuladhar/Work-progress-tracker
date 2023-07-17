@@ -8,10 +8,10 @@ $sql_task = "select * from employee";
 $result_task = mysqli_query($conn,$sql_task);
 
 $idnum = 1;
-
+// <th>Image</th>
 echo "<tr>
 <th>#</th>
-<th>Image</th>
+
 <th>Name</th>
 <th>Email</th>
 <th>Last Name</th>
@@ -34,7 +34,7 @@ if($result_task->num_rows > 0)
               <tr>
                   <!-- <td><img src="uploads/647af3b759df2.png" alt=""></td> -->
               <td><?php echo $idnum;?></td>
-              <td> <img src="uploads/<?php echo $row["em_img"];?>" width = 100px height= 80px title="<?php echo $row['em_img']; ?>"> </td>
+           
               <td><?php echo $row['emp_name'];?></td>
               <td><?php echo  $row['emp_email'];?></td>
               <td><?php echo  $row['emp_lastname'];?></td>
@@ -63,3 +63,14 @@ else{
 }
 $conn->close();
 ?>
+
+
+
+<!-- <td> <img src="uploads/
+<?php
+// echo $row["em_img"];
+?>" 
+width = 100px height= 80px title="<?php 
+// echo $row['em_img'];
+ ?>">
+  </td>
