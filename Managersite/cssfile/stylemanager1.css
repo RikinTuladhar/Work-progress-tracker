@@ -92,9 +92,7 @@ nav:hover {
   margin-left: 68px;
   flex-wrap: wrap;
 }
-.total_container {
-  border-radius: 20px;
-}
+
 .content {
   margin: auto;
   padding: 30px;
@@ -170,10 +168,6 @@ td {
   padding: 15px;
 }
 
-.total_container {
-  margin: 29px;
-  padding: 54px;
-}
 #total {
   background-color: #d9d9d9;
   width: auto;
@@ -188,6 +182,9 @@ div#total {
 }
 .total_container {
   background-color: #9f84b4;
+  margin: 55px;
+  padding: 40px;
+  border-radius: 10%;
 }
 .total_container:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
