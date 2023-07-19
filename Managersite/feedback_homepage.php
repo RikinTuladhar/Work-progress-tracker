@@ -74,7 +74,7 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
-          <th>Days-Took</th>
+          <th>Days-Taken</th>
           <th>Files</th>
           <th>Feedback</th>
         </tr>
@@ -126,7 +126,7 @@
             <script>
               </script>
               <!-- can download file -->
-              <td><a href="../xlshfiles/<?php echo $row['file_name']?>" download >Download</a></td>
+              <td><a href="../xlshfiles/<?php echo $row['file_name']?>" download ><img src="../icons/download-icon.png" alt="" srcset=""></a></td>
             <!-- <td> -->
                 <?php
                 //  echo $row['task_id'];
