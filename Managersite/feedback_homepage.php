@@ -80,7 +80,7 @@
         </tr>
         <?php 
         //data of employee
-        $sql_task_list = "select task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name,started_task,finished_task from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed'";
+        $sql_task_list = "SELECT task_id,task_title,emp_name,status,start_date,end_date,feedback,file_name,started_task,finished_task from tasks INNER JOIN employee on tasks.e_id =employee.eid where status='Completed' AND  NOT started_task = '0000-00-00'";
         $result  =  mysqli_query($conn,$sql_task_list);
 
 
@@ -109,6 +109,10 @@
 
 
           if(empty($row['task_title'])){
+            echo '';
+          }
+          elseif(empty($row['started_task']))
+          {
             echo '';
           }
           else

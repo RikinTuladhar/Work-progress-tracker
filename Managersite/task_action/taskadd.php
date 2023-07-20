@@ -41,12 +41,6 @@ else{
 
 }
 
-
-
-
-
-
-
 $items = [
     
     "task_title" => "$Name",
@@ -55,7 +49,10 @@ $items = [
     "start_date"=>"$StartDate",
     "end_date"=>"$EndDate",
     "m_id "=>"$ProjectManager",
-    "e_id"=>"$ProjectMember"
+    "e_id"=>"$ProjectMember",
+    "started_task" =>"NULL",
+    "finished_task"=>"NULL"
+
 ];
 
 $login -> insert($table,$items);
