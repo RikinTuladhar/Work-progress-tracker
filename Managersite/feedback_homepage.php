@@ -74,8 +74,8 @@
           <th>Status</th>
           <th>Start-Date</th>
           <th>End-Date</th>
-          <th>Days-Taken</th>
           <th>Files</th>
+          <th>View</th>
           <th>Feedback</th>
         </tr>
         <?php 
@@ -125,12 +125,12 @@
             <td><?php  echo $row['status'] ?></td>
             <td><?php  echo $row['start_date'] ?></td>
             <td><?php  echo $row['end_date'] ?></td>
-            <td><?php  echo $daysDifference ?></td>
             <!-- for file to be downloaded -->
             <script>
               </script>
               <!-- can download file -->
               <td><a href="../xlshfiles/<?php echo $row['file_name']?>" download ><img src="../icons/download-icon.png" alt="" srcset=""></a></td>
+              <td><a href="./ajaxfile/task_detail.php?task_id= <?php echo $row["task_id"]?>">View</a></td>
             <!-- <td> -->
                 <?php
                 //  echo $row['task_id'];
