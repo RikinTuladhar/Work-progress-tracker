@@ -93,8 +93,8 @@
               <th>Last Name</th>
               <th>Phone</th>
               <th>View</th>
-              <th>Edit</th>
-              <th>Delete</th>
+              <th>Edit Delete</th>
+              
             </tr>
             <?php 
               $conn = mysqli_connect("localhost","root","","workprogresstracker");

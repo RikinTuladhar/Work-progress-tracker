@@ -18,8 +18,8 @@ echo "<tr>
 <th>end date</th>
 <th>Description</th>
 <th>E-Name</th>
-<th>Edit</th>
-<th>Delete</th>
+<th>View</th>
+<th>Action</th>
 </tr>";
 if($result_task->num_rows > 0)
 {
@@ -37,8 +37,16 @@ if($result_task->num_rows > 0)
             <td><?php echo  $rows['end_date'] ?></td>
             <td><a href="./../description_tasks/<?php echo $rows['task_description']?>" download >Download</a></td>
             <td><?php echo $rows['emp_email']?></td>
-            <td><a href ="task_action/tasskedit.php?task_id= <?php echo $rows["task_id"] ?>">Edit</a></td>
-            <td><a href ="task_action/tasskdelete.php?task_id= <?php echo $rows["task_id"] ?>">Delete</a></td>
+            <td><a href="./ajaxfile/task_detail.php?task_id=  <?php echo $rows["task_id"]?>">View</a></td>
+            <td 
+            style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            ">
+            <a style=" margin-right: 10px;" href ="task_action/tasskedit.php?task_id= <?php echo $rows["task_id"] ?>"><img src="../icons/edit.png" alt="Edit" srcset="" width="27px" height="27px"></a> </a>
+            <a style=" margin-right: 10px;" href ="task_action/tasskdelete.php?task_id= <?php echo $rows["task_id"] ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
+            </td>
             </tr>
             <?php 
             $idnum++;

@@ -137,7 +137,7 @@ nav:hover {
   padding: 30px;
   background-color: #9f84b4;
   border-radius: 30px;
-  width: 70%;
+  width: auto;
 }
 
 .details:nth-child(1):hover {

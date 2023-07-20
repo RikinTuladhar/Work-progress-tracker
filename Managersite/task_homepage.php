@@ -35,19 +35,45 @@
       height: fit-content;
       margin: 100px auto;
       padding: 20px;
- 
-    
-
     }
     
     .close {
       float: right;
       cursor: pointer;
     }
-    
     .close:hover {
       color: red;
     }
+    /* for Task-detail */
+    .popuptask {
+      display: none;
+      position: absolute;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      
+    }
+    .popup-contentTask {
+      box-shadow: 0px 13px 15px 28px rgba(115, 114, 117, 0.562);
+      border-radius: 25px;
+      background-color: #9f84b4;
+      max-width: 700px;
+      height: fit-content;
+      margin: 100px auto;
+      padding: 20px;
+    }
+    .closeTask {
+      float: right;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: red;
+    }
+
+
     </style>
   </head>
   <body>
@@ -236,10 +262,25 @@
     
   </div>
 </div>
+
+<div id="popuptask" class="popuptask">
+ <div class="popup-contentTask ">
+ <span class="close" onclick="hidePopupTask()">&times;</span>
+    <div id="task-content">
+      <h1>Task Detail</h1>
+      <div class="data_content">
+          
+      </div>
+    </div>
+ </div>
+</div>
+
+
     </div>
     
 
     <script>
+//for pop up
 function showPopup() {
   document.getElementById("popup").style.display = "block";
   document.querySelector(".blur-effect").style.filter= "blur(8px)";
@@ -249,6 +290,7 @@ function hidePopup() {
   document.getElementById("popup").style.display = "none";
   document.querySelector(".blur-effect").style.filter= "none"; 
 }
+
 //validation for date
 var form = document.querySelector("form");
 form.addEventListener("submit",function(event){

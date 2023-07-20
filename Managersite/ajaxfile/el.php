@@ -17,8 +17,7 @@ echo "<tr>
 <th>Last Name</th>
 <th>Phone</th>
 <th>View</th>
-<th>Edit</th>
-<th>Delete</th>
+<th>Action</th>
 </tr>";
 
 if($result_task->num_rows > 0)
@@ -40,8 +39,15 @@ if($result_task->num_rows > 0)
               <td><?php echo  $row['emp_lastname'];?></td>
               <td><?php echo  $row['emp_phone'];?></td>
               <td><a href="emplyee_view.php?eid=<?php echo $row['eid']; ?>">View</a></td>
-              <td><a href="emp_action/edit_employee.php?eid=<?php echo $row['eid']; ?>">Edit</a></td>
-              <td><a href="emp_action/delete_employee.php?eid=<?php echo $row['eid']; ?>">Delete</a></td>
+              <td
+              style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center; 
+              ">
+              <a style=" margin-right: 10px;" href="emp_action/edit_employee.php?eid=<?php echo $row['eid']; ?>"><img src="../icons/edit.png" alt="Edit" srcset="" width="27px" height="27px"></a> 
+              <a style=" margin-right: 10px;" href="emp_action/delete_employee.php?eid=<?php echo $row['eid']; ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
+              </td>
             </tr>
             <?php
         // echo "<tr>

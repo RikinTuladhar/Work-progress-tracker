@@ -103,7 +103,7 @@
               <tr>
                 <td><?php echo $idnum?> </td>
                 <td><?php echo $row['task_title'];?></td>
-                <td><a href="./../description_tasks/<?php echo $row['task_description']?>" download >Download</a></td>
+                <td style="text-align: center;"><a href="./../description_tasks/<?php echo $row['task_description']?>" download > <img src="../icons/download-icon.png" alt="" srcset=""> </a></td>
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
