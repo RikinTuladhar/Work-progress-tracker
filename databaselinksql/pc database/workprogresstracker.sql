@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2023 at 09:41 AM
+-- Generation Time: Jul 20, 2023 at 10:01 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -147,8 +147,8 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`, `started_task`, `finished_task`) VALUES
-(78, NULL, 'Check', 'On-going', '', '2023-07-17', '2023-07-18', 1, 155, 1, NULL, '', '2023-07-17', '0000-00-00'),
-(79, NULL, 'Check 2', 'On-going', '', '2023-07-17', '2023-07-22', 1, 155, 0, NULL, NULL, '2023-07-17', '0000-00-00');
+(92, NULL, 'check2', 'Completed', '', '2023-07-20', '2023-07-20', 1, 155, 1, NULL, 'Well done ', '0000-00-00', '0000-00-00'),
+(93, NULL, 'check3', 'Completed', '', '2023-07-20', '2023-07-21', 1, 155, 1, '64b8e8821202a.pdf', 'Well done', '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -221,7 +221,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Constraints for dumped tables
