@@ -15,7 +15,13 @@ $ProjectMember=$_POST['Project-Member'];
 
 
 if($_FILES["desc_file"]["error"] == UPLOAD_ERR_NO_FILE){
-    echo '<script>alert("PDF Does Not Exist");</script>';
+    ?>
+  <script>
+    alert("PDF Does Not Exist")
+    location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    </script>
+  <?php
+  exit(1);
   }
 else{
     $validImageExtension =array("pdf", "xls", "xlsx", "ppt", "docx", "pptx");
@@ -25,13 +31,24 @@ else{
     $imageExtension = explode(".",$fileName);
     $imageExtension = strtolower(end($imageExtension));
     if(!in_array($imageExtension,$validImageExtension)){
-        echo
-        "<script> alert('Invalid extension');</script>";
-    }
+?>
+  <script>
+    alert("Invalid extention");
+    location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    </script>
+  <?php
+  exit(1);
+  }
     elseif($fileSize > 1000000)
     {
-        echo "<script> alert('File size to large');</script>";
-    }
+        ?>
+  <script>
+    alert("File size to big")
+    location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/task_homepage.php";
+    </script>
+  <?php
+  exit(1);
+  }
     else{
         if(move_uploaded_file($tempName,'../../description_tasks/'.$fileName))
         {

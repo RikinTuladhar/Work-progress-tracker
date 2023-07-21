@@ -83,9 +83,9 @@
                 <th>#</th>
                 <th>Task_title</th>
                 <th>Task_description</th>
-                <th>Start_date</th>
-                <th>End_date</th>
+             
                 <th>Status</th>
+                <th>View</th>
                 
                 <th>Action</th>
                 
@@ -106,10 +106,9 @@
                 <td><?php echo $idnum?> </td>
                 <td><?php echo $row['task_title'];?></td>
                 <td style="text-align: center;"><a href="./../description_tasks/<?php echo $row['task_description']?>" download > <img src="../icons/download-icon.png" alt="" srcset=""> </a></td>
-                <td><?php echo $row['start_date'];?></td>
-                <td><?php echo $row['end_date'];?></td>
+              
                 <td><?php echo $row['status'];?></td>
-                 
+                <td><a href="../Managersite/ajaxfile/task_detail.php?task_id=  <?php echo $row["task_id"]?>">View</a></td>
                   <td><a href="task_action/edit_status_task.php?task_id=<?php echo $task_id; ?>">Edit</a></td>
 
               
