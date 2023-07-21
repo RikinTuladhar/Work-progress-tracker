@@ -43,7 +43,7 @@ if($result_task->num_rows > 0)
                     justify-content: center; 
               ">
                <a style=" margin-right: 10px;" href="emp_action/edit_employee.php?eid=<?php echo $row['eid']; ?>"><img src="../icons/edit.png" alt="Edit" srcset="" width="27px" height="27px"></a> 
-              <a style=" margin-right: 10px;" href="emp_action/delete_employee.php?eid=<?php echo $row['eid']; ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
+              <a style=" margin-right: 10px;" onclick="return confirm('Do you want to Delete?')" href="emp_action/delete_employee.php?eid=<?php echo $row['eid']; ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
               </td>
             </tr>
             <?php 
