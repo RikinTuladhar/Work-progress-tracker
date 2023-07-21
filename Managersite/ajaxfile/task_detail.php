@@ -109,7 +109,7 @@
     <hr>
     <div class="flex-box">
       <h3>Task Title: <span ><?php echo $row['task_title'] ?></span></h3>
-      <h3>Task-Description: <span ><a style="color:black" href="./../description_tasks/<?php echo $rows['task_description']?>" download ><img src="../../icons/download-icon.png" alt="Download" srcset=""></a></span></h3>
+      <h3>Task-Description: <span ><a style="color:black" href="./../description_tasks/<?php echo $row['task_description']?>" download ><img src="../../icons/download-icon.png" alt="Download" srcset=""></a></span></h3>
     </div>
     
     <div class="flex-box">

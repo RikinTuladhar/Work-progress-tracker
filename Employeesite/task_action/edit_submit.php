@@ -39,7 +39,7 @@ else{
   $fileSize = $_FILES["pdfFile"]["size"];
   $tmpName = $_FILES["pdfFile"]["tmp_name"];
 
-  $validImageExtension = ['pdf'];
+  $validImageExtension = ['pdf','xls','xlsx'];
   $imageExtension = explode('.', $fileName);
   $imageExtension = strtolower(end($imageExtension));
 
@@ -56,9 +56,9 @@ else{
     $newImageName = uniqid();
     $newImageName .= '.' . $imageExtension;
 
-    move_uploaded_file($tmpName, '../../xlshfiles/' . $newImageName);
+    move_uploaded_file($tmpName, '../../xlshfiles/' . $fileName);
     //update when completed
-    $query = "UPDATE `tasks` SET `file_name` = '$newImageName',status='$status', completed_task='1', feedback='',finished_task = '$currentDateTime'   WHERE task_id = '$task_id'";
+    $query = "UPDATE `tasks` SET `file_name` = '$fileName',status='$status', completed_task='1', feedback='',finished_task = '$currentDateTime'   WHERE task_id = '$task_id'";
     $stmt = mysqli_prepare($conn, $query);
 
     // mysqli_stmt_bind_param($stmt, 'ss',$newImageName,$task_id);

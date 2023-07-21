@@ -15,15 +15,16 @@
 
         #container{
             display: flex;
-            width: 454px;
-            padding: 20px;
+            width: auto;
+            padding: 40px;
+            margin-top: 120px;
             height: auto;
-             background: aqua;
-                flex-direction: row;
-             flex-wrap: wrap;
-             align-content: center;
-             justify-content: center;
-             border-radius: 30px;
+            background: #9F84B4;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            border-radius: 30px;
 
         }
         input[type="text"] {
@@ -77,8 +78,19 @@ select#E-Name {
                     <input type="text" name="task_title" value="<?php echo $row['task_title'] ?>"><br>
 
                     <label for="">status</label>
-                    <input type="text" name="status" value="<?php echo $row['status'] ?>"><br>
-                    
+                    <!-- <input type="text" name="status" value=">-->
+                    <?php 
+                    // echo $row['status'] 
+                    ?> 
+                    <select name="status" id="">
+                        <option value="Pending">Pending</option>
+                        <option value="On-going">On-going</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <br>
+                    <br>
+
+
                     <label for="">Description</label>   
                     <input type="file" name="desc_file" accept=".pdf, .xls, .xlsx, .ppt, .docx, .pptx ">
                     <br>

@@ -46,7 +46,7 @@ for($a=0;$a<$val;$a++){
     justify-content: center; 
     ">
     <a style=" margin-right: 10px;" href ="task_action/tasskedit.php?task_id= <?php echo $rows["task_id"] ?>"><img src="../icons/edit.png" alt="Edit" srcset="" width="27px" height="27px"></a> </a>
-    <a style=" margin-right: 10px;"  href ="task_action/tasskdelete.php?task_id= <?php echo $rows["task_id"] ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
+    <a style=" margin-right: 10px;" onclick="return confirm('Do you want to Delete?')"  href ="task_action/tasskdelete.php?task_id= <?php echo $rows["task_id"] ?>"><img src="../icons/delete.png" alt="delete" srcset=""></a>
     </td>
     </tr>
     <?php 
