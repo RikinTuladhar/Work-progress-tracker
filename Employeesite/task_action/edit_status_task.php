@@ -96,7 +96,7 @@ button[type="submit"]
                   </select> 
                   <!-- <input type="file" id="fileInput" name="xlsh" accept=".xlsx, .xls"> -->
                   <!-- <input type="file" id="fileInput" name="xlsh" accept="application/pdf> -->
-                  <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf">
+                  <input type="file" name="pdfFile" id="pdfFile" accept="application/pdf,application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
                 </div>
                 <button type="submit">submit</button>
 

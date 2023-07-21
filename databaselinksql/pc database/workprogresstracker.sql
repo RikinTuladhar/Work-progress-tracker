@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2023 at 10:01 AM
+-- Generation Time: Jul 21, 2023 at 08:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -68,11 +68,7 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `d_id`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
-(143, NULL, 'Salina', 'salinamaharjan@gmail.com', 'Maharjan', '9869456323', '123456', '64947f8a6a1fa.jpg', '', 21, '', '', '', ''),
-(144, NULL, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png', NULL, NULL, NULL, NULL, NULL, NULL),
-(154, NULL, 'labi', 'labi@gmail.com', '', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.'),
-(156, NULL, 'Shuvaa', 'Shuvaa@gmail.com', 'maharjan', '9845345323', '123456', '64958bbbd369c.jpg', NULL, NULL, NULL, NULL, NULL, NULL);
+(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.');
 
 -- --------------------------------------------------------
 
@@ -147,8 +143,7 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`, `started_task`, `finished_task`) VALUES
-(92, NULL, 'check2', 'Completed', '', '2023-07-20', '2023-07-20', 1, 155, 1, NULL, 'Well done ', '0000-00-00', '0000-00-00'),
-(93, NULL, 'check3', 'Completed', '', '2023-07-20', '2023-07-21', 1, 155, 1, '64b8e8821202a.pdf', 'Well done', '0000-00-00', '0000-00-00');
+(96, NULL, 'check    ', 'Pending', 'Working_with_Dates_(JS).pdf', '2023-07-16', '2023-07-17', 1, 155, 1, 'check.xls', '', '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -203,7 +198,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -221,7 +216,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- Constraints for dumped tables

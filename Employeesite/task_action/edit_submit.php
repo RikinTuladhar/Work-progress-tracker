@@ -39,7 +39,7 @@ else{
   $fileSize = $_FILES["pdfFile"]["size"];
   $tmpName = $_FILES["pdfFile"]["tmp_name"];
 
-  $validImageExtension = ['pdf'];
+  $validImageExtension = ['pdf','xls','xlsx'];
   $imageExtension = explode('.', $fileName);
   $imageExtension = strtolower(end($imageExtension));
 
