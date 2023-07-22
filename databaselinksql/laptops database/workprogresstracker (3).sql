@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2023 at 02:49 PM
+-- Generation Time: Jul 21, 2023 at 09:05 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -28,17 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `department` (
-  `dep_id` int(11) NOT NULL,
-  `dep_name` varchar(50) NOT NULL,
-  `m_id` int(11) DEFAULT NULL
+  `d_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `department`
 --
 
-INSERT INTO `department` (`dep_id`, `dep_name`, `m_id`) VALUES
-(1, 'Front-End', 1);
+INSERT INTO `department` (`d_id`, `name`) VALUES
+(1, 'Front-End'),
+(2, 'Back-End');
 
 -- --------------------------------------------------------
 
@@ -48,6 +48,7 @@ INSERT INTO `department` (`dep_id`, `dep_name`, `m_id`) VALUES
 
 CREATE TABLE `employee` (
   `eid` int(50) NOT NULL,
+  `d_id` int(50) DEFAULT NULL,
   `emp_name` varchar(50) NOT NULL,
   `emp_email` varchar(50) NOT NULL,
   `emp_lastname` varchar(50) NOT NULL,
@@ -66,20 +67,11 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`eid`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
-(143, 'salina', 'salinamaharjan@gmail.com', 'maharjan', '', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(144, 'helo', 'admin@admin.com', '1231312', '9869452356', 'admin123', '647df59b95b69.png', NULL, NULL, NULL, NULL, NULL, NULL),
-(145, 'design', 'rikin@gmail.com', 'ewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(146, 'ziva', 'ziva@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(147, 'ziva', 'ziva1@gmail.com', 'ziva', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(148, 'ziva', 'ziva12@gmail.com', 'qweqwe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(149, 'wqe', 'a@gmail.com', '213', '9869452356', '12323', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(150, 'gg', 'gg@gmail.com', 'wqewqe', '9869452356', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(151, 'qwewqe', 'ghh@gmail.com', 'wqewqe', '9869452356', '1234', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(152, 'abb', 'abb@gmail.com', 'aabb', '9869452356', '12333', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(153, 'aaahh', 'aahh@gmail.com', 'abbd', '9869452356', '12344', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(154, 'labi', 'labi@gmail.com', '', NULL, '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(155, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', NULL, 'Kalimati', 21, 'Hawa', 'Bca', 'I am cool ', 'I like reading books and playing games.');
+INSERT INTO `employee` (`eid`, `d_id`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
+(143, NULL, 'salina', 'salinamaharjan@gmail.com', 'maharjan', '', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.'),
+(159, NULL, 'nn', 'nn@gmail.com', '', '1111111111', 'nnn', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(160, NULL, 'Labi', 'labi@gmail.com', 'Shrestha', '9869456321', '123456', '64954cec4346f.png', 'Kalimati', 77, '3', 'MBA', 'Designer', 'I like to read books ');
 
 -- --------------------------------------------------------
 
@@ -99,7 +91,6 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
-(39, 'salina', '123456', 'salinamaharjan@gmail.com'),
 (40, 'labi', '123456', 'labi@gmail.com'),
 (41, 'suraj', '123456', 'suraj@gmail.com');
 
@@ -111,6 +102,7 @@ INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
 
 CREATE TABLE `manager` (
   `m_id` int(50) NOT NULL,
+  `d_id` int(50) DEFAULT NULL,
   `m_name` varchar(50) NOT NULL,
   `m_email` varchar(50) NOT NULL,
   `m_phone` varchar(50) NOT NULL,
@@ -121,9 +113,9 @@ CREATE TABLE `manager` (
 -- Dumping data for table `manager`
 --
 
-INSERT INTO `manager` (`m_id`, `m_name`, `m_email`, `m_phone`, `m_pw`) VALUES
-(1, 'sizen', 'sizen@gmail.com', '9843652356', '123456'),
-(2, 'rikin', 'rikin@gmail.com', '9856342365', '123456');
+INSERT INTO `manager` (`m_id`, `d_id`, `m_name`, `m_email`, `m_phone`, `m_pw`) VALUES
+(1, 1, 'suman', 'suman@gmail.com', '9856342365', '123456'),
+(2, 2, 'rikin', 'rikin@gmail.com', '9856342365', '123456');
 
 -- --------------------------------------------------------
 
@@ -133,6 +125,7 @@ INSERT INTO `manager` (`m_id`, `m_name`, `m_email`, `m_phone`, `m_pw`) VALUES
 
 CREATE TABLE `tasks` (
   `task_id` int(11) NOT NULL,
+  `d_id` int(50) DEFAULT NULL,
   `task_title` varchar(50) DEFAULT NULL,
   `status` varchar(50) NOT NULL,
   `task_description` varchar(200) NOT NULL,
@@ -149,10 +142,14 @@ CREATE TABLE `tasks` (
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`) VALUES
-(59, '`1', 'Completed', '', '2023-06-17', '2023-06-17', 1, 155, 1, '648daa60b0845.pdf', ''),
-(60, '2', 'Completed', '', '2023-06-17', '2023-06-17', 1, 155, 1, '648d918e74a5b.pdf', ''),
-(61, 'pdf see', 'Completed', 'complete it on time ', '2023-06-17', '2023-06-17', 1, 155, 1, '648daab1ad145.pdf', 'good job ');
+INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`) VALUES
+(59, NULL, '`1', 'Pending', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648daa60b0845.pdf', ''),
+(60, NULL, '2', 'On-going', '', '2023-06-17', '2023-06-17', NULL, 155, 1, '648d918e74a5b.pdf', ''),
+(61, NULL, 'pdf see    ', 'Completed', 'complete it on time ....', '2023-06-17', '2023-06-17', NULL, 143, 1, '64946a535104f.pdf', ''),
+(62, NULL, 'change css', 'Completed', 'do it in proper way', '2023-06-18', '2023-06-18', NULL, 155, 1, '64946a9522ec7.pdf', ''),
+(63, NULL, 'css', 'Completed', 'jsajdkkas', '2023-06-28', '2023-06-29', 1, 160, 1, '64954a1124f05.pdf', ''),
+(64, NULL, 'css', 'Completed', 'design front page', '2023-06-23', '2023-06-30', 1, 160, 1, '64954db499d44.pdf', ''),
+(65, NULL, 'css', 'Pending', 'change layout', '2023-06-23', '2023-06-23', 1, 160, 1, '64956ff8b8a17.pdf', '');
 
 --
 -- Indexes for dumped tables
@@ -162,14 +159,14 @@ INSERT INTO `tasks` (`task_id`, `task_title`, `status`, `task_description`, `sta
 -- Indexes for table `department`
 --
 ALTER TABLE `department`
-  ADD PRIMARY KEY (`dep_id`),
-  ADD KEY `m_id` (`m_id`);
+  ADD PRIMARY KEY (`d_id`);
 
 --
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`eid`);
+  ADD PRIMARY KEY (`eid`),
+  ADD KEY `d_id` (`d_id`);
 
 --
 -- Indexes for table `login`
@@ -181,7 +178,8 @@ ALTER TABLE `login`
 -- Indexes for table `manager`
 --
 ALTER TABLE `manager`
-  ADD PRIMARY KEY (`m_id`);
+  ADD PRIMARY KEY (`m_id`),
+  ADD KEY `did` (`d_id`);
 
 --
 -- Indexes for table `tasks`
@@ -189,7 +187,8 @@ ALTER TABLE `manager`
 ALTER TABLE `tasks`
   ADD PRIMARY KEY (`task_id`),
   ADD KEY `manager_id` (`m_id`),
-  ADD KEY `employee_id` (`e_id`);
+  ADD KEY `employee_id` (`e_id`),
+  ADD KEY `department_id` (`d_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -199,13 +198,13 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `department`
 --
 ALTER TABLE `department`
-  MODIFY `dep_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -223,22 +222,29 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `department`
+-- Constraints for table `employee`
 --
-ALTER TABLE `department`
-  ADD CONSTRAINT `m_id` FOREIGN KEY (`m_id`) REFERENCES `manager` (`m_id`) ON DELETE SET NULL ON UPDATE SET NULL;
+ALTER TABLE `employee`
+  ADD CONSTRAINT `d_id` FOREIGN KEY (`d_id`) REFERENCES `department` (`d_id`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Constraints for table `manager`
+--
+ALTER TABLE `manager`
+  ADD CONSTRAINT `did` FOREIGN KEY (`d_id`) REFERENCES `department` (`d_id`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 --
 -- Constraints for table `tasks`
 --
 ALTER TABLE `tasks`
+  ADD CONSTRAINT `department_id` FOREIGN KEY (`d_id`) REFERENCES `department` (`d_id`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `employee_id` FOREIGN KEY (`e_id`) REFERENCES `employee` (`eid`) ON DELETE SET NULL ON UPDATE SET NULL,
   ADD CONSTRAINT `manager_id` FOREIGN KEY (`m_id`) REFERENCES `manager` (`m_id`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;

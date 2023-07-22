@@ -85,6 +85,7 @@
                 <th>Start_date</th>
                 <th>End_date</th>
                 <th>Status</th>
+                <th>View</th>
                 <th>Feedback</th>
                 
               </tr>
@@ -107,6 +108,7 @@
                 <td><?php echo $row['start_date'];?></td>
                 <td><?php echo $row['end_date'];?></td>
                 <td><?php echo $row['status'];?></td>
+                <td><a href="../Managersite/ajaxfile/task_detail.php?task_id=  <?php echo $row["task_id"]?>">View</a></td>
                 <td><?php  echo $row['feedback']?></td>
 
               
