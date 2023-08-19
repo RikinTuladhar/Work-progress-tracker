@@ -1,25 +1,29 @@
 <?php
 require "../../database/crud.php";
 $Email =$_POST['Email'];
+
+$Name=$_POST['Name'];
+$LastName=$_POST['Last-Name'];
+$Password = $_POST['Password'];
+$Phone = $_POST['Phone'];
+
+echo $Phone;
+
 $count = 0;
 // echo $Email;
 $conn = mysqli_connect("localhost","root","","workprogresstracker");
-$sql = "SELECT * FROM employee";
+$sql = "SELECT * FROM employee where emp_email = '$Email' or emp_phone = '$Phone' ";
 $result = mysqli_query($conn,$sql);
-while($row = $result->fetch_assoc())
+if(mysqli_num_rows($result) > 0)
 {
 // echo $row['emp_name'];
-  if($row['emp_email'] == $Email )
-  {
     $count =1;
   ?>
   <script>
-    alert("Email exist");
+    alert("Email or Phone Number exist");
     location.href="http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php";
   </script>
   <?php
-  break;
-}
 }
 
 if($count == 0)
@@ -64,11 +68,6 @@ if($_FILES["image"]["error"] == 4){
     $login = new crud();
     $table = "employee";
     
-    $Name=$_POST['Name'];
-  
-    $LastName=$_POST['Last-Name'];
-    $Password = $_POST['Password'];
-    $Phone = $_POST['Phone'];
   
     
     $items = [
@@ -82,7 +81,7 @@ if($_FILES["image"]["error"] == 4){
     $login -> insert($table,$items);
     if($login)
     {
-        header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
+        // header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
     }
     else{
         echo "error";
