@@ -284,16 +284,16 @@
            <h2>About Me</h2>
            <hr>
                <div class="flex-box">
-                    <h4>Name:  <?php echo $row['emp_name'];?></h4>
-                   <h4>LastName:  <?php echo $row['emp_lastname'];?></h4>
+                    <b><h4>Name:  <?php echo $row['emp_name'];?></h4></b>
+                   <b><h4>LastName:  <?php echo $row['emp_lastname'];?></h4></b>
                 </div >
                 <div class="flex-box">
-                <h4>Location:  <?php echo $row['location'];?></h4>
-                    <h4>Phone:  <?php echo $row['emp_phone'];?></h4>
+                <b><h4>Location:  <?php echo $row['location'];?></h4></b>
+                <b>   <h4>Phone:  <?php echo $row['emp_phone'];?></h4></b>
                 </div>
                 <div class="flex-box">
-                    <h4>E-Mail:  <?php echo $row['emp_email'];?></h4>
-                    <h4>Age:  <?php echo $row['Age'];?></h4>
+                <b> <h4>E-Mail:  <?php echo $row['emp_email'];?></h4></b>
+                <b>   <h4>Age:  <?php echo $row['Age'];?></h4></b>
                 </div>
         </div>
         <div class="card spacingtop">
