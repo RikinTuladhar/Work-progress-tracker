@@ -8,15 +8,20 @@
 
     
 #addcontact{
-    width: 300px;
+    width: 82px;
     border: 2px;
     text-decoration: none;
     border: 2px solid black;
-    margin: 5px auto 20px 20px;
-    position: relative;
+    margin: 2px auto;
+    position: absolute;
+    padding: 5px;
 }
 table{
     margin: 20px;
+    background: #9f84b4;
+    border-radius: 10%;
+    padding: 2%;
+    margin-left: 5%;
 }
 .myClass{
     color: gray;
@@ -27,6 +32,19 @@ a:active {
   color: red;
   /* Add any other styles you want to apply during the click */
 }
+
+.container-table{
+    margin: 20px;
+  
+    border-radius: 10%;
+    padding: 2%;
+    display: flex;
+    /* margin-left: 5%; */
+    justify-content: center;
+    align-items: center;
+}
+
+
 </style>
 <?php
 // require "selectDatabase.php";
@@ -38,17 +56,18 @@ class datacontainer extends crud{
     public function showAllUsersOfLogin(){
        $datas = $this->getUsers("login");
        ?>
+           <a href="login.html" id="addcontact">Add Contact</a>
        <div id="container">
 
-        <a href="login.html" id="addcontact">Add Contact</a>
         
+        <div class="container-table">
+      
         <table border="1" cellspacing="10px" cellpadding="20px" >
-            
             <tr>
                 <th>Id</th>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Edit</th>
+                <!-- <th>Edit</th> -->
                 <th>Delete</th>
                 <th>Approve</th>
             </tr>
@@ -61,12 +80,12 @@ class datacontainer extends crud{
             // echo "<td><td>".$data['id']."</td><td>".$data['username']."</td><td>".$data['email'].
             // "</td></td> <a href='delete.php?id=".$data["id"]."'>Delete</a></td>
             // <td><a hreft ='edit.php?id=".$data["id"]."'>Edit</a></td></tr> ";  if needed<td>" . $data["id"] . "</td>
-
-                echo "<tr>
-                <td> $idnum</td>
-                <td>" . $data["username"]. "</td>
-                <td>"  .$data["email"]. "</td>
-                <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
+            // <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
+            echo "<tr>
+            <td> $idnum</td>
+            <td>" . $data["username"]. "</td>
+            <td>"  .$data["email"]. "</td>
+            
                 <td> <a href='delete_login.php?id=" .$data["id"]."'>Delete</a></td>
                 <td><a id='mylink' onclick='disable()' href='approve_employee_toDb.php?email=" .$data["email"]."'>Approve</a></td></tr>";
                 $idnum++;
@@ -80,6 +99,7 @@ class datacontainer extends crud{
 }
 ?>
         </table>
+        </div>
 </div>
        
         <script >
