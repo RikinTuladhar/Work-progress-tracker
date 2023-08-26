@@ -56,7 +56,7 @@ else{
             $mail->addAddress($email); //send to
             $mail->isHTML(true);
             $mail->Subject = "Account Created!";
-            $mail->Body = "We have created your account at workprogresstracker.com ";
+            $mail->Body = "We have created your account at http://localhost/work-progress-tracker/Work-progress-tracker/Landing/index.html ";
             $mail->send();
             
             ?>
