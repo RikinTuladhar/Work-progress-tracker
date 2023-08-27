@@ -25,8 +25,6 @@ if ($result->num_rows > 0) {
 
             $_SESSION['username'] = $row['emp_name'];
             $_SESSION['id'] = $row['eid'];
-
-
             // var_dump($row['eid'] );
             $count = 1;
             // if(isset($_SESSION['username']))

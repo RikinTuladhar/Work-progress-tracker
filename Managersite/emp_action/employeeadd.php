@@ -110,7 +110,7 @@ if ($count == 0) {
 
 
 
-  // header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
+  header('location:http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/employee_homepage.php');
 } else {
   echo "error";
 }
