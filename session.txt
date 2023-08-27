@@ -1,5 +1,6 @@
  $_SESSION['username']
   $_SESSION['id']
+   $_SESSION["name"] 
 
 Go back 
 <button id="goBackBtn">Go Back</button>
