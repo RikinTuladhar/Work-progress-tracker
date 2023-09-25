@@ -1,3 +1,11 @@
  $_SESSION['username']
   $_SESSION['id']
+   $_SESSION["name"] 
 
+Go back 
+<button id="goBackBtn">Go Back</button>
+document.getElementById('goBackBtn').addEventListener('click', goBack);
+// Function to go back in the browser history
+  function goBack() {
+  window.history.back();
+}

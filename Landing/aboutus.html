@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Progress Tracker</title>
+    <style>
+      body {
+        background-image: url(background.png);
+        background-size: 20cm;
+        background-repeat: no-repeat;
+        background-position: right;
+      }
+      nav ul li a {
+        color: black;
+      }
+
+      .paragraph-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 25rem;
+    margin-top: 17rem;
+    width: auto;
+    align-items: center;
+}
+
+      .card {
+  box-sizing: border-box;
+  width: 190px;
+  height: 254px;
+  background: rgba(217, 217, 217, 0);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  color: black;
+  margin: 20px;
+}
+
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+ul{
+    margin: 20px;
+}
+ul li{
+    list-style-type: none;
+    margin: 5px;
+}
+.card ul li a{
+  text-decoration: none;
+  color: black;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="hero-aboutus">
+      <nav id="nav">
+        <img src="LOGO.png" class="logo" />
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="aboutus.html">ABOUT US</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container-aboutus">
+      <!-- <span
+        style="
+          text-align: center;
+          padding: 20px;
+          display: block;
+          font-size: 48px;
+          font-weight: bolder;
+        "
+        >About Us</span
+      > -->
+      <div class="paragraph">
+        <span
+          style="
+            text-align: justify;
+            padding: 20px;
+            display: block;
+            font-size: 32px;
+            font-weight: bold;
+            position: relative;
+            left: -61px;
+          "
+          >Tracking Progress <br />
+          Fueling Success</span
+        >
+        <span
+          style="
+            text-align: center;
+            padding: 20px;
+            display: block;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: justify;
+          "
+          >“Work Progress Tracker” is a work progress tracking site that can be
+          accessed throughout the organization with the proper provided login
+          information."
+        </span>
+      </div>
+      <div class="paragraph-card">
+        <div class="card">
+            <span style="font-size: 20px;">Salina Maharjan</span>
+            <ul>
+                <li><a href="https://www.facebook.com/salina.maharjan.7906">Facebook</a></li>
+                <li>Instragram</li>
+                <li><a href="https://github.com/Slemhrzn">GitHub</a></li>
+            </ul>
+          </div>
+        <div class="card">
+          <span style="font-size: 20px;">Rikin Tuladhar</span>
+            <ul>
+                <li><a href="https://www.facebook.com/senyadta2">Facebook</a></li>
+                <li>Instragram</li>
+                <li><a href="https://github.com/Senyadt2">GitHub</a></li>
+            </ul>
+          </div>
+    </div>
+  </body>
+</html>

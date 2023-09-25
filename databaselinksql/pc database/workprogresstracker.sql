@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2023 at 08:41 AM
+-- Generation Time: Aug 25, 2023 at 06:36 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -68,7 +68,11 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`eid`, `d_id`, `emp_name`, `emp_email`, `emp_lastname`, `emp_phone`, `e_pw`, `em_img`, `location`, `Age`, `Experence`, `Degree`, `Short-detail`, `About-Your-Self`) VALUES
-(155, NULL, 'Suraj', 'suraj@gmail.com', 'Shrestha', '9858453456', '123456', '64947ed6d5564.jpg', 'Kalimati', 21, '3', 'Bca', 'Nerd Boy', 'I like reading books and playing games.');
+(159, NULL, 'Labi', 'Labi@gmail.co', '', '9869562112', '123456', NULL, '', 20, '', '', '', ''),
+(160, NULL, 'Salina', 'salinamaharjan@gmail.com', '', '9869562352', '123456', '64e0a14baf1ff.png', '', 20, '', '', '', ''),
+(161, NULL, 'Ravi', 'Ravi@gmail.com', '', '9869522352', '123', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(162, NULL, 'kk', 'kk@gmail.com', '', '9869562352', '123456', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(164, NULL, 'Riyes', 'riyas@gmail.com', '', '1121112122', '123456', NULL, '', 22, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -90,7 +94,8 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`id`, `username`, `password`, `email`) VALUES
 (39, 'salina', '123456', 'salinamaharjan@gmail.com'),
 (40, 'labi', '123456', 'labi@gmail.com'),
-(41, 'suraj', '123456', 'suraj@gmail.com');
+(41, 'suraj', '123456', 'suraj@gmail.com'),
+(42, 'riyes', '123456', 'riyas@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -143,7 +148,7 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`task_id`, `d_id`, `task_title`, `status`, `task_description`, `start_date`, `end_date`, `m_id`, `e_id`, `completed_task`, `file_name`, `feedback`, `started_task`, `finished_task`) VALUES
-(96, NULL, 'check    ', 'Pending', 'Working_with_Dates_(JS).pdf', '2023-07-16', '2023-07-17', 1, 155, 1, 'check.xls', '', '0000-00-00', '0000-00-00');
+(98, NULL, 'hh', 'Pending', 'INDEX.pdf', '2023-08-20', '2023-08-26', 1, 159, 0, NULL, NULL, '0000-00-00', '0000-00-00');
 
 --
 -- Indexes for dumped tables
@@ -198,13 +203,13 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `eid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `manager`
@@ -216,7 +221,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- Constraints for dumped tables

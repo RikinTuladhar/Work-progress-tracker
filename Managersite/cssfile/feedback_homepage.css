@@ -10,46 +10,48 @@ body {
 }
 
 nav {
-  position: fixed;
-  z-index: 1;
+  position: absolute;
   top: 0;
   bottom: 0;
   height: 100%;
   left: 0;
   background: #fff;
-  width: 100px;
+  width: 90px;
   overflow: hidden;
   transition: width 0.2s linear;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  transition: all 0.5s ease;
+  margin: 10px 0 0 10px;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  /* border-radius: 50%; */
+}
+.logo span {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 30px;
+}
+.first {
+  border-bottom: 2px solid;
+  margin: 11px 0 10px 10px;
 }
 
 .last {
   position: absolute;
   bottom: 10px;
 }
-.logo {
-  text-align: center;
-  display: flex;
-  transition: all 0.5s ease;
-  margin: 10px 5px 0 10px;
-}
-.logo img {
-  width: 45px;
-  height: 45px;
-}
-.logo span {
-  font-weight: bold;
 
-  font-size: 18px;
-  text-transform: uppercase;
-  padding-top: 30px;
-}
-
-a {
+nav a {
   position: relative;
   color: rgb(85, 83, 83);
-  font-size: 14px;
   display: table;
+  width: 300px;
   padding: 10px;
   text-decoration: none;
 }
@@ -63,16 +65,38 @@ a {
 }
 .nav-item {
   position: relative;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 34px;
   top: -14px;
 }
-a:hover {
-  background-color: #828486b9;
+.nav-text {
+  position: relative;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 34px;
+  top: -14px;
 }
+
 nav:hover {
-  width: 250px;
+  width: 280px;
   transform: all 0.5s ease;
+  transition-delay: 0.1s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+/* ul:hover li {
+  filter: blur(1px);
+}
+ul li:hover {
+  filter: blur(0px);
+} */
+
+.logo:hover {
+  background-color: #eee;
+}
+.logoout {
+  position: absolute;
+  bottom: 0;
 }
 /* .sidebar .element :hover{
       width: 150px;
@@ -135,9 +159,9 @@ nav:hover {
     justify-content: space-around; */
   margin: 0px;
   padding: 30px;
-  background-color: #9f84b4;
-  border-radius: 30px;
-  width: auto;
+  background-color: #aa9fb6;
+  border-radius: 10px;
+  width: 1000px;
 }
 
 .details:nth-child(1):hover {
