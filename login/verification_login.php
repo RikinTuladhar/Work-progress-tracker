@@ -12,7 +12,7 @@ $con = mysqli_connect("localhost", "root", "", "workprogresstracker");
 if ($con->connect_error) {
     die("connection error" . $con->connect_error);
 }
-$sql = "SELECT * FROM employee";
+$sql = "SELECT * FROM employee ";
 $result = mysqli_query($con, $sql);
 
 

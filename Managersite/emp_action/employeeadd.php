@@ -23,7 +23,11 @@ echo $Phone;
 $count = 0;
 // echo $Email;
 $conn = mysqli_connect("localhost", "root", "", "workprogresstracker");
-$sql = "SELECT * FROM employee where emp_email = '$Email' or emp_phone = '$Phone' ";
+// $sql = "SELECT * FROM employee where emp_email = '$Email' or emp_phone = '$Phone' ";
+$sql = "
+SELECT login.email from login  where email = '$Email'  UNION ALL 
+SELECT manager.m_email from manager where m_email = '$Email'  UNION ALL
+Select employee.emp_email from employee where emp_email = '$Email'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
   // echo $row['emp_name'];
