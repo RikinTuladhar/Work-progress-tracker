@@ -7,7 +7,4 @@ if(isset($_GET['unset']) && $_GET['unset']==='true')
     header('Location: http://localhost/work-progress-tracker/Work-progress-tracker/login/login.html');
     exit();
 }
-
-
-
 ?>

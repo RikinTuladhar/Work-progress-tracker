@@ -102,7 +102,7 @@ ul li:hover {
 .container {
   display: flex;
   width: auto;
-  min-height: 10vh;
+  min-height: 87vh;
   background-color: #d9d9d9;
   margin-left: 68px;
   flex-wrap: wrap;
@@ -138,6 +138,10 @@ th,
 td {
   padding: 15px;
   text-align: center;
+}
+td > a{
+  text-decoration: none;
+  color:black;
 }
 
 #top-heading {

@@ -133,3 +133,8 @@ th,
 td {
   padding: 15px;
 }
+th > a,td > a{
+  text-decoration: none;
+  color: black;
+
+}

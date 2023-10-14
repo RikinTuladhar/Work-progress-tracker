@@ -120,7 +120,7 @@ button[type="submit"]
      statusSelect.addEventListener('change', function() {
      var selectedValue = statusSelect.value;
 
-         // Enable or disable the file input based on the selected value
+     // Enable or disable the file input based on the selected value
        if (selectedValue === 'Completed') {
         pdfFile.disabled = false;
         } 
