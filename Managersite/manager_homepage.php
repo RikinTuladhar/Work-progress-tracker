@@ -15,7 +15,6 @@
   session_start();
   $conn = mysqli_connect("localhost", "root", "", "workprogresstracker");
   if (isset($_SESSION['username'])) {
-
   ?>
     <nav>
       <ul>
@@ -64,11 +63,6 @@
         $task = mysqli_query($conn, $sql_tasks);
         $result_task  = $task->num_rows;
 
-        //total Department
-        $sql_department = "select * from department";
-        $department = mysqli_query($conn, $sql_department);
-        $result_department = $department->num_rows;
-
         //total employee
         $sql_employee = "select * from employee";
         $employee = mysqli_query($conn, $sql_employee);
@@ -85,9 +79,6 @@
         $completed = mysqli_query($conn, $sql_completed);
         $result_completed = $completed->num_rows;
         ?>
-        <div class="total_container">
-          <h3>Total Department <?php echo $result_department; ?></h3>
-        </div>
         <div class="total_container" id="total_tasks">
           <h3>Total Tasks <?php echo "$result_task"; ?></h3>
         </div>
