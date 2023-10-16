@@ -96,32 +96,6 @@
         </div>
 
       </div>
-      <!-- <div class="details"> -->
-
-
-
-
-      <!-- <img src="" alt="imgemp" />
-        
-       
-        <span class="content">2023/04/27</span>
-        <span class="content">2023/04/30</span> -->
-      <!-- <table>
-          <tr>
-            <th><span class="content heading">Profil</span></th>
-            <th><span class="content heading">Name</span></th>
-            <th><span class="content heading">Task</span></th>
-            <th><span class="content heading">Start Date</span></th>
-            <th><span class="content heading">End Date</span></th>
-          </tr>
-          <tr>
-            <td><img src="" alt="imgemp" /></td>
-            <td><span class="content detail_row">Savib</span></td>
-            <td><span class="content detail_row">Html correction</span></td>
-            <td><span class="content detail_row">2023/04/27</span></td>
-            <td><span class="content detail_row">2023/04/30</span></td>
-          </tr>
-        </table> -->
     </div>
   <?php
 

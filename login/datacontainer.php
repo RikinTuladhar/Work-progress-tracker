@@ -5,8 +5,6 @@
         background-color: #d9d9d9;
     }
 
-
-
     #addcontact {
         width: 82px;
         border: 2px;
@@ -78,10 +76,6 @@ class datacontainer extends crud
             $idnum = 1;
             if ($datas > 0) {
                 foreach ($datas as $data) {
-                    // echo "<td><td>".$data['id']."</td><td>".$data['username']."</td><td>".$data['email'].
-                    // "</td></td> <a href='delete.php?id=".$data["id"]."'>Delete</a></td>
-                    // <td><a hreft ='edit.php?id=".$data["id"]."'>Edit</a></td></tr> ";  if needed<td>" . $data["id"] . "</td>
-                    // <td> <a href='edit_login.php?id=".$data["id"]."'>Edit</a></td>
                     echo "<tr>
             <td> $idnum</td>
             <td>" . $data["username"] . "</td>
@@ -101,22 +95,3 @@ class datacontainer extends crud
                 </table>
             </div>
         </div>
-
-
-
-        <?php
-        // protected function getUsers(){
-        //         $sql = "select * from login";
-        //         $result = $this->getConnection()->query($sql); //could have used directly
-        //         $numRows = $result->num_rows;   //notnneed
-        //         if($numRows >0){
-
-        //             while($row = $result->fetch_assoc())
-        //             {
-        //                 echo $row['username'];
-        //             }
-        //             // return $data;
-        //         }
-        //     } 
-
-        ?>

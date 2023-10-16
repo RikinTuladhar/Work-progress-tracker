@@ -167,11 +167,6 @@
 
 
     ?>
-
-
-
-
-
         <main id="blur_bg">
 
             <header>
@@ -209,11 +204,7 @@
                         window.history.back();
                     });
                 </script>
-
             </aside>
-
-
-
             <article>
                 <div class="card">
                     <h2>About Me</h2>
@@ -246,61 +237,6 @@
     } else {
         echo "";
     } ?>
-
-
-
-    <script>
-        function showpopup() {
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("blur_bg").style.filter = "blur(5px)";
-        }
-
-        function hidePopup() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("blur_bg").style.filter = "";
-        }
-        var form = document.querySelector("form");
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            //values from id
-            var age = parseInt(document.getElementById("Age").value);
-            var phone = document.getElementById("phone").value;
-            var email = document.getElementById("email").value;
-            var e_pw = document.getElementById("e_pw").value;
-
-            //patterns
-            var pattern = /^[\w\.-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,4}$/;
-            var patternnum = /^[0-9]+$/;
-
-
-            if (pattern.test(email)) {
-
-            } else {
-                alert("Not valid email");
-                return;
-            }
-
-
-            if (age <= 0) {
-                alert("Invalid Age");
-                return;
-            }
-            if (phone.length === 10) {} else {
-                alert("Invalid Phone Number");
-                return;
-            }
-            var intnumber = parseInt(phone)
-            if (patternnum.test(phone)) {} else {
-                alert("Incorret Phone number pattern");
-                return;
-            }
-
-
-
-            form.submit();
-
-        })
-    </script>
 </body>
 
 </html>

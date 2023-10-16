@@ -21,7 +21,7 @@ form_login.addEventListener("submit", function (event) {
   let password = document.getElementById("password-login").value;
 
   if (username.trim() === "") {
-    alert("Please enter a username l");
+    alert("Please enter a username");
     return;
   }
 
@@ -95,28 +95,13 @@ form_register.addEventListener("submit", function (event) {
     return false;
   }
 
-  // if (email.trim() === "") {
-  //   alert("Please enter an email");
-  //   return;
-  // }
-  // if (email.charAt(0) == "@") {
-  //   alert("@ cannot be at beginning");
-  //   return;
-  // }
-  // if (email.search(/@/i) == -1) {
-  //   alert("Please enter a valid email");
-  //   return;
-  // }
-
   // Validate the checkbox
   if (!agreeCheckbox.checked) {
     alert("Please agree to the terms and conditions");
     return;
   }
   form_register.submit();
-  // If all validations pass, you can proceed with form submission
-  // For example, you can make an AJAX request to submit the form data
-  // Here, we'll simply log the form data
+
   console.log("Form submitted");
   console.log("Username:", username);
   console.log("Password:", password);

@@ -5,7 +5,6 @@ $emailname = $_GET['vername'];
 $password = $_GET['verpassword'];
 $count = 0;
 // var_dump($emailname);
-
 $con = mysqli_connect("localhost", "root", "", "workprogresstracker");
 if ($con->connect_error) {
     die("connection error" . $con->connect_error);
@@ -21,7 +20,7 @@ if ($result->num_rows > 0) {
             // var_dump($row['eid'] );
             $count = 1;
             // if(isset($_SESSION['username']))
-
+            // workprogresstracker
 ?>
             <script>
                 alert("Log in success <?php echo $_SESSION['id'] ?>");
@@ -48,7 +47,7 @@ if ($managercheck->num_rows > 0) {
             alert("Log in success for manager");
             window.location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php?<?php echo $_SESSION['username']; ?>"
         </script>
-<?php
+    <?php
         }
 }
 if ($count == 0) {
@@ -56,8 +55,8 @@ if ($count == 0) {
     <script>
         alert("Incorrect Email or Password");
         location.href = "./login.html";
-        </script>
-    <?php
+    </script>
+<?php
     // header('location:login.html');
 }
 $con->close();
