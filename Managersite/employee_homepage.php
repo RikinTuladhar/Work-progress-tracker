@@ -73,7 +73,7 @@
               <option value="50">50</option>
 
             </select>entries</span>
-          <span class="search_bar"><input type="text" id="search_input" placeholder="search" style="    width: 200px;
+          <span class="search_bar"><input type="text" id="search_input" placeholder="search" style="width: 200px;
     height: 35px;
     font-size: 16px;
     border-radius: 10px;
@@ -90,7 +90,6 @@
               <th>Phone</th>
               <th>View</th>
               <th>Edit Delete</th>
-
             </tr>
             <?php
             $conn = mysqli_connect("localhost", "root", "", "workprogresstracker");
@@ -99,23 +98,6 @@
             }
             $sql = "SELECT * FROM employee";
             $row = mysqli_query($conn, $sql);
-            // $result=mysqli_query($conn,$sql);
-            // if($result->num_rows > 0)
-            // {
-            //   while($row = $result->fetch_assoc())
-            //   {
-
-            // echo "<tr>
-            // <td>".$row['eid']."</td>
-            // <td>".$row['emp_name']."</td>
-            // <td>".$row['emp_email']." </td>
-            // <td>".$row['emp_lastname']."</td>
-            // <td>".$row['emp_phone']."</td>
-            // <td> <a href='edit_employee.php?eid=".$row['eid']."'>Edit</a></td>
-            // <td> <a href='delete_employee.php?eid=".$row['eid']."'>Delete</a></td>
-            // </tr>";      
-            //   }
-            // ?
             ?>
 
           </table>
@@ -255,6 +237,10 @@
         // alert(Phonenumber);
         if (Phonenumber.length === 10) {} else {
           alert("Invalid Phone number");
+          return false;
+        }
+        if (isNaN(Phonenumber)) {
+          alert("Not a Number");
           return false;
         }
         form.submit();

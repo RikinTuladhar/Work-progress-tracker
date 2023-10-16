@@ -71,23 +71,11 @@ form_register.addEventListener("submit", function (event) {
     alert("Please enter same password");
     return;
   }
+  if (email.trim() === "") {
+    alert("Enter email");
+    return;
+  }
 
-  // Password should contain at least one uppercase letter
-  // if (!/[A-Z]/.test(password)) {
-  //   return false;
-  // }
-
-  // Password should contain at least one lowercase letter
-  // if (!/[a-z]/.test(password)) {
-  //   return false;
-  // }
-
-  // Password should contain at least one digit
-  // if (!/[0-9]/.test(password)) {
-  //   return false;
-  // }
-
-  // // Validate the email  /^[a-zA-Z0-9]+@[A-Z0-9]+\.[A-Z]{2,}$/i
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   if (emailRegex.test(email)) {
   } else {

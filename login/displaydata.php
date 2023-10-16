@@ -1,8 +1,3 @@
-<!-- called datacontainer.php datas using oop where there is table ui with data from database used by manager for delete edit  -->
-
-<?php
-require "datacontainer.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +82,9 @@ require "datacontainer.php";
             <td><?php echo $idnum; ?></td>
             <td><?php echo $row['username'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td> <a onclick="return confirm('Delete?')" href="delete_login.php?id=<?php echo $row['id'] ?>">Delete</a></td>
+            <td>
+              <a onclick="return confirm('Delete?')" href="delete_login.php?id=<?php echo $row['id'] ?>">Delete</a>
+            </td>
             <td> <a onclick="return confirm('Approve?')" href="approve_employee_toDb.php?email=<?php echo $row['email'] ?>">Approve</a></td>
             <?php $idnum++; ?>
           </tr>
