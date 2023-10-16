@@ -4,7 +4,7 @@ if ($conn->connect_error) {
     die("Connection error" . $conn->connect_error);
 }
 $seach_input = $_POST['data'];
-$sql = "SELECT * FROM employee WHERE emp_name LIKE '%{$seach_input}%'";
+$sql = "SELECT * FROM employee WHERE emp_name LIKE '%{$seach_input}%' OR emp_email LIKE '%{$seach_input}%' ";
 $result = mysqli_query($conn, $sql);
 $idnum = 1;
 

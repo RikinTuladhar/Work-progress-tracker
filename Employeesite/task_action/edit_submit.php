@@ -35,7 +35,7 @@ if ($status === "Completed") {
     $fileName = $_FILES["pdfFile"]["name"];
     $tmpName = $_FILES["pdfFile"]["tmp_name"];
 
-    $validImageExtension = ['pdf', 'xls', 'xlsx'];
+    $validImageExtension = ['pdf', 'xls', 'xlsx', 'docx'];
     $imageExtension = explode('.', $fileName);
     $imageExtension = strtolower(end($imageExtension));
 
