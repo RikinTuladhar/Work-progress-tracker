@@ -4,7 +4,6 @@ $sessionid = $_SESSION["id"];
 $task_id = $_POST["task_id"];
 $status = $_POST["status"];
 $conn = mysqli_connect("localhost", "root", "", "workprogresstracker");
-// if(isset($_POST['submit'])){}
 $mydate = getdate(date("U"));
 $currentDateTime = $mydate['year'] . "-" . $mydate['mon'] . "-" . $mydate['mday'];
 //started date from database 
