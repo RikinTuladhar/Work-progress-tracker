@@ -11,21 +11,21 @@
       @keyframes start {
         0% {
           opacity: 0;
-          background-color: #9f84b4;
+          transform: scale(0.9);
         }
         50% {
           opacity: 50;
+          
         }
         100% {
           opacity: 100;
+          transform: scale(1);
         }
       }
       .hero {
         height: 100vh;
         width: 100%;
         background-color: #9f84b4;
-        background-position: center;
-        background-size: cover;
         position: absolute;
       }
       .form-box {
@@ -45,7 +45,8 @@
           rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
           rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 1px 8px,
           rgba(0, 0, 0, 0) 0px 1px 16px;
-        overflow: hidden; /*if yo use garena vane both log in ra register ko dekhau xha*/
+         /*if yo use garena vane both log in ra register ko dekhau xha*/
+         overflow: hidden;
       }
       .button-box {
         /*side small brouwn color outline*/
@@ -73,7 +74,7 @@
         height: 100%;
         background: #9f84b4;
         border-radius: 30px;
-        transition: 0.5s;
+        transition: 0.2s;
       }
       .input-group {
         top: 150px;

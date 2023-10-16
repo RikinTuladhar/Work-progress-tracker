@@ -1,7 +1,5 @@
 <?php
 
-// if(isset($_GET['vername']) && isset($_GET['verpassword']))
-// {
 session_start();
 $emailname = $_GET['vername'];
 $password = $_GET['verpassword'];
@@ -14,13 +12,8 @@ if ($con->connect_error) {
 }
 $sql = "SELECT * FROM employee ";
 $result = mysqli_query($con, $sql);
-
-
-
-
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-
         if ($row['emp_email'] == $emailname && $row['e_pw'] == $password) {
 
             $_SESSION['username'] = $row['emp_name'];
@@ -55,21 +48,17 @@ if ($managercheck->num_rows > 0) {
             alert("Log in success for manager");
             window.location.href = "http://localhost/work-progress-tracker/Work-progress-tracker/Managersite/manager_homepage.php?<?php echo $_SESSION['username']; ?>"
         </script>
-
 <?php
-
         }
 }
-
-
 if ($count == 0) {
-    header('location:login.html');
+    ?>
+    <script>
+        alert("Incorrect Email or Password");
+        location.href = "./login.html";
+        </script>
+    <?php
+    // header('location:login.html');
 }
-
-
-
-// }
-// else{
-// echo "Value not received";
-// }
+$con->close();
 ?>
