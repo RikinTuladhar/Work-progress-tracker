@@ -56,7 +56,6 @@ if ($status === "Completed") {
       $query = "UPDATE `tasks` SET `file_name` = '$fileName',status='$status', completed_task='1', feedback='',finished_task = '$currentDateTime'   WHERE task_id = '$task_id'";
       $stmt = mysqli_prepare($conn, $query);
 
-      // mysqli_stmt_bind_param($stmt, 'ss',$newImageName,$task_id);
       $result = mysqli_stmt_execute($stmt);
 
       if ($result) {
