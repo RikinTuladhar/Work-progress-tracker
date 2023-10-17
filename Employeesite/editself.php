@@ -228,7 +228,7 @@
                             <br>
                             <br>
 
-                            <input type="text" name="Experence" placeholder="Experence" value="<?php echo "{$row['Experence']}"; ?>"><br>
+                            <input type="text" name="Experence" id="Experence" placeholder="Experence" value="<?php echo "{$row['Experence']}"; ?>"><br>
                         </div>
                         <div class="margin-content">
                             <br>
@@ -254,7 +254,7 @@
                             <br>
                             <br>
                             <!-- <input name="profile_pic" type="file"><br> -->
-                            <input type="text" name="e_pw" id="e_pw" value="<?php echo $row['e_pw'] ?>">
+                            <input type="text" name="e_pw" id="e_pw" placeholder="password">
                         </div>
                     </div>
                     <div class="margin-content">
@@ -384,6 +384,7 @@
             var phone = document.getElementById("phone").value;
             var email = document.getElementById("email").value;
             var e_pw = document.getElementById("e_pw").value;
+            var Experence = document.getElementById("Experence").value;
 
             //patterns
             var pattern = /^[\w\.-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,4}$/;
@@ -402,6 +403,10 @@
                 alert("Invalid Age");
                 return;
             }
+            if (age >= 100) {
+                alert("Invalid Age");
+                return;
+            }
             if (phone.length === 10) {} else {
                 alert("Invalid Phone Number");
                 return;
@@ -409,6 +414,14 @@
             var intnumber = parseInt(phone)
             if (patternnum.test(phone)) {} else {
                 alert("Incorret Phone number pattern");
+                return;
+            }
+            if (isNaN(Experence)) {
+                alert("The Experiance Should be in Number Format");
+                return;
+            }
+            if (parseInt(Experence) >= 100) {
+                alert("Experence is set 100Years or  above 100Years");
                 return;
             }
 

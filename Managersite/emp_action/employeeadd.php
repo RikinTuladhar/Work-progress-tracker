@@ -1,13 +1,5 @@
 <?php
 require "../../database/crud.php";
-// require "../database/crud.php";
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-
-require '../../sendemail/phpmailer/src/Exception.php';
-require '../../sendemail/phpmailer/src/PHPMailer.php';
-require '../../sendemail/phpmailer/src/SMTP.php';
 
 
 
@@ -15,7 +7,7 @@ $Email = $_POST['Email'];
 
 $Name = $_POST['Name'];
 $LastName = $_POST['Last-Name'];
-$Password = $_POST['Password'];
+$Password = md5($_POST['Password']);
 $Phone = $_POST['Phone'];
 
 echo $Phone;
@@ -89,25 +81,11 @@ if ($count == 0) {
   ];
   $login->insert($table, $items);
   if ($login) {
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'abc73357240@gmail.com';    //your gmail
-    $mail->Password = 'xzngkworkmmjtewo';  //your password
-    $mail->SMTPSecure = 'ssl'; //connection secured 
-    $mail->Port = 465;
-    $mail->setFrom('workprogresstracker@gmail.com');
-    $mail->addAddress($Email); //send to
-    $mail->isHTML(true);
-    $mail->Subject = "Account Created!";
-    $mail->Body = "We have created your account at http://localhost/work-progress-tracker/Work-progress-tracker/Landing/index.html ";
-    $mail->send();
 
   ?>
     <script>
       alert("send successfully");
-      alert("Inserted")
+      alert("Inserted tO Database");
     </script>
 <?php
   }

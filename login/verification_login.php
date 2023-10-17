@@ -2,7 +2,7 @@
 
 session_start();
 $emailname = $_GET['vername'];
-$password = $_GET['verpassword'];
+$password = md5($_GET['verpassword']);
 $count = 0;
 // var_dump($emailname);
 $con = mysqli_connect("localhost", "root", "", "workprogresstracker");
