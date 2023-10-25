@@ -314,24 +314,7 @@
           alert("End date is in the past.");
         } else {
           // alert("End date is either today or in the future.");
-          var diff = calculateDateDifference(startDateObj, endDateObj);
-          alert("Days left:" + diff);
           form.submit();
-        }
-
-        function calculateDateDifference(startDateStr, endDateStr) {
-          // Parse the input dates as Date objects
-          const startDate = new Date(startDateStr);
-          const endDate = new Date(endDateStr);
-
-          // Calculate the difference between the two dates in milliseconds
-          const differenceInMs = endDate - startDate;
-
-          // Convert the difference to days
-          const differenceInDays = differenceInMs / (1000 * 60 * 60 * 24);
-
-          // Return the difference in days as a positive integer (rounded down)
-          return Math.floor(differenceInDays);
         }
 
 
